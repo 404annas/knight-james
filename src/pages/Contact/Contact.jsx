@@ -59,7 +59,7 @@ const Contact = () => {
                     <div className="space-y-14">
                         <motion.section variants={fadeInUp}>
                             <h2 className="font-bold text-xl mb-2">General Enquiries</h2>
-                            <p className="text-xl">info@knightjames.co.uk</p>
+                            <p className="text-xl">info@dwellrich.co.uk</p>
                             <p className="text-xl">+44 (0)20 8142 9177</p>
                         </motion.section>
 
@@ -72,8 +72,8 @@ const Contact = () => {
                         <motion.section variants={fadeInUp}>
                             <h2 className="font-bold text-xl mb-2">Registered Address</h2>
                             <div className="leading-relaxed">
-                                <p className="text-xl">The Knight James Group Limited</p>
-                                <p className="text-xl">39 Hendon Lane</p>
+                                <p className="text-xl">London, United Kingdom</p>
+                                <p className="text-xl">39 UK</p>
                                 <p className="text-xl">Finchley</p>
                                 <p className="text-xl">N3 1RY</p>
                             </div>

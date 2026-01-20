@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#111] text-white py-7 px-6 md:px-12 flex flex-col items-center">
+        <footer className="bg-[#111] text-white py-7 px-6 md:px-12 flex flex-col items-center z-50">
             {/* Top Section: Logo and Brand Name */}
             <img className='invert w-40 mb-3' src="/footerLogo.svg" alt="" />
 

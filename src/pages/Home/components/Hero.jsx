@@ -39,7 +39,7 @@ const Hero = () => {
 
             {/* Top Right Menu Bar */}
             <div className="absolute top-10 right-10 flex items-center gap-4 z-20">
-                <span className="text-white uppercase tracking-[0.2em] text-sm font-medium">
+                <span className="text-black uppercase tracking-[0.2em] text-sm font-medium">
                     Menu
                 </span>
                 <div className="bg-white w-10 h-10 flex items-center justify-center shadow-sm cursor-pointer hover:bg-gray-100 transition-colors">

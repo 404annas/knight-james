@@ -7,14 +7,12 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        "What We Do",
-        "Current Projects",
-        "Past Developments",
-        "People",
-        "Investors",
-        "Press",
-        "Contact"
+        { label: "What We Do", path: "/what-we-do" },
+        { label: "Current Projects", path: "/projects" },
+        { label: "Past Developments", path: "/developments" },
+        { label: "Contact", path: "/contact" },
     ];
+
 
     // Variants for the whole menu panel slide-in
     const menuVariants = {
@@ -53,7 +51,7 @@ const Navbar = () => {
                             initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 10 }}
-                            className="text-white uppercase tracking-[0.2em] text-sm font-medium"
+                            className="text-black uppercase tracking-[0.2em] text-sm font-medium"
                         >
                             Menu
                         </motion.span>
@@ -113,18 +111,24 @@ const Navbar = () => {
                         </Link>
                         {/* RIGHT SIDE: Black panel with links */}
                         <div className="w-full md:w-1/2 h-full  flex flex-col justify-center px-10 md:px-20  xl:pl-44 z-10 relative">
-                            <ul className=" flex flex-col gap-5">
-                                {navLinks.map((link, i) => (
+                            <ul className=" flex flex-col gap-10">
+                                {navLinks.map((item, i) => (
                                     <motion.li
-                                        key={link}
+                                        key={item.label}
                                         custom={i}
                                         variants={linkVariants}
                                         initial="closed"
                                         animate="open"
-                                        className="text-white font-normal text-3xl lg:text-4xl  tracking-wide group cursor-pointer transition-colors inline-block w-fit"
+                                        className="text-white text-3xl lg:text-4xl tracking-wide group w-fit"
                                     >
-                                        {link}
-                                        <div className={`w-0 transition-all duration-300 group-hover:w-full ease-in-out  h-[2px] bg-white  `}></div>
+                                        <Link
+                                            to={item.path}
+                                            onClick={() => setIsOpen(false)}
+                                            className="inline-block"
+                                        >
+                                            {item.label}
+                                            <div className="w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
+                                        </Link>
                                     </motion.li>
                                 ))}
                             </ul>

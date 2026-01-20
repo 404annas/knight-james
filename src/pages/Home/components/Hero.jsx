@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu as MenuIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const brandName = "KNIGHT JAMES";
@@ -20,10 +21,12 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden select-none">
-            {/* Background Image Layer */}
+        /* CHANGED: h-screen to min-h-screen, removed overflow-hidden, added py-20 for spacing when scrolling */
+        <section className="relative min-h-screen w-full flex flex-col items-center justify-center select-none py-20">
+
+            {/* Background Image Layer - CHANGED: absolute to fixed so it covers the whole scroll area */}
             <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="fixed inset-0 bg-cover bg-center"
                 style={{
                     backgroundImage: "url('https://www.knightjames.co.uk/assets/site/_1536xAUTO_crop_center-center_70_none/Flat-1-76-Hamilton-Terrace-Hi-103.jpg')",
                 }}
@@ -37,8 +40,8 @@ const Hero = () => {
                 ></motion.div>
             </div>
 
-            {/* Top Right Menu Bar */}
-            <div className="absolute top-10 right-10 flex items-center gap-4 z-20">
+            {/* Top Right Menu Bar - CHANGED: absolute to fixed so it stays visible while scrolling */}
+            <div className="fixed top-10 right-10 flex items-center gap-4 z-20">
                 <span className="text-black uppercase tracking-[0.2em] text-sm font-medium">
                     Menu
                 </span>
@@ -48,7 +51,7 @@ const Hero = () => {
             </div>
 
             {/* Center Content Container */}
-            <div className="relative z-10 flex flex-col items-center text-white w-full max-w-lg px-6">
+            <div className="relative z-10 flex flex-col items-center text-white w-full max-w-3xl px-6">
 
                 {/* SVG Icon - Simple Fade In */}
                 <motion.div
@@ -76,7 +79,7 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Brand Typography - Each letter animates up */}
-                <h1 className="text-3xl tracking-[0.18em] font-medium mb-4 text-center ml-[0.35em] flex overflow-hidden">
+                <h1 className="text-2xl tracking-[0.18em] font-medium mb-4 text-center ml-[0.35em] flex overflow-hidden">
                     {brandName.split("").map((char, i) => (
                         <motion.span
                             key={i}
@@ -92,6 +95,27 @@ const Hero = () => {
                     ))}
                 </h1>
 
+                <motion.h1 initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1.2 }}
+                    className="text-2xl uppercase tracking-wide font-bold mb-4 text-center">
+                    Where Global Capital Meets Timeless Value
+                </motion.h1>
+
+                <motion.p initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1.2 }}
+                    className="text-center text-sm md:text-base leading-relaxed mb-4">
+                    Dwell Rich Ltd is a London‑based private property development and investment company specialising in identifying high‑quality property opportunities across Central London, South London, and carefully selected surrounding areas. Our focus is on sourcing properties with strong fundamentals and unlocking additional value through planning gains, intelligent design, and disciplined execution.
+                </motion.p>
+
+                <motion.p initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1.2 }}
+                    className="text-center text-sm md:text-base leading-relaxed mb-4">
+                    London remains one of the world’s most resilient and transparent property markets. Through a selective and research‑driven approach, Dwell Rich Ltd enables investors to participate in value‑enhancing developments within one of the most sought‑after global cities.
+                </motion.p>
+
                 {/* Navigation Links - Smooth Fade In */}
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -99,20 +123,24 @@ const Hero = () => {
                     transition={{ delay: 1.5, duration: 1.2 }}
                     className="w-xs space-y-0 text-center"
                 >
-                    <button className="w-full py-6 uppercase tracking-[0.25em] text-sm font-bold hover:text-white/70 transition-colors">
-                        Current Projects
-                    </button>
+                    <Link to={"/projects"} >
+                        <button className="w-full py-6 uppercase tracking-[0.25em] text-sm font-bold hover:text-white/70 transition-colors cursor-pointer duration-300">
+                            Current Projects
+                        </button>
+                    </Link>
 
                     <div className="w-full flex h-px ">
                         <motion.div className='h-[1px] bg-white/40 w-1/2'></motion.div>
                         <motion.div className='h-[1px] bg-white/40 w-1/2'></motion.div>
                     </div>
 
-                    <button className="w-full py-6 uppercase tracking-[0.25em] text-sm font-bold hover:text-white/70 transition-colors">
-                        Past Developments
-                    </button>
+                    <Link to={"/developments"} >
+                        <button className="w-full py-6 uppercase tracking-[0.25em] text-sm font-bold hover:text-white/70 transition-colors duration-300 cursor-pointer">
+                            Past Developments
+                        </button>
+                    </Link>
 
-                    <div className="w-full h-[1px] bg-white/40"></div>
+                    {/* <div className="w-full h-[1px] bg-white/40"></div> */}
                 </motion.div>
             </div>
         </section>

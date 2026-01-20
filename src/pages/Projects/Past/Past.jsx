@@ -2,24 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import logo from "../../../assets/logo-contact.svg";
 import { Link } from 'react-router-dom';
+import kingstonMain from "../../../assets/KingstonMain.jpg"
+import surreyMain from "../../../assets/SurreyMain.jpg"
 
 const projects = [
-    { title: "Hamilton Terrace, NW8", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Flat-1-76-Hamilton-Terrace-Hi-2_2025-01-06-040036_tjjc.jpg" },
-    { title: "Westbourne Terrace, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Living-Room-2_2025-01-12-101758_rhsq.jpg" },
-    { title: "Sutherland Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/CORE-Flat-4-116-Sutherland-Avenue-Reception3.1-1.jpg" },
-    { title: "Midhurst Avenue, N10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-front-zoomed.jpg" },
-    { title: "Leamington Road Villas, W11", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/LRV-Rear-Living-Room.jpg" },
-    { title: "Oxford Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-I.jpg" },
-    { title: "Clanricarde Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Living-Room-Main.jpg" },
-    { title: "Queens Gate Place, SW7", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-Wide-angle_2020-10-26-130738.jpg" },
-    { title: "Craven Hill, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Website-main-shot-terrace-and-living-from-side.jpg" },
-    { title: "Trebovir Road, SW5", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-I.jpg" },
-    { title: "Linden Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Linden-Gardens-W2-LIVING-MEZZ-AND-KITCHEN.jpg" },
-    { title: "St. Mark's Road, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Marks-Place-91D-2.jpg" },
-    { title: "Ashmore Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Ashmore-Road-68D-22.jpg" },
-    { title: "St. Quintin Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Quintin-Gardens-W10_19.jpg" },
-    { title: "Shirland Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Shirland-rd-4.jpg" },
-    { title: "Elgin Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Elgin-Avenue-Diner-Through-A.jpg" },
+    { title: "Kingston Upon Thames", img: kingstonMain },
+    { title: "Thames Surrey", img: surreyMain },
+    // { title: "Sutherland Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/CORE-Flat-4-116-Sutherland-Avenue-Reception3.1-1.jpg" },
+    // { title: "Midhurst Avenue, N10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-front-zoomed.jpg" },
+    // { title: "Leamington Road Villas, W11", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/LRV-Rear-Living-Room.jpg" },
+    // { title: "Oxford Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-I.jpg" },
+    // { title: "Clanricarde Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Living-Room-Main.jpg" },
+    // { title: "Queens Gate Place, SW7", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-Wide-angle_2020-10-26-130738.jpg" },
+    // { title: "Craven Hill, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Website-main-shot-terrace-and-living-from-side.jpg" },
+    // { title: "Trebovir Road, SW5", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-I.jpg" },
+    // { title: "Linden Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Linden-Gardens-W2-LIVING-MEZZ-AND-KITCHEN.jpg" },
+    // { title: "St. Mark's Road, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Marks-Place-91D-2.jpg" },
+    // { title: "Ashmore Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Ashmore-Road-68D-22.jpg" },
+    // { title: "St. Quintin Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Quintin-Gardens-W10_19.jpg" },
+    // { title: "Shirland Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Shirland-rd-4.jpg" },
+    // { title: "Elgin Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Elgin-Avenue-Diner-Through-A.jpg" },
 ];
 
 const Past = () => {
@@ -57,29 +59,31 @@ const Past = () => {
                 {/* PROJECTS LIST */}
                 <div className="flex flex-col gap-24">
                     {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ y: 80, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="flex flex-col items-center group"
-                        >
-                            <div className="w-full overflow-hidden mb-6">
-                                <img
-                                    loading='lazy'
-                                    src={project.img}
-                                    alt={project.title}
-                                    className="w-full h-[80vh] object-cover cursor-pointer transition-all duration-700 ease-in-out transform hover:scale-110"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <p className="text-lg md:text-xl font-medium tracking-wide">
-                                    {project.title}
-                                </p>
-                                <div className="h-[2px] bg-[#8F6573] w-1/4 mx-auto mt-1 group-hover:w-full transition-all duration-500"></div>
-                            </div>
-                        </motion.div>
+                        <Link to={`/developments/${project.title.toLowerCase().replace(/ /g, "-")}`}>
+                            <motion.div
+                                key={index}
+                                initial={{ y: 80, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="flex flex-col items-center group"
+                            >
+                                <div className="w-full overflow-hidden mb-6">
+                                    <img
+                                        loading='lazy'
+                                        src={project.img}
+                                        alt={project.title}
+                                        className="w-full h-[80vh] object-cover cursor-pointer transition-all duration-700 ease-in-out transform hover:scale-110"
+                                    />
+                                </div>
+                                <div className="text-center">
+                                    <p className="text-lg md:text-xl font-medium tracking-wide">
+                                        {project.title}
+                                    </p>
+                                    <div className="h-[2px] bg-[#8F6573] w-1/4 mx-auto mt-1 group-hover:w-full transition-all duration-500"></div>
+                                </div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
             </main>

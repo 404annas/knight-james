@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import wallImage from "../../assets/whatImg.jpg";
 import logo from "../../assets/logo-contact.svg";
 import { Link } from "react-router-dom";
 

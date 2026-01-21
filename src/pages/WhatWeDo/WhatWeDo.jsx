@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { AlignVerticalSpaceAround, Award, ChartNoAxesCombined, Handshake, House, LogOut, NotebookPen, PencilRuler, Pickaxe, UsersRound } from "lucide-react";
 
-import imageMain from "../../assets/kingstonMain.jpg"
+import imageMain from "../../assets/KingstonMain.jpg"
 
 const WhatWeDo = () => {
     const [isVisible, setIsVisible] = useState(false);

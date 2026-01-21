@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import logo from "../../../assets/logo.png"
 
-import mainBg from "../../../assets/surreyMain.jpg"
+import mainBg from "../../../assets/SurreyMain.jpg"
 
 const Hero = () => {
     const brandName = "KNIGHT JAMES";

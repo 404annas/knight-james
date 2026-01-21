@@ -2,6 +2,7 @@ import React from 'react';
 import contactLogo from "../../assets/logo.png"
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEO from '../../components/SEO';
 
 const Contact = () => {
     // Animation variants for the slide-up effect
@@ -22,6 +23,12 @@ const Contact = () => {
     return (
         <div className="flex flex-col md:flex-row min-h-screen text-gray-900 font-sans relative">
 
+            <SEO
+                title="Contact Us - Invest in London Property"
+                description="Get in touch with Dwell Rich Ltd for private investment enquiries. We offer premium London real estate opportunities for international investors."
+                keywords="Invest in London property, international investors UK property, London real estate opportunities"
+            />
+
             {/* FIXED LOGO SECTION */}
             <motion.div
                 initial={{ opacity: 0 }}
@@ -30,7 +37,7 @@ const Contact = () => {
                 className="fixed top-10 left-10 lg:left-14 z-50"
             >
                 <Link to={"/"}>
-                    <img loading='lazy' className='w-20 md:w-24' src={contactLogo} alt="Logo" />
+                    <img loading='lazy' className='w-20 md:w-24' src={contactLogo} alt="Dwell Rich Ltd - London Real Estate Opportunities Logo" />
                 </Link>
             </motion.div>
 
@@ -42,6 +49,7 @@ const Contact = () => {
                     animate="animate"
                     className="max-w-xl w-full ml-auto"
                 >
+                    <h2 className="sr-only">Invest in London property and international investors UK property</h2>
                     <motion.h1
                         variants={fadeInUp}
                         className="text-5xl md:text-[68px] leading-none font-semibold text-[#222222] mb-16 tracking-tight"
@@ -64,6 +72,7 @@ const Contact = () => {
 
                         {/* Updated Section: Private Investment Enquiries */}
                         <motion.section variants={fadeInUp}>
+                            <h2 className="sr-only">London real estate opportunities for global partners</h2>
                             <h2 className="font-bold text-xl mb-2">Private Investment Enquiries</h2>
                             <p className="text-lg text-gray-700 leading-relaxed mb-4">
                                 Dwell Rich Ltd works with a limited number of investment partners. All enquiries are handled with strict confidentiality and professionalism.

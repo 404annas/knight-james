@@ -13,6 +13,7 @@ import {
     Handshake
 } from 'lucide-react';
 import logo from "../../assets/logo.png";
+import SEO from '../../components/SEO';
 
 const Investor = () => {
     const fadeInUp = {
@@ -32,10 +33,16 @@ const Investor = () => {
     return (
         <div className="bg-white min-h-screen text-[#222222] relative">
 
+            <SEO
+                title="Investment Approach - London Real Estate ROI"
+                description="Discover a strategic property investment strategy in the UK focusing on planning gain and high ROI. Dwell Rich Ltd offers predictable returns and UK development opportunities."
+                keywords="Property investment strategy UK, planning gain investments, London real estate ROI, UK development opportunities"
+            />
+
             {/* FIXED LOGO */}
             <div className="fixed top-10 left-10 md:left-14 z-50">
                 <Link to="/">
-                    <img src={logo} alt="Logo" className="w-20 md:w-24" />
+                    <img src={logo} alt="Dwell Rich Ltd - Property investment strategy UK Logo" className="w-20 md:w-24" />
                 </Link>
             </div>
 
@@ -43,6 +50,7 @@ const Investor = () => {
 
                 {/* PAGE TITLE */}
                 <motion.div {...fadeInUp} className="mb-20">
+                    <h2 className="sr-only">Property investment strategy UK and planning gain investments</h2>
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-10 tracking-tight">Investor</h1>
                     <div className="h-[2px] bg-[#8F6573] w-full"></div>
                 </motion.div>
@@ -50,6 +58,7 @@ const Investor = () => {
                 {/* 1. APPROACH SECTION */}
                 <motion.section {...fadeInUp} className="max-w-4xl mb-20">
                     <h2 className="text-sm font-bold uppercase tracking-widest text-[#8F6573] mb-6">Our Investment Approach</h2>
+                    <h3 className="sr-only">London real estate ROI and UK development opportunities</h3>
                     <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
                         Predictable Returns. <br />
                         Defined Timeframe. <br />

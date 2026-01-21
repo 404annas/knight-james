@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import {
-    Home, MapPin, Calendar, Layout,
-    Hammer, Coins, TrendingUp, CheckCircle2
+    Home, Layout, Hammer, Coins, TrendingUp, CheckCircle2
 } from 'lucide-react';
 import logo from "../../assets/logo.png";
 import { pastProjectsData } from './pastProjects';
@@ -18,6 +17,17 @@ const ProjectDetails = () => {
 
     if (!project) return null;
 
+    // Logic to determine how many images are full width based on project ID
+    const getFullWidthCount = () => {
+        if (project.id === "kingston-upon-thames") return 1; // Kingston: 1st image full width
+        if (project.id === "thames-surrey") return 2;        // Surrey: 1st and 2nd images full width
+        return 0;
+    };
+
+    const fullWidthCount = getFullWidthCount();
+    const fullWidthImages = project.gallery.slice(0, fullWidthCount);
+    const gridImages = project.gallery.slice(fullWidthCount);
+
     const fadeInUp = {
         initial: { y: 30, opacity: 0 },
         whileInView: { y: 0, opacity: 1 },
@@ -26,7 +36,7 @@ const ProjectDetails = () => {
     };
 
     return (
-        <div className="bg-white min-h-screen text-[#222222] px-44">
+        <div className="bg-white min-h-screen text-[#222222] lg:px-44">
             {/* FIXED LOGO */}
             <div className="fixed top-10 left-10 md:left-14 z-50">
                 <Link to="/"><img src={logo} alt="Logo" className="w-20 md:w-24" /></Link>
@@ -65,7 +75,6 @@ const ProjectDetails = () => {
 
                 {/* ASSET PROFILE & STRATEGY GRID */}
                 <div className="grid md:grid-cols-2 gap-20 mb-20">
-                    {/* Asset Profile */}
                     <motion.div {...fadeInUp}>
                         <div className="flex items-center gap-3 mb-8 border-b pb-4">
                             <Layout size={24} className="text-[#8F6573]" />
@@ -81,7 +90,6 @@ const ProjectDetails = () => {
                         </div>
                     </motion.div>
 
-                    {/* Development Strategy */}
                     <motion.div {...fadeInUp}>
                         <div className="flex items-center gap-3 mb-8 border-b pb-4">
                             <TrendingUp size={24} className="text-[#8F6573]" />
@@ -98,21 +106,40 @@ const ProjectDetails = () => {
                     </motion.div>
                 </div>
 
-                {/* GALLERY 1 & 2 */}
-                <div className="grid md:grid-cols-2 gap-10 mb-20">
-                    {project.gallery && project.gallery.length > 0 ? (
-                        project.gallery.map((img, index) => (
-                            <img
-                                key={index}
+                {/* GALLERY SECTION */}
+                <div className="flex flex-col gap-4 mb-20">
+                    
+                    {/* 1. FULL WIDTH IMAGES (1 for Kingston, 2 for Surrey) */}
+                    <div className="flex flex-col gap-4">
+                        {fullWidthImages.map((img, index) => (
+                            <motion.img
+                                key={`full-${index}`}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                src={img}
+                                className="w-full h-[600px] object-cover"
+                                alt={`Featured ${index}`}
+                                loading="lazy"
+                            />
+                        ))}
+                    </div>
+
+                    {/* 2. GRID IMAGES (The rest of the gallery) */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                        {gridImages.map((img, index) => (
+                            <motion.img
+                                key={`grid-${index}`}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
                                 src={img}
                                 className="w-full h-[500px] object-cover"
                                 alt={`Detail ${index}`}
                                 loading="lazy"
                             />
-                        ))
-                    ) : (
-                        null
-                    )}
+                        ))}
+                    </div>
                 </div>
 
                 {/* FINANCIAL SUMMARY */}
@@ -133,7 +160,8 @@ const ProjectDetails = () => {
 
                 {/* DESIGN & BUILD */}
                 <section className="grid md:grid-cols-2 gap-20 items-center mb-20">
-                    <img src={project.gallery[2]} className="w-full aspect-square object-cover" alt="Design" />
+                    {/* Using index 2 or 0 of the grid images for this section to avoid repeats if preferred */}
+                    <img src={project.gallery[0]} className="w-full aspect-square object-cover" alt="Design" />
                     <motion.div {...fadeInUp}>
                         <div className="flex items-center gap-3 mb-8">
                             <Hammer size={24} className="text-[#8F6573]" />

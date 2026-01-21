@@ -94,7 +94,7 @@ const Navbar = () => {
                             className='absolute h-full w-1/2   bottom-0 left-0 right-0 z-0 object-center object-cover'
                             src={mainImg}
                         />
-                        <div className='absolute inset-0 z-5'></div>
+                        <div className='absolute inset-0 bg-black/50 z-5'></div>
                         <motion.div
                             className='absolute top-0 right-0 bottom-0 bg-[#111] z-10 '
                             initial={{ width: "100%" }}

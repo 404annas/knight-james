@@ -6,6 +6,7 @@ import kingston3 from "../../assets/kingston4.jpg";
 import kingston4 from "../../assets/secondaryMain.jpg";
 import kingston5 from "../../assets/secondaryMain2.jpg";
 import kingston6 from "../../assets/secondaryMain3.jpg";
+import kingston10 from "../../assets/kingston10.png";
 
 import surrey3 from "../../assets/surrey3.jpg"
 import surrey2 from "../../assets/surrey2.jpg"
@@ -13,6 +14,8 @@ import surrey1 from "../../assets/surrey1.jpg"
 import surrey4 from "../../assets/surrey4.jpg"
 import surrey5 from "../../assets/surrey5.jpg"
 import surrey6 from "../../assets/surrey6.jpg"
+import surrey10 from "../../assets/surreyMain10.jpg"
+import surrey11 from "../../assets/surreyMain11.jpg"
 
 export const pastProjectsData = [
     {
@@ -57,7 +60,7 @@ export const pastProjectsData = [
 
         outcome: "The Kingston project represents a strong example of value-led residential development, combining strategic buying, controlled costs, and design-driven execution. The completed property achieved a significant uplift in value while delivering a premium, future-proof family home.",
 
-        gallery: [kingston1, kingston2, kingston3, kingston4, kingston5, kingston6],
+        gallery: [kingston10, kingston1, kingston2, kingston3, kingston4, kingston5, kingston6],
         nextProjectName: "Cheam, Surrey",
         nextProjectId: "thames-surrey"
     },
@@ -104,6 +107,8 @@ export const pastProjectsData = [
         outcome: "The Cheam development exemplifies our ability to identify underutilised assets, execute large-scale luxury redevelopments, and control build costs while delivering exceptional specification. It stands as a strong demonstration of our investor-led luxury development model.",
 
         gallery: [
+            surrey10,
+            surrey11,
             surrey3,
             surrey2,
             surrey1,

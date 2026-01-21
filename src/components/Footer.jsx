@@ -11,10 +11,10 @@ const Footer = () => {
             </Link>
 
             {/* Middle Section: Company Information */}
-            <div className="text-center max-w-2xl mb-3">
+            <div className="text-center max-w-3xl mb-3">
                 <p className="text-[#888] text-xs leading-relaxed">
-                    Dwell Rich Ltd is the trading name of The Dwell Rich Ltd Group Limited and its associated companies - 39 Hendon Lane,
-                    London, N3 1RY - Registered in England and Wales - Company Number: 09129424
+                    Dwell Rich Ltd is a London‑based private property development and investment company specialising in identifying high‑quality property opportunities across Central London, South London.
+                    At Dwell Rich Ltd, we focus on properties where planning potential, location quality, and market demand combine to create strong risk‑adjusted returns.
                 </p>
             </div>
 

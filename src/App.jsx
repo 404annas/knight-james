@@ -9,6 +9,7 @@ import Past from './pages/Projects/Past/Past'
 import WhatWeDo from './pages/WhatWeDo/WhatWeDo'
 import ProjectDetails from './pages/Projects/ProjectDetails'
 import About from './pages/About/About'
+import Investor from './pages/Investor/Investor'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/investor" element={<Investor />} />
         <Route path='/projects' element={<Current />}/>
         <Route path='/developments' element={<Past />}/>
         <Route path='/developments/:id' element={<ProjectDetails />}/> 

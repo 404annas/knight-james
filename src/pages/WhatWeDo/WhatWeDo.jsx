@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { AlignVerticalSpaceAround, Award, ChartNoAxesCombined, Handshake, House, LogOut, NotebookPen, PencilRuler, Pickaxe, UsersRound } from "lucide-react";
 
-import image from "../../assets/kingstonMain.jpg"
+import imageMain from "../../assets/kingstonMain.jpg"
 
 const WhatWeDo = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -104,7 +104,7 @@ const WhatWeDo = () => {
             <div className="w-full md:w-1/2 h-screen sticky top-0 hidden md:block">
                 <img
                     loading="lazy"
-                    src={image}
+                    src={imageMain}
                     alt="Interior Design"
                     className="w-full h-full object-cover"
                 />
@@ -112,7 +112,7 @@ const WhatWeDo = () => {
 
             {/* Mobile Image */}
             <div className="md:hidden w-full h-96">
-                <img src={image} alt="Wall" className="w-full h-full object-cover" />
+                <img src={imageMain} alt="Wall" className="w-full h-full object-cover" />
             </div>
         </section>
     );

@@ -11,6 +11,7 @@ const Navbar = () => {
 
     const navLinks = [
         { label: "Home", path: "/home" },
+        { label: "About", path: "/about" },
         { label: "Current Projects", path: "/projects" },
         { label: "Past Developments", path: "/developments" },
         { label: "Contact", path: "/contact" },
@@ -109,12 +110,11 @@ const Navbar = () => {
                         ></motion.div>
                         {/* logo  */}
                         <Link to={"/"}>
-
                             <img onClick={() => setIsOpen(!isOpen)} src={logo} className='absolute top-10 left-14 w-24 z-50' />
                         </Link>
                         {/* RIGHT SIDE: Black panel with links */}
                         <div className="w-full md:w-1/2 h-full  flex flex-col justify-center px-10 md:px-20  xl:pl-44 z-10 relative">
-                            <ul className=" flex flex-col gap-10">
+                            <ul className=" flex flex-col gap-6">
                                 {navLinks.map((item, i) => (
                                     <motion.li
                                         key={item.label}

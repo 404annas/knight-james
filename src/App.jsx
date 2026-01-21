@@ -8,6 +8,7 @@ import Current from './pages/Projects/Current/Current'
 import Past from './pages/Projects/Past/Past'
 import WhatWeDo from './pages/WhatWeDo/WhatWeDo'
 import ProjectDetails from './pages/Projects/ProjectDetails'
+import About from './pages/About/About'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path='/projects' element={<Current />}/>
         <Route path='/developments' element={<Past />}/>
         <Route path='/developments/:id' element={<ProjectDetails />}/> 

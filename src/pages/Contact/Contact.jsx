@@ -1,7 +1,7 @@
 import React from 'react';
 import contactLogo from "../../assets/logo.png"
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Added this
+import { motion } from 'framer-motion';
 
 const Contact = () => {
     // Animation variants for the slide-up effect
@@ -35,7 +35,7 @@ const Contact = () => {
             </motion.div>
 
             {/* LEFT COLUMN: Contact Information */}
-            <div className="w-full md:w-1/2 p-10 lg:px-60 pt-52 pb-16 bg-white flex flex-col">
+            <div className="w-full md:w-1/2 p-10 lg:pl-60 pt-52 pb-16 bg-white flex flex-col">
                 <motion.div
                     variants={staggerContainer}
                     initial="initial"
@@ -52,7 +52,7 @@ const Contact = () => {
                     {/* Decorative Line */}
                     <motion.div
                         variants={fadeInUp}
-                        className="w-full md:w-[180%] h-[3px] bg-[#8F6573] mb-20"
+                        className="w-full h-[3px] bg-[#8F6573] mb-20"
                     ></motion.div>
 
                     {/* Contact Details */}
@@ -60,22 +60,24 @@ const Contact = () => {
                         <motion.section variants={fadeInUp}>
                             <h2 className="font-bold text-xl mb-2">General Enquiries</h2>
                             <p className="text-xl">info@dwellrich.co.uk</p>
-                            <p className="text-xl">+44 (0)20 8142 9177</p>
                         </motion.section>
 
+                        {/* Updated Section: Private Investment Enquiries */}
                         <motion.section variants={fadeInUp}>
-                            <h2 className="font-bold text-xl mb-2">Press Enquiries</h2>
-                            <p className="text-xl">info@dwellrich.co.uk</p>
-                            <p className="text-xl">+44 (0)20 8142 9177</p>
+                            <h2 className="font-bold text-xl mb-2">Private Investment Enquiries</h2>
+                            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                                Dwell Rich Ltd works with a limited number of investment partners. All enquiries are handled with strict confidentiality and professionalism.
+                            </p>
+                            <p className="text-lg text-gray-700 leading-relaxed">
+                                We welcome discussions with international investors seeking exposure to London property through a disciplined, planning‑led development strategy.
+                            </p>
                         </motion.section>
 
+                        {/* Updated Section: Location */}
                         <motion.section variants={fadeInUp}>
-                            <h2 className="font-bold text-xl mb-2">Registered Address</h2>
+                            <h2 className="font-bold text-xl mb-2">Location</h2>
                             <div className="leading-relaxed">
-                                <p className="text-xl">London, UK</p>
-                                <p className="text-xl">39 UK</p>
-                                <p className="text-xl">Finchley</p>
-                                <p className="text-xl">N3 1RY</p>
+                                <p className="text-xl">London, United Kingdom</p>
                             </div>
                         </motion.section>
                     </div>

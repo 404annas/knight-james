@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { Menu as MenuIcon, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import logo from "../assets/logo.png"
+
+import mainImg from "../assets/secondaryMain3.jpg"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { label: "What We Do", path: "/what-we-do" },
+        { label: "Home", path: "/home" },
         { label: "Current Projects", path: "/projects" },
         { label: "Past Developments", path: "/developments" },
         { label: "Contact", path: "/contact" },
@@ -88,10 +91,10 @@ const Navbar = () => {
                             animate={{ scale: 1 }}
                             exit={{ scale: 1.15 }}
                             transition={{ duration: 0.8, delay: 0.4, exit: { delay: 0, duration: 0 }, }}
-                            className='absolute h-full  bottom-0 left-0 right-0 z-0 object-bottom object-cover'
-                            src='http://knightjames.co.uk/assets/site/_1536xAUTO_crop_center-center_70_none/Flat-1-76-Hamilton-Terrace-Hi-5_2025-01-06-170738_kyos.jpg'
+                            className='absolute h-full w-1/2   bottom-0 left-0 right-0 z-0 object-center object-cover'
+                            src={mainImg}
                         />
-                        <div className='absolute md:hidden inset-0 bg-[#111] z-5'></div>
+                        <div className='absolute inset-0 z-5'></div>
                         <motion.div
                             className='absolute top-0 right-0 bottom-0 bg-[#111] z-10 '
                             initial={{ width: "100%" }}
@@ -107,7 +110,7 @@ const Navbar = () => {
                         {/* logo  */}
                         <Link to={"/"}>
 
-                            <img onClick={() => setIsOpen(!isOpen)} src='logo.svg' className='absolute top-14 left-16 w-24' />
+                            <img onClick={() => setIsOpen(!isOpen)} src={logo} className='absolute top-10 left-14 w-24 z-50' />
                         </Link>
                         {/* RIGHT SIDE: Black panel with links */}
                         <div className="w-full md:w-1/2 h-full  flex flex-col justify-center px-10 md:px-20  xl:pl-44 z-10 relative">

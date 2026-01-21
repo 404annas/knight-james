@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import logo from "../../../assets/logo-contact.svg";
+import logo from "../../../assets/logo.png";
 import { Link } from 'react-router-dom';
 
 const projects = [
@@ -20,7 +20,7 @@ const Current = () => {
             {/* HEADER SECTION */}
             <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
-                    <img src={logo} alt="Knight James Logo" className="w-20 md:w-24" />
+                    <img loading='lazy' src={logo} alt="DWELL RICH LTD" className="w-20 md:w-24" />
                 </Link>
             </header>
 

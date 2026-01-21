@@ -1,98 +1,158 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import logo from "../../assets/logo-contact.svg";
-import logo2 from "../../assets/logo2.svg";
+import { useParams, Link } from 'react-router-dom';
+import {
+    Home, MapPin, Calendar, Layout,
+    Hammer, Coins, TrendingUp, CheckCircle2
+} from 'lucide-react';
+import logo from "../../assets/logo.png";
 import { pastProjectsData } from './pastProjects';
 
 const ProjectDetails = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
-
-    // Find the specific project data based on the ID in the URL
     const project = pastProjectsData.find((p) => p.id === id);
 
-    // Scroll to top when the project changes
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [id]);
 
-    // Handle case where project ID is wrong
-    if (!project) {
-        return (
-            <div className="h-screen flex flex-col items-center justify-center">
-                <h1 className="text-2xl mb-4">Project not found</h1>
-                <Link to="/developments" className="text-[#8F6573] underline">Back to Developments</Link>
-            </div>
-        );
-    }
+    if (!project) return null;
+
+    const fadeInUp = {
+        initial: { y: 30, opacity: 0 },
+        whileInView: { y: 0, opacity: 1 },
+        viewport: { once: true },
+        transition: { duration: 0.8 }
+    };
 
     return (
-        <div className="bg-white min-h-screen text-[#222222]">
-            {/* FIXED LOGO & MENU */}
+        <div className="bg-white min-h-screen text-[#222222] px-44">
+            {/* FIXED LOGO */}
             <div className="fixed top-10 left-10 md:left-14 z-50">
                 <Link to="/"><img src={logo} alt="Logo" className="w-20 md:w-24" /></Link>
             </div>
 
-            <main className="max-w-5xl mx-auto pt-44 pb-20 px-6">
-                {/* TITLE SECTION */}
+            <main className="max-w-6xl mx-auto pt-44 pb-20 px-6">
+
+                {/* HEADER */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
                     <Link to="/developments" className="text-[#8F6573] text-sm uppercase tracking-widest mb-4 inline-block hover:opacity-70">
                         Past Developments
                     </Link>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">{project.title}</h1>
-                    <div className="flex items-center gap-4 mt-2 mb-16">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2">{project.title}</h1>
+                    <div className="flex items-center gap-4 mb-16">
                         <div className="w-12 h-[2px] bg-[#8F6573]"></div>
-                        <span className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-400">{project.location}</span>
+                        <span className="text-3xl md:text-4xl font-light text-gray-400">{project.location}</span>
                     </div>
                 </motion.div>
 
                 {/* HERO IMAGE */}
-                <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="mb-24">
-                    <img loading='lazy' src={project.heroImg} alt={project.title} className="w-full aspect-[16/9] object-cover shadow-sm" />
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="mb-24">
+                    <img loading='lazy' src={project.heroImg} alt={project.title} className="w-full aspect-video object-cover shadow-sm" />
                 </motion.div>
 
-                {/* INFO SECTION */}
-                <div className="grid md:grid-cols-1 gap-10 mb-32 max-w-3xl mx-auto">
-                    <div className="md:col-span-5">
-                        <h2 className="text-3xl text-[#222222] font-bold mb-8">{project.subTitle}</h2>
-                        <div className="border-t border-gray-100">
-                            {project.specs.map((item, i) => (
-                                <div key={i} className="flex items-center justify-between py-4 border-b border-gray-100 text-xl">
-                                    <span className="font-normal text-gray-700">{item.label}</span>
-                                    <span className="text-gray-700 font-light">{item.value}</span>
+                {/* PROJECT OVERVIEW */}
+                <section className="max-w-4xl mx-auto mb-32">
+                    <div className="flex items-center gap-3 mb-6 text-[#8F6573]">
+                        <Home size={28} strokeWidth={1.5} />
+                        <h2 className="text-3xl font-bold">Project Overview</h2>
+                    </div>
+                    <div className="text-lg md:text-xl font-light text-gray-600 leading-relaxed space-y-6">
+                        <p>{project.overview}</p>
+                        <p>{project.overviewSecondary}</p>
+                    </div>
+                </section>
+
+                {/* ASSET PROFILE & STRATEGY GRID */}
+                <div className="grid md:grid-cols-2 gap-20 mb-20">
+                    {/* Asset Profile */}
+                    <motion.div {...fadeInUp}>
+                        <div className="flex items-center gap-3 mb-8 border-b pb-4">
+                            <Layout size={24} className="text-[#8F6573]" />
+                            <h3 className="text-2xl font-bold">Asset Profile</h3>
+                        </div>
+                        <div className="space-y-6">
+                            {project.assetProfile?.map((item, i) => (
+                                <div key={i} className="flex flex-col">
+                                    <span className="text-sm uppercase tracking-widest text-[#8F6573] font-bold mb-1">{item.label}</span>
+                                    <span className="text-xl font-light">{item.value}</span>
                                 </div>
                             ))}
                         </div>
-                    </div>
-                    <div className="md:col-span-7 space-y-6 text-[#666666] leading-relaxed text-xl font-light">
-                        {project.description.map((p, i) => <p key={i}>{p}</p>)}
-                    </div>
+                    </motion.div>
+
+                    {/* Development Strategy */}
+                    <motion.div {...fadeInUp}>
+                        <div className="flex items-center gap-3 mb-8 border-b pb-4">
+                            <TrendingUp size={24} className="text-[#8F6573]" />
+                            <h3 className="text-2xl font-bold">Strategy</h3>
+                        </div>
+                        <ul className="space-y-4">
+                            {project.strategy?.map((item, i) => (
+                                <li key={i} className="flex gap-4 text-lg font-light text-gray-600">
+                                    <CheckCircle2 size={20} className="text-[#8F6573] mt-1 shrink-0" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
                 </div>
 
-                {/* GALLERY LIST */}
-                <div className="space-y-10">
-                    {project.gallery.map((img, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ y: 50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <img loading='lazy' src={img} alt={`Gallery ${i}`} className="w-full h-[500px] object-cover" />
-                        </motion.div>
-                    ))}
+                {/* GALLERY 1 & 2 */}
+                <div className="grid md:grid-cols-2 gap-10 mb-20">
+                    {project.gallery && project.gallery.length > 0 ? (
+                        project.gallery.map((img, index) => (
+                            <img
+                                key={index}
+                                src={img}
+                                className="w-full h-[500px] object-cover"
+                                alt={`Detail ${index}`}
+                                loading="lazy"
+                            />
+                        ))
+                    ) : (
+                        null
+                    )}
                 </div>
 
-                {/* NEXT PROJECT LINK */}
-                <div className="mt-20 text-center py-20 bg-gray-50 flex flex-col items-center">
-                    <img src={logo2} alt="Logo" className="w-30 md:w-40 mb-4" />
-                    <p className="text-sm font-bold tracking-widest uppercase mb-2">Next Project</p>
-                    <Link
-                        to={`/developments/${project.nextProjectId}`}
-                        className="text-2xl font-light hover:text-[#8F6573] transition-colors"
-                    >
+                {/* FINANCIAL SUMMARY */}
+                <motion.section {...fadeInUp} className="bg-gray-50 px-6 py-8 md:p-10 mb-20 rounded-sm">
+                    <div className="flex items-center justify-center gap-3 mb-10">
+                        <Coins size={28} className="text-[#8F6573]" />
+                        <h2 className="text-3xl font-bold">Financial Summary</h2>
+                    </div>
+                    <div className="max-w-2xl mx-auto">
+                        {project.financials?.map((item, i) => (
+                            <div key={i} className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight ? 'text-[#8F6573] font-bold text-2xl mt-4' : 'text-xl'}`}>
+                                <span className="font-normal">{item.label}</span>
+                                <span className='font-light'>{item.value}</span>
+                            </div>
+                        ))}
+                    </div>
+                </motion.section>
+
+                {/* DESIGN & BUILD */}
+                <section className="grid md:grid-cols-2 gap-20 items-center mb-20">
+                    <img src={project.gallery[2]} className="w-full aspect-square object-cover" alt="Design" />
+                    <motion.div {...fadeInUp}>
+                        <div className="flex items-center gap-3 mb-8">
+                            <Hammer size={24} className="text-[#8F6573]" />
+                            <h3 className="text-3xl font-bold">Design & Build</h3>
+                        </div>
+                        <ul className="space-y-6">
+                            {project.designBuild?.map((item, i) => (
+                                <li key={i} className="text-xl font-light text-gray-600 border-l-2 border-[#8F6573] pl-6">
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                </section>
+
+                {/* NEXT PROJECT */}
+                <div className="mt-20 text-center pt-20 border-t flex flex-col items-center">
+                    <p className="text-sm font-bold tracking-[0.4em] uppercase mb-4 text-[#8F6573]">Next Project</p>
+                    <Link to={`/developments/${project.nextProjectId}`} className="text-4xl md:text-5xl font-light hover:opacity-50 transition-all duration-300">
                         {project.nextProjectName} →
                     </Link>
                 </div>

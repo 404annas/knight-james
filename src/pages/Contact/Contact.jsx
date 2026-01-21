@@ -1,5 +1,5 @@
 import React from 'react';
-import contactLogo from "../../assets/logo-contact.svg"
+import contactLogo from "../../assets/logo.png"
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'; // Added this
 
@@ -27,7 +27,7 @@ const Contact = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="fixed top-14 left-10 lg:left-16 z-50"
+                className="fixed top-10 left-10 lg:left-14 z-50"
             >
                 <Link to={"/"}>
                     <img loading='lazy' className='w-20 md:w-24' src={contactLogo} alt="Logo" />
@@ -65,14 +65,14 @@ const Contact = () => {
 
                         <motion.section variants={fadeInUp}>
                             <h2 className="font-bold text-xl mb-2">Press Enquiries</h2>
-                            <p className="text-xl">press@knightjames.co.uk</p>
+                            <p className="text-xl">info@dwellrich.co.uk</p>
                             <p className="text-xl">+44 (0)20 8142 9177</p>
                         </motion.section>
 
                         <motion.section variants={fadeInUp}>
                             <h2 className="font-bold text-xl mb-2">Registered Address</h2>
                             <div className="leading-relaxed">
-                                <p className="text-xl">London, United Kingdom</p>
+                                <p className="text-xl">London, UK</p>
                                 <p className="text-xl">39 UK</p>
                                 <p className="text-xl">Finchley</p>
                                 <p className="text-xl">N3 1RY</p>

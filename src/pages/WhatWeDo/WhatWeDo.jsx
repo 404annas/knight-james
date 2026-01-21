@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import wallImage from "../../assets/whatImg.jpg";
-import logo from "../../assets/logo-contact.svg";
+import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import { AlignVerticalSpaceAround, Award, ChartNoAxesCombined, Handshake, House, LogOut, NotebookPen, PencilRuler, Pickaxe, UsersRound } from "lucide-react";
+
+import image from "../../assets/kingstonMain.jpg"
 
 const WhatWeDo = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -14,13 +16,39 @@ const WhatWeDo = () => {
         <section className="relative w-full flex flex-col md:flex-row min-h-screen">
 
             {/* FIXED LOGO */}
-            <Link to={"/"} className="fixed top-14 left-10 lg:left-16 z-50">
+            <Link to={"/"} className="fixed top-10 left-10 lg:left-14 z-50">
                 <img loading="lazy" src={logo} alt="Logo" className="w-20 md:w-24 object-contain" />
             </Link>
 
             {/* LEFT CONTENT (Scrollable) */}
             <div className="w-full md:w-1/2 bg-white min-h-screen">
                 <div className="pt-52 md:pt-58 px-10 lg:px-32 xl:pl-44 pb-20">
+
+                    {/* HEADING SECTION */}
+                    <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                        <h1 className="text-5xl md:text-5xl font-bold mb-16 text-[#222222] tracking-tight">
+                            Where Global Capital Meets Timeless Value
+                        </h1>
+
+                        {/* DECORATIVE LINE */}
+                        <div className={`h-[2px] bg-[#8F6573] mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'w-full' : 'w-0'}`}></div>
+                    </div>
+
+                    {/* TEXT CONTENT */}
+                    <div className={`text-[#444444] text-lg md:text-xl font-light leading-relaxed space-y-12 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+
+                        <h1 className="text-2xl font-normal text-[#222222]">London Real Estate Developments:</h1>
+                        {/* Section: What We Do */}
+                        <div className="space-y-4">
+                            <p>
+                                Dwell Rich Ltd is a London‑based private property development and investment company specialising in identifying high‑quality property opportunities across Central London, South London, and carefully selected surrounding areas. Our focus is on sourcing properties with strong fundamentals and unlocking additional value through planning gains, intelligent design, and disciplined execution.
+                            </p>
+                            <p>London remains one of the world’s most resilient and transparent property markets. Through a selective and research‑driven approach, Dwell Rich Ltd enables investors to participate in value‑enhancing developments within one of the most sought‑after global cities. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="pt-10 px-10 lg:px-32 xl:pl-44 pb-20">
 
                     {/* HEADING SECTION */}
                     <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -40,24 +68,24 @@ const WhatWeDo = () => {
                             <p>
                                 We carefully source under‑utilised homes with huge potential for intelligent space planning, good location and connectivity and enhance their value through:
                             </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Planning permissions and change‑of‑use opportunities</li>
-                                <li>Architectural reconfiguration and space optimisation</li>
-                                <li>High‑quality construction and interior delivery</li>
-                                <li>Clear exit strategies focused on maximising ROI</li>
+                            <ul className="space-y-2">
+                                <li className="flex items-center gap-3 leading-6"><NotebookPen size={24}/>Planning permissions and change‑of‑use opportunities</li>
+                                <li className="flex items-center gap-3 leading-6"><House size={24}/>Architectural reconfiguration and space optimisation</li>
+                                <li className="flex items-center gap-3 leading-6"><Pickaxe size={24}/>High‑quality construction and interior delivery</li>
+                                <li className="flex items-center gap-3 leading-6"><LogOut size={24}/>Clear exit strategies focused on maximising ROI</li>
                             </ul>
                         </div>
 
                         {/* Section: Why Invest */}
                         <div className="space-y-4">
                             <h2 className="text-2xl font-bold text-[#222222]">Why Invest with Dwell Rich Ltd:</h2>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Prime Central and South London focus</li>
-                                <li>Planning‑led value creation strategy</li>
-                                <li>Fully integrated professional team</li>
-                                <li>Conservative and disciplined underwriting</li>
-                                <li>International investor‑friendly structures</li>
-                                <li>Alignment of developer and investor interests</li>
+                            <ul className="space-y-2">
+                                <li className="flex items-center gap-3 leading-6"><Award size={20}/>Prime Central and South London focus</li>
+                                <li className="flex items-center gap-3 leading-6"><ChartNoAxesCombined size={20}/>Planning‑led value creation strategy</li>
+                                <li className="flex items-center gap-3 leading-6"><UsersRound size={20}/>Fully integrated professional team</li>
+                                <li className="flex items-center gap-3 leading-6"><PencilRuler size={20}/>Conservative and disciplined underwriting</li>
+                                <li className="flex items-center gap-3 leading-6"><Handshake size={20}/>International investor‑friendly structures</li>
+                                <li className="flex items-center gap-3 leading-6"><AlignVerticalSpaceAround size={20}/>Alignment of developer and investor interests</li>
                             </ul>
                         </div>
 
@@ -76,7 +104,7 @@ const WhatWeDo = () => {
             <div className="w-full md:w-1/2 h-screen sticky top-0 hidden md:block">
                 <img
                     loading="lazy"
-                    src={wallImage}
+                    src={image}
                     alt="Interior Design"
                     className="w-full h-full object-cover"
                 />
@@ -84,7 +112,7 @@ const WhatWeDo = () => {
 
             {/* Mobile Image */}
             <div className="md:hidden w-full h-96">
-                <img src={wallImage} alt="Wall" className="w-full h-full object-cover" />
+                <img src={image} alt="Wall" className="w-full h-full object-cover" />
             </div>
         </section>
     );

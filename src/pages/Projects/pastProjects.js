@@ -25,7 +25,7 @@ import surrey14 from "../../assets/surrey14.jpg"
 import surrey10 from "../../assets/surreyMain10.jpg"
 import surrey11 from "../../assets/surreyMain11.jpg"
 
-import cheamBefore from "../../assets/cheamBefore.jpg"
+import cheamBefore from "../../assets/cheambefore.jpg"
 import cheamAfter from "../../assets/cheamAfter.jpg"
 
 import kingstonNewMain from "../../assets/kingstonNew1.jpg"

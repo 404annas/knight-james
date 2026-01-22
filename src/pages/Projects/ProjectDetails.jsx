@@ -108,7 +108,7 @@ const ProjectDetails = () => {
 
                 {/* GALLERY SECTION */}
                 <div className="flex flex-col gap-4 mb-20">
-                    
+
                     {/* 1. FULL WIDTH IMAGES (1 for Kingston, 2 for Surrey) */}
                     <div className="flex flex-col gap-4">
                         {fullWidthImages.map((img, index) => (

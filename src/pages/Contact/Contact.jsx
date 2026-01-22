@@ -108,6 +108,7 @@ const Contact = () => {
                         <input
                             type="text"
                             id="name"
+                            placeholder='Your Name'
                             className="w-full md:w-[80%] bg-white border-none p-4 outline-none focus:ring-1 focus:ring-gray-400"
                         />
                     </div>
@@ -117,6 +118,7 @@ const Contact = () => {
                         <input
                             type="email"
                             id="email"
+                            placeholder='email@example.com'
                             className="w-full md:w-[80%] bg-white border-none p-4 outline-none focus:ring-1 focus:ring-gray-400"
                         />
                     </div>
@@ -126,6 +128,7 @@ const Contact = () => {
                         <textarea
                             id="message"
                             rows="6"
+                            placeholder='Your Enquiry'
                             className="w-full md:w-[80%] bg-white border-none p-4 outline-none resize-none focus:ring-1 focus:ring-gray-400"
                         ></textarea>
                     </div>

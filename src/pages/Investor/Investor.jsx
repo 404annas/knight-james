@@ -31,8 +31,7 @@ const Investor = () => {
     ];
 
     return (
-        <div className="bg-white min-h-screen text-[#222222] relative">
-
+        <div className="flex flex-col md:flex-row min-h-screen text-[#222222] bg-white relative">
             <SEO
                 title="Investment Approach - London Real Estate ROI"
                 description="Discover a strategic property investment strategy in the UK focusing on planning gain and high ROI. Dwell Rich Ltd offers predictable returns and UK development opportunities."
@@ -46,114 +45,182 @@ const Investor = () => {
                 </Link>
             </div>
 
-            <main className="max-w-4xl mx-auto pt-44 pb-20 px-6">
+            {/* LEFT COLUMN: All existing Investor content */}
+            <div className="w-full md:w-1/2 p-10 lg:pl-44 pt-44 pb-20">
+                <main className="max-w-2xl">
+                    {/* PAGE TITLE */}
+                    <motion.div {...fadeInUp} className="mb-20">
+                        <h2 className="sr-only">Property investment strategy UK and planning gain investments</h2>
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-10 tracking-tight">Investor</h1>
+                        <div className="h-[2px] bg-[#8F6573] w-full"></div>
+                    </motion.div>
 
-                {/* PAGE TITLE */}
-                <motion.div {...fadeInUp} className="mb-20">
-                    <h2 className="sr-only">Property investment strategy UK and planning gain investments</h2>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-10 tracking-tight">Investor</h1>
-                    <div className="h-[2px] bg-[#8F6573] w-full"></div>
-                </motion.div>
+                    {/* 1. APPROACH SECTION */}
+                    <motion.section {...fadeInUp} className="mb-20">
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-[#8F6573] mb-6">Our Investment Approach</h2>
+                        <h3 className="sr-only">London real estate ROI and UK development opportunities</h3>
+                        <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+                            Predictable Returns. <br />
+                            Defined Timeframe. <br />
+                            Disciplined Strategy.
+                        </h3>
+                        <div className="space-y-6 text-lg md:text-xl font-light leading-relaxed text-gray-600">
+                            <p>
+                                At Dwell Rich Developments, we offer investors a structured return model designed for clarity, security, and predictability.
+                            </p>
+                            <p className="border-l-4 border-[#8F6573] pl-8 font-normal text-gray-800">
+                                Our investment approach is focused on delivering fixed returns over a defined lock-in period, without exposure to development risk beyond the agreed terms.
+                            </p>
+                            <p>
+                                This structure is ideal for investors seeking stable ROI rather than long-term capital appreciation or equity participation.
+                            </p>
+                        </div>
+                    </motion.section>
 
-                {/* 1. APPROACH SECTION */}
-                <motion.section {...fadeInUp} className="max-w-4xl mb-20">
-                    <h2 className="text-sm font-bold uppercase tracking-widest text-[#8F6573] mb-6">Our Investment Approach</h2>
-                    <h3 className="sr-only">London real estate ROI and UK development opportunities</h3>
-                    <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
-                        Predictable Returns. <br />
-                        Defined Timeframe. <br />
-                        Disciplined Strategy.
-                    </h3>
-                    <div className="space-y-6 text-lg md:text-xl font-light leading-relaxed text-gray-600">
-                        <p>
-                            At Dwell Rich Developments, we offer investors a structured return model designed for clarity, security, and predictability.
-                        </p>
-                        <p className="border-l-4 border-[#8F6573] pl-8 text-gray-500">
-                            Our investment approach is focused on delivering fixed returns over a defined lock-in period, without exposure to development risk beyond the agreed terms.
-                        </p>
-                        <p>
-                            This structure is ideal for investors seeking stable ROI rather than long-term capital appreciation or equity participation.
-                        </p>
+                    {/* 2. HOW IT WORKS */}
+                    <motion.section
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-gray-50 px-6 py-8 md:p-10 rounded-sm mb-20"
+                    >
+                        <div className="grid grid-cols-1 gap-10">
+                            <div>
+                                <h2 className="text-2xl font-bold mb-8">How the Investment Works ?</h2>
+                                <p className="text-base sm:text-lg font-light text-gray-600 mb-10">
+                                    Investors participate in our development projects through a fixed-return investment structure:
+                                </p>
+                                <div className="space-y-8">
+                                    <div className="flex gap-5">
+                                        <TrendingUp className="text-[#8F6573] shrink-0" size={28} />
+                                        <div>
+                                            <h4 className="font-bold text-base sm:text-lg">Fixed ROI</h4>
+                                            <p className="font-light text-gray-500">A pre-agreed return on investment based on project fundamentals.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-5">
+                                        <Clock className="text-[#8F6573] shrink-0" size={28} />
+                                        <div>
+                                            <h4 className="font-bold text-base sm:text-lg">Defined Lock-in</h4>
+                                            <p className="font-light text-gray-500">A clearly defined timeframe for capital deployment.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col justify-center border-t border-gray-200 pt-10">
+                                <h4 className="text-sm font-bold uppercase tracking-widest text-[#8F6573] mb-4">At Maturity</h4>
+                                <ul className="space-y-6">
+                                    <li className="flex items-center gap-3 text-base sm:text-xl font-light">
+                                        <CheckCircle2 className="text-green-600" size={20} />
+                                        Original capital returned
+                                    </li>
+                                    <li className="flex items-center gap-3 text-base sm:text-xl font-light">
+                                        <CheckCircle2 className="text-green-600" size={20} />
+                                        Agreed ROI paid in full
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </motion.section>
+
+                    {/* 3. WHY THIS STRUCTURE */}
+                    <motion.section {...fadeInUp} className="mb-20">
+                        <h2 className="text-2xl font-bold mb-10">Why This Structure Appeals to Investors</h2>
+                        <div className="grid grid-cols-1 gap-y-10">
+                            {benefits.map((item, i) => (
+                                <div key={i} className="flex items-start gap-4 group">
+                                    <div className="p-3 bg-white border border-gray-100 shadow-sm text-[#8F6573] group-hover:bg-[#8F6573] group-hover:text-white transition-all duration-300">
+                                        <item.icon size={22} strokeWidth={1.5} />
+                                    </div>
+                                    <span className="text-base sm:text-lg font-normal text-gray-600 leading-snug">{item.text}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.section>
+
+                    {/* 4. COMMITMENT & RELATIONSHIP */}
+                    <div className="space-y-20">
+                        <motion.section {...fadeInUp}>
+                            <h2 className="text-2xl font-bold mb-6">Our Commitment</h2>
+                            <p className="text-base sm:text-lg font-light leading-relaxed text-gray-600">
+                                Dwell Rich Developments applies conservative assumptions and disciplined underwriting across all projects. We prioritise capital preservation, robust feasibility analysis, and responsible leverage to ensure our obligations to investors are met regardless of market conditions.
+                            </p>
+                        </motion.section>
+                        <motion.section {...fadeInUp}>
+                            <h2 className="text-2xl font-bold mb-6">Straightforward Relationship</h2>
+                            <div className="space-y-4 text-base sm:text-lg font-normal text-gray-600">
+                                <p className="flex items-center gap-3"><Briefcase size={18} className="text-[#8F6573]" /> Fixed timelines & income-style returns</p>
+                                <p className="flex items-center gap-3"><Briefcase size={18} className="text-[#8F6573]" /> Clear contractual terms</p>
+                                <p className="flex items-center gap-3"><Briefcase size={18} className="text-[#8F6573]" /> No operational involvement required</p>
+                            </div>
+                        </motion.section>
                     </div>
-                </motion.section>
+                </main>
+            </div>
 
-                {/* 2. HOW IT WORKS */}
-                <motion.section
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-2 gap-16 mb-20 bg-gray-50 px-6 py-8 md:p-10 rounded-sm"
+            {/* RIGHT COLUMN: Investor Inquiry Form */}
+            <div className="w-full md:w-1/2 p-10 lg:px-24 pt-20 md:pt-80 bg-[#ebebeb] flex flex-col relative">
+                <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                    className="w-full max-w-md mx-auto md:mx-0"
                 >
-                    <div>
-                        <h2 className="text-2xl font-bold mb-8">How the Investment Works</h2>
-                        <p className="text-base sm:text-lg font-light text-gray-600 mb-10">
-                            Investors participate in our development projects through a fixed-return investment structure:
-                        </p>
-                        <div className="space-y-8">
-                            <div className="flex gap-5">
-                                <TrendingUp className="text-[#8F6573] shrink-0" size={28} />
-                                <div>
-                                    <h4 className="font-bold text-base sm:text-lg">Fixed ROI</h4>
-                                    <p className="font-light text-gray-500">A pre-agreed return on investment based on project fundamentals.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-5">
-                                <Clock className="text-[#8F6573] shrink-0" size={28} />
-                                <div>
-                                    <h4 className="font-bold text-base sm:text-lg">Defined Lock-in</h4>
-                                    <p className="font-light text-gray-500">A clearly defined timeframe for capital deployment.</p>
-                                </div>
-                            </div>
+                    <h2 className="text-3xl font-bold mb-10 text-[#222222]">Investment Enquiry</h2>
+                    <form className="space-y-8">
+                        <div>
+                            <label className="block text-xl font-medium mb-2" htmlFor="name">Your Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                className="w-full bg-white border-none p-4 outline-none focus:ring-1 focus:ring-gray-400"
+                                placeholder="Full Name"
+                            />
                         </div>
-                    </div>
-                    <div className="flex flex-col justify-center border-l border-gray-200 md:pl-16">
-                        <h4 className="text-sm font-bold uppercase tracking-widest text-[#8F6573] mb-4">At Maturity</h4>
-                        <ul className="space-y-6">
-                            <li className="flex items-center gap-3 text-base sm:text-xl font-light">
-                                <CheckCircle2 className="text-green-600" size={20} />
-                                Original capital returned
-                            </li>
-                            <li className="flex items-center gap-3 text-base sm:text-xl font-light">
-                                <CheckCircle2 className="text-green-600" size={20} />
-                                Agreed ROI paid in full
-                            </li>
-                        </ul>
-                    </div>
-                </motion.section>
 
-                {/* 3. WHY THIS STRUCTURE */}
-                <motion.section {...fadeInUp} className="max-w-4xl mb-20">
-                    <h2 className="text-2xl font-bold mb-10">Why This Structure Appeals to Investors</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                        {benefits.map((item, i) => (
-                            <div key={i} className="flex items-start gap-4 group">
-                                <div className="p-3 bg-white border border-gray-100 shadow-sm text-[#8F6573] group-hover:bg-[#8F6573] group-hover:text-white transition-all duration-300">
-                                    <item.icon size={22} strokeWidth={1.5} />
-                                </div>
-                                <span className="text-base sm:text-lg font-light text-gray-600 leading-snug">{item.text}</span>
-                            </div>
-                        ))}
-                    </div>
-                </motion.section>
-
-                {/* 4. COMMITMENT & RELATIONSHIP */}
-                <div className="grid md:grid-cols-2 gap-20">
-                    <motion.section {...fadeInUp}>
-                        <h2 className="text-2xl font-bold mb-6">Our Commitment</h2>
-                        <p className="text-base sm:text-lg font-light leading-relaxed text-gray-600">
-                            Dwell Rich Developments applies conservative assumptions and disciplined underwriting across all projects. We prioritise capital preservation, robust feasibility analysis, and responsible leverage to ensure our obligations to investors are met regardless of market conditions.
-                        </p>
-                    </motion.section>
-                    <motion.section {...fadeInUp}>
-                        <h2 className="text-2xl font-bold mb-6">Straightforward Relationship</h2>
-                        <div className="space-y-4 text-base sm:text-lg font-light text-gray-600">
-                            <p className="flex items-center gap-3"><Briefcase size={18} className="text-[#8F6573]" /> Fixed timelines & income-style returns</p>
-                            <p className="flex items-center gap-3"><Briefcase size={18} className="text-[#8F6573]" /> Clear contractual terms</p>
-                            <p className="flex items-center gap-3"><Briefcase size={18} className="text-[#8F6573]" /> No operational involvement required</p>
+                        <div>
+                            <label className="block text-xl font-medium mb-2" htmlFor="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                className="w-full bg-white border-none p-4 outline-none focus:ring-1 focus:ring-gray-400"
+                                placeholder="email@example.com"
+                            />
                         </div>
-                    </motion.section>
-                </div>
-            </main>
+
+                        <div>
+                            <label className="block text-xl font-medium mb-2" htmlFor="type">Investment Type</label>
+                            <select
+                                id="type"
+                                className="w-full bg-white border-none p-4 outline-none focus:ring-1 focus:ring-gray-400 cursor-pointer appearance-none"
+                            >
+                                <option value="">Select an option</option>
+                                <option value="individual">Individual Investor</option>
+                                <option value="institutional">Institutional Investor</option>
+                                <option value="joint-venture">Joint Venture Partner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label className="block text-xl font-medium mb-2" htmlFor="message">Message</label>
+                            <textarea
+                                id="message"
+                                rows="6"
+                                className="w-full bg-white border-none p-4 outline-none resize-none focus:ring-1 focus:ring-gray-400"
+                                placeholder="Your Enquiry..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="w-full bg-black text-white py-4 text-[13px] font-bold uppercase tracking-[0.3em] transition-all duration-300 cursor-pointer hover:bg-gray-800"
+                        >
+                            Send Enquiry
+                        </button>
+                    </form>
+                </motion.div>
+            </div>
         </div>
     );
 };

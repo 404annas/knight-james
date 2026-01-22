@@ -50,8 +50,8 @@ const Hero = () => {
 
             {/* Top Right Menu Bar - CHANGED: absolute to fixed so it stays visible while scrolling */}
             <div className="fixed top-10 right-10 flex items-center gap-4 z-20">
-                <a href='mailto:info@dwellrich.co.uk' className="text-black flex items-center gap-2 uppercase tracking-widest text-sm font-medium">
-                    <Mail />
+                <a href='mailto:info@dwellrich.co.uk' className="text-black flex items-center gap-2 uppercase tracking-widest text-xs sm:text-sm font-medium">
+                    <Mail size={20}/>
                     <p>info@dwellrich.co.uk</p>
                 </a>
                 <div className="bg-white w-10 h-10 flex items-center justify-center shadow-sm cursor-pointer hover:bg-white rounded-full transition-colors">

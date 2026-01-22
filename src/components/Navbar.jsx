@@ -64,10 +64,10 @@ const Navbar = () => {
                             initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 10 }}
-                            className={`uppercase tracking-widest text-sm font-medium transition-colors duration-300 flex items-center gap-2 cursor-pointer 
+                            className={`uppercase tracking-widest text-xs sm:text-sm font-medium transition-colors duration-300 flex items-center gap-2 cursor-pointer 
                                 ${isHomePage ? 'text-white' : 'text-black'}`}
                         >
-                            <Mail />
+                            <Mail size={20}/>
                             <p>info@dwellrich.co.uk</p>
                         </motion.a>
                     )}

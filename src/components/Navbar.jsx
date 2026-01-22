@@ -18,8 +18,6 @@ const Navbar = () => {
         { label: "Contact", path: "/contact" },
     ];
 
-
-    // Variants for the whole menu panel slide-in
     const menuVariants = {
         closed: { x: '-100%' },
         open: {
@@ -32,7 +30,6 @@ const Navbar = () => {
         }
     };
 
-    // Variants for staggered link animation
     const linkVariants = {
         closed: { opacity: 0, x: 30 },
         open: (i) => ({
@@ -48,7 +45,15 @@ const Navbar = () => {
 
     return (
         <>
-            {/* FIXED MENU BUTTON - Always visible on top */}
+            {/* MOBILE TOP BAR BACKGROUND - This provides the bg-white below md */}
+            <div className="fixed top-0 left-0 w-full h-32 bg-white md:bg-transparent z-[49] border-b border-gray-100 md:border-none shadow-sm md:shadow-none" />
+
+            {/* FIXED LOGO - High Z-index to sit above the bar */}
+            <Link to={"/"} className="fixed top-7 left-10 lg:left-14 z-[100]">
+                <img loading="lazy" src={logo} alt="Logo" className="w-20 md:w-24 object-contain" />
+            </Link>
+
+            {/* FIXED MENU BUTTON CONTAINER */}
             <div className="fixed top-10 right-10 flex items-center gap-4 z-[100] select-none">
                 <AnimatePresence>
                     {!isOpen && (
@@ -86,36 +91,32 @@ const Navbar = () => {
                         animate="open"
                         exit="exit"
                         className="fixed inset-0 z-[90] flex justify-end overflow-hidden"
-
                     >
                         <motion.img
                             initial={{ scale: 1.15 }}
                             animate={{ scale: 1 }}
                             exit={{ scale: 1.15 }}
                             transition={{ duration: 0.8, delay: 0.4, exit: { delay: 0, duration: 0 }, }}
-                            className='absolute h-full w-1/2   bottom-0 left-0 right-0 z-0 object-center object-cover'
+                            className='absolute h-full w-full md:w-1/2 bottom-0 left-0 right-0 z-0 object-center object-cover'
                             src={mainImg}
                         />
                         <div className='absolute inset-0 bg-black/50 z-5'></div>
                         <motion.div
-                            className='absolute top-0 right-0 bottom-0 bg-[#111] z-10 '
+                            className='absolute md:block hidden top-0 right-0 bottom-0 bg-[#111] z-10'
                             initial={{ width: "100%" }}
                             animate={{ width: "50%" }}
                             exit={{ width: "100%" }}
                             transition={{
                                 duration: 0.7,
-                                delay: 0.5, // Delay only on enter
-                                exit: { delay: 0, duration: 0 }, // No delay on exit
+                                delay: 0.5,
+                                exit: { delay: 0, duration: 0 },
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                         ></motion.div>
-                        {/* logo  */}
-                        <Link to={"/"}>
-                            <img onClick={() => setIsOpen(!isOpen)} src={logo} className='absolute top-10 left-14 w-24 z-50' />
-                        </Link>
+
                         {/* RIGHT SIDE: Black panel with links */}
-                        <div className="w-full md:w-1/2 h-full  flex flex-col justify-center px-10 md:px-20  xl:pl-44 z-10 relative">
-                            <ul className=" flex flex-col gap-6">
+                        <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-10 md:px-20 xl:pl-44 z-10 relative">
+                            <ul className="flex flex-col gap-6">
                                 {navLinks.map((item, i) => (
                                     <motion.li
                                         key={item.label}

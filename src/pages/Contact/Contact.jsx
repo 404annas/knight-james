@@ -37,7 +37,7 @@ const Contact = () => {
                 className="fixed top-10 left-10 lg:left-14 z-50"
             >
                 <Link to={"/"}>
-                    <img loading='lazy' className='w-20 md:w-24' src={contactLogo} alt="Dwell Rich Ltd - London Real Estate Opportunities Logo" />
+                    <img loading='lazy' className='w-16 md:w-24' src={contactLogo} alt="Dwell Rich Ltd - London Real Estate Opportunities Logo" />
                 </Link>
             </motion.div>
 

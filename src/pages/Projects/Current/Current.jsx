@@ -27,7 +27,7 @@ const Current = () => {
             {/* HEADER SECTION */}
             <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
-                    <img loading='lazy' src={logo} alt="Dwell Rich Ltd - Property Development Company London" className="w-20 md:w-24" />
+                    <img loading='lazy' src={logo} alt="Dwell Rich Ltd - Property Development Company London" className="w-16 md:w-24" />
                 </Link>
             </header>
 

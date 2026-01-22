@@ -31,7 +31,7 @@ const Past = () => {
             {/* HEADER SECTION */}
             <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
-                    <img src={logo} alt="Knight James Logo" className="w-20 md:w-24" />
+                    <img src={logo} alt="Knight James Logo" className="w-16 md:w-24" />
                 </Link>
             </header>
 

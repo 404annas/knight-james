@@ -81,7 +81,7 @@ const Hero = () => {
                     </svg>
                 </motion.div> */}
 
-                <img loading='lazy' src={logo} alt="Logo" className="w-20 md:w-44 object-cover mb-4" />
+                <img loading='lazy' src={logo} alt="Logo" className="w-36 md:w-44 object-cover mb-4" />
 
                 {/* Brand Typography - Each letter animates up */}
                 {/* <h1 className="text-2xl tracking-[0.18em] font-medium mb-4 text-center ml-[0.35em] flex overflow-hidden">
@@ -108,7 +108,7 @@ const Hero = () => {
                     className="w-xs space-y-0 text-center"
                 >
                     <Link to={"/projects"} >
-                        <button className="w-full py-6 uppercase tracking-[0.25em] text-sm font-bold hover:text-white/70 transition-colors cursor-pointer duration-300">
+                        <button className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors cursor-pointer duration-300">
                             Current Projects
                         </button>
                     </Link>
@@ -119,7 +119,7 @@ const Hero = () => {
                     </div>
 
                     <Link to={"/developments"} >
-                        <button className="w-full py-6 uppercase tracking-[0.25em] text-sm font-bold hover:text-white/70 transition-colors duration-300 cursor-pointer">
+                        <button className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors duration-300 cursor-pointer">
                             Past Developments
                         </button>
                     </Link>

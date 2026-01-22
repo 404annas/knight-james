@@ -54,7 +54,7 @@ const About = () => {
             {/* FIXED LOGO */}
             <div className="fixed top-10 left-10 md:left-14 z-50">
                 <Link to="/">
-                    <img loading='lazy' src={logo} alt="Dwell Rich Ltd - Property Developer London Logo" className="w-20 md:w-24" />
+                    <img loading='lazy' src={logo} alt="Dwell Rich Ltd - Property Developer London Logo" className="w-16 md:w-24" />
                 </Link>
             </div>
 

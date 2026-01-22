@@ -23,9 +23,9 @@ const WhatWeDo = () => {
             />
 
             {/* FIXED LOGO */}
-            <Link to={"/"} className="fixed top-10 left-10 lg:left-14 z-50">
-                <img loading="lazy" src={logo} alt="Dwell Rich Ltd - Property Developer London Logo" className="w-20 md:w-24 object-contain" />
-            </Link>
+            {/* <Link to={"/"} className="fixed top-10 left-10 lg:left-14 z-50">
+                <img loading="lazy" src={logo} alt="Dwell Rich Ltd - Property Developer London Logo" className="w-16 md:w-24 object-contain" />
+            </Link> */}
 
             {/* LEFT CONTENT (Scrollable) */}
             <div className="w-full md:w-1/2 bg-white min-h-screen">

@@ -27,10 +27,6 @@ const Footer = () => {
                 <div className="flex items-center gap-2 text-[#444] text-[11px]">
                     <span>MADE BY</span>
                     <div className="flex items-center font-bold text-white">
-                        {/* Minimal Northform logo representation */}
-                        <svg width="12" height="12" viewBox="0 0 100 100" className="mr-1 fill-white">
-                            <path d="M0 100 L40 0 L60 0 L100 100 L80 100 L50 25 L20 100 Z" />
-                        </svg>
                         <a href='https://techxudo.com/' target='_blank'>
                             Techxudo
                         </a>

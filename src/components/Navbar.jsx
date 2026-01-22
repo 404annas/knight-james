@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Menu as MenuIcon, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from "../assets/logo.png"
-
 import mainImg from "../assets/secondaryMain3.jpg"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
 
     const navLinks = [
-        { label: "Home", path: "/home" },
+        { label: "Home", path: "/what-we-do" },
         { label: "About", path: "/about" },
         { label: "Investor", path: "/investor" },
         { label: "Current Projects", path: "/projects" },
@@ -45,10 +46,12 @@ const Navbar = () => {
 
     return (
         <>
-            {/* MOBILE TOP BAR BACKGROUND - This provides the bg-white below md */}
-            <div className="fixed top-0 left-0 w-full h-32 bg-white md:bg-transparent z-[49] border-b border-gray-100 md:border-none shadow-sm md:shadow-none" />
+            {/* MOBILE TOP BAR BACKGROUND */}
+            <div className={`fixed top-0 left-0 w-full h-32 md:bg-transparent z-[49] transition-colors duration-500 
+                ${isHomePage ? 'bg-transparent' : 'bg-white border-b border-gray-100 shadow-sm md:border-none md:shadow-none'}`}
+            />
 
-            {/* FIXED LOGO - High Z-index to sit above the bar */}
+            {/* FIXED LOGO */}
             <Link to={"/"} className="fixed top-7 left-10 lg:left-14 z-[100]">
                 <img loading="lazy" src={logo} alt="Logo" className="w-20 md:w-24 object-contain" />
             </Link>
@@ -61,23 +64,27 @@ const Navbar = () => {
                             initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 10 }}
-                            className="text-black uppercase tracking-[0.2em] text-sm font-medium"
+                            className={`uppercase tracking-[0.2em] text-sm font-medium transition-colors duration-300 
+                                ${isHomePage ? 'text-white' : 'text-black'}`}
                         >
                             Menu
                         </motion.span>
                     )}
                 </AnimatePresence>
 
+                {/* THE CIRCLE BUTTON */}
                 <motion.div
                     onClick={() => setIsOpen(!isOpen)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-white w-10 h-10 flex items-center justify-center shadow-lg cursor-pointer transition-colors"
+                    // Added: flex-shrink-0, aspect-square, and overflow-hidden for a perfect circle
+                    className="bg-white rounded-full w-10 h-10 flex flex-shrink-0 aspect-square items-center justify-center shadow-lg cursor-pointer transition-colors overflow-hidden"
                 >
                     {isOpen ? (
-                        <X size={24} className="text-black" />
+                        <X size={24} strokeWidth={2} className="text-black" />
                     ) : (
-                        <MenuIcon size={24} strokeWidth={1.5} className="text-[#998a8f]" />
+                        // Added strokeLinecap and strokeLinejoin for rounder icon lines
+                        <MenuIcon size={24} strokeWidth={1.8} className="text-[#998a8f]" />
                     )}
                 </motion.div>
             </div>
@@ -101,6 +108,7 @@ const Navbar = () => {
                             src={mainImg}
                         />
                         <div className='absolute inset-0 bg-black/50 z-5'></div>
+
                         <motion.div
                             className='absolute md:block hidden top-0 right-0 bottom-0 bg-[#111] z-10'
                             initial={{ width: "100%" }}
@@ -114,7 +122,6 @@ const Navbar = () => {
                             }}
                         ></motion.div>
 
-                        {/* RIGHT SIDE: Black panel with links */}
                         <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-10 md:px-20 xl:pl-44 z-10 relative">
                             <ul className="flex flex-col gap-6">
                                 {navLinks.map((item, i) => (
@@ -128,7 +135,7 @@ const Navbar = () => {
                                     >
                                         <Link
                                             to={item.path}
-                                            onClick={() => setIsOpen(false)}
+                                            onClick={() => {setIsOpen(false); window.scrollTo(0, 0);}}
                                             className="inline-block"
                                         >
                                             {item.label}

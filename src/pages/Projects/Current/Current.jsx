@@ -25,11 +25,11 @@ const Current = () => {
             />
 
             {/* HEADER SECTION */}
-            <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
+            {/* <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
                     <img loading='lazy' src={logo} alt="Dwell Rich Ltd - Property Development Company London" className="w-16 md:w-24" />
                 </Link>
-            </header>
+            </header> */}
 
             {/* MAIN CONTENT */}
             <main className="max-w-5xl mx-auto pt-52 pb-20 px-6">

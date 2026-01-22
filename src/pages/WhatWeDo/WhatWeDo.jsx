@@ -35,7 +35,7 @@ const WhatWeDo = () => {
                     <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <h2 className="sr-only">Property development company London specializing in planning gain property UK</h2>
                         <h1 className="text-5xl md:text-5xl font-bold mb-16 text-[#222222] tracking-tight">
-                            Where Global Capital Meets Timeless Value
+                            Global Capital Enduring Value One destination 
                         </h1>
 
                         {/* DECORATIVE LINE */}

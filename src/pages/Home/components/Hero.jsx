@@ -108,7 +108,7 @@ const Hero = () => {
                     className="w-xs space-y-0 text-center"
                 >
                     <Link to={"/projects"} >
-                        <button className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors cursor-pointer duration-300">
+                        <button onClick={() => scrollTo(0, 0)} className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors cursor-pointer duration-300">
                             Current Projects
                         </button>
                     </Link>
@@ -119,7 +119,7 @@ const Hero = () => {
                     </div>
 
                     <Link to={"/developments"} >
-                        <button className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors duration-300 cursor-pointer">
+                        <button onClick={() => scrollTo(0, 0)} className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors duration-300 cursor-pointer">
                             Past Developments
                         </button>
                     </Link>

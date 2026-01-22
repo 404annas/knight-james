@@ -38,9 +38,9 @@ const ProjectDetails = () => {
     return (
         <div className="bg-white min-h-screen text-[#222222] lg:px-44">
             {/* FIXED LOGO */}
-            <div className="fixed top-10 left-10 md:left-14 z-50">
+            {/* <div className="fixed top-10 left-10 md:left-14 z-50">
                 <Link to="/"><img src={logo} alt="Logo" className="w-16 md:w-24" /></Link>
-            </div>
+            </div> */}
 
             <main className="max-w-6xl mx-auto pt-44 pb-20 px-6">
 

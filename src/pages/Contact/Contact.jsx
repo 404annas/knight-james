@@ -30,7 +30,7 @@ const Contact = () => {
             />
 
             {/* FIXED LOGO SECTION */}
-            {/* <motion.div
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
@@ -39,7 +39,7 @@ const Contact = () => {
                 <Link to={"/"}>
                     <img loading='lazy' className='w-16 md:w-24' src={contactLogo} alt="Dwell Rich Ltd - London Real Estate Opportunities Logo" />
                 </Link>
-            </motion.div> */}
+            </motion.div>
 
             {/* LEFT COLUMN: Contact Information */}
             <div className="w-full md:w-1/2 p-10 lg:pl-60 pt-52 pb-16 bg-white flex flex-col">

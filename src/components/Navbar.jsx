@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu as MenuIcon, X } from 'lucide-react';
+import { Mail, Menu, Menu as MenuIcon, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import logo from "../assets/logo.png"
@@ -52,23 +52,24 @@ const Navbar = () => {
             />
 
             {/* FIXED LOGO */}
-            <Link to={"/"} className="fixed top-7 left-10 lg:left-14 z-[100]">
+            {/* <Link to={"/"} className="fixed top-7 left-10 lg:left-14 z-[100]">
                 <img loading="lazy" src={logo} alt="Logo" className="w-20 md:w-24 object-contain" />
-            </Link>
+            </Link> */}
 
             {/* FIXED MENU BUTTON CONTAINER */}
             <div className="fixed top-10 right-10 flex items-center gap-4 z-[100] select-none">
                 <AnimatePresence>
                     {!isOpen && (
-                        <motion.span
+                        <motion.a href='mailto:info@dwellrich.co.uk'
                             initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 10 }}
-                            className={`uppercase tracking-[0.2em] text-sm font-medium transition-colors duration-300 
+                            className={`uppercase tracking-widest text-sm font-medium transition-colors duration-300 flex items-center gap-2 cursor-pointer 
                                 ${isHomePage ? 'text-white' : 'text-black'}`}
                         >
-                            Menu
-                        </motion.span>
+                            <Mail />
+                            <p>info@dwellrich.co.uk</p>
+                        </motion.a>
                     )}
                 </AnimatePresence>
 
@@ -77,14 +78,18 @@ const Navbar = () => {
                     onClick={() => setIsOpen(!isOpen)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    // Added: flex-shrink-0, aspect-square, and overflow-hidden for a perfect circle
-                    className="bg-white rounded-full w-10 h-10 flex flex-shrink-0 aspect-square items-center justify-center shadow-lg cursor-pointer transition-colors overflow-hidden"
+                    className={`
+    w-10 h-10 aspect-square flex items-center justify-center
+    rounded-full shadow-lg cursor-pointer overflow-hidden
+    bg-white
+    ${isHomePage ? "ring-1 ring-black/20" : ""}
+  `}
                 >
                     {isOpen ? (
                         <X size={24} strokeWidth={2} className="text-black" />
                     ) : (
                         // Added strokeLinecap and strokeLinejoin for rounder icon lines
-                        <MenuIcon size={24} strokeWidth={1.8} className="text-[#998a8f]" />
+                        <Menu size={24} strokeWidth={1.8} className="text-[#998a8f]" />
                     )}
                 </motion.div>
             </div>
@@ -135,7 +140,7 @@ const Navbar = () => {
                                     >
                                         <Link
                                             to={item.path}
-                                            onClick={() => {setIsOpen(false); window.scrollTo(0, 0);}}
+                                            onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}
                                             className="inline-block"
                                         >
                                             {item.label}

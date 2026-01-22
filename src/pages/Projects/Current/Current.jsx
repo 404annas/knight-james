@@ -1,17 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ImageLoader from '../../../components/ImageLoader';
 import logo from "../../../assets/logo.png";
 import { Link } from 'react-router-dom';
 import SEO from '../../../components/SEO';
 
+import current1 from "../../../assets/current1.jpg"
+
 const projects = [
-    { title: "The Hayloft, WD3", img: "https://www.knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Exterior-Pre-Build.jpg" },
-    { title: "Jermyn Street, SW1", img: "https://www.knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/IMG_5266.jpeg" },
-    { title: "Lower Duplex, Brompton Square, SW3", img: "https://www.knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/IMG_4826.jpg" },
-    { title: "Upper Duplex, Brompton Square, SW3", img: "https://www.knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/IMG_4843.jpg" },
-    { title: "Cranley Gardens, SW7", img: "https://www.knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Exterior_2024-01-06-092147_uqwe.jpg" },
-    { title: "Gloucester Terrace, W2", img: "https://www.knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Exterior_2024-01-06-092433_qkse.jpg" },
-    { title: "Clifton Road, W9", img: "https://www.knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Exterior_2024-01-06-093109_jfej.jpg" },
+    { title: "Wimbledon", img: current1 }
 ];
 
 const Current = () => {
@@ -25,11 +22,16 @@ const Current = () => {
             />
 
             {/* HEADER SECTION */}
-            {/* <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
+            <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
-                    <img loading='lazy' src={logo} alt="Dwell Rich Ltd - Property Development Company London" className="w-16 md:w-24" />
+                    <ImageLoader
+                        src={logo}
+                        alt="Dwell Rich Ltd - Property Development Company London"
+                        className="w-16 md:w-24"
+                        priority={true}
+                    />
                 </Link>
-            </header> */}
+            </header>
 
             {/* MAIN CONTENT */}
             <main className="max-w-5xl mx-auto pt-52 pb-20 px-6">
@@ -65,11 +67,13 @@ const Current = () => {
                             className="flex flex-col items-center group"
                         >
                             <div className="w-full overflow-hidden mb-6">
-                                <img
-                                    loading='lazy'
+                                <ImageLoader
                                     src={project.img}
                                     alt={`${project.title} - London property development by Dwell Rich Ltd`}
-                                    className="w-full h-auto object-cover cursor-pointer hover:opacity-50 transition-all duration-500 ease-in-out transform hover:scale-[1.02]"
+                                    className="w-full h-[500px] object-cover cursor-pointer hover:opacity-50 transition-all duration-500 ease-in-out transform hover:scale-[1.02]"
+                                    priority={false}
+                                    placeholder="color"
+                                    placeholderColor="#e5e7eb"
                                 />
                             </div>
                             <div className="text-center">

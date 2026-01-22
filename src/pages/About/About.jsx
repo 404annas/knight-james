@@ -13,6 +13,7 @@ import {
     TrendingUp,
     Target
 } from 'lucide-react';
+import ImageLoader from '../../components/ImageLoader';
 import logo from "../../assets/logo.png";
 import SEO from '../../components/SEO';
 // import founderImg from "../../assets/founder.jpg";
@@ -29,7 +30,7 @@ const About = () => {
         { icon: PenTool, text: "Architects and planning consultants" },
         { icon: Settings, text: "Structural engineers" },
         { icon: Scale, text: "Legal and conveyancing advisors" },
-        { icon: HardHat, text: "Construction and project management professionals" },
+        { icon: HardHat, text: "Construction and project management" },
         { icon: Palette, text: "Interior designers and fit‑out specialists" }
     ];
 
@@ -52,14 +53,18 @@ const About = () => {
             />
 
             {/* FIXED LOGO */}
-            {/* <div className="fixed top-10 left-10 md:left-14 z-50">
+            <div className="fixed top-10 left-10 md:left-14 z-50">
                 <Link to="/">
-                    <img loading='lazy' src={logo} alt="Dwell Rich Ltd - Property Developer London Logo" className="w-16 md:w-24" />
+                    <ImageLoader
+                        src={logo}
+                        alt="Dwell Rich Ltd - Property Developer London Logo"
+                        className="w-16 md:w-24"
+                        priority={true}
+                    />
                 </Link>
-            </div> */}
+            </div>
 
             <main className="max-w-4xl mx-auto pt-44 pb-20 px-6">
-
                 {/* PAGE TITLE */}
                 <motion.div {...fadeInUp} className="mb-20">
                     <h2 className="sr-only">London real estate investment company and UK property specialists</h2>
@@ -69,7 +74,6 @@ const About = () => {
 
                 {/* 1. ABOUT HEADLINE */}
                 <motion.section {...fadeInUp} className="max-w-4xl mb-20">
-                    <h2 className="text-2xl font-bold mb-6">About Dwell Rich Ltd</h2>
                     <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-gray-600">
                         Dwell Rich Ltd is a privately owned property development and investment company built on discipline, selectivity, and execution excellence.
                     </p>
@@ -81,7 +85,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="flex flex-col md:flex-row gap-12 md:gap-24 mb-20"
+                    className="flex flex-col md:flex-row items-center gap-12 md:gap-24 mb-20"
                 >
                     <div className="w-full md:w-3/5 order-2 md:order-1">
                         <h2 className="sr-only">Leading women property developer UK - Saleha Ali Khan</h2>
@@ -95,31 +99,41 @@ const About = () => {
                             <p>
                                 This practical background enables a deep understanding of buildability, cost control, and design efficiency, ensuring that projects remain commercially viable throughout the development lifecycle.
                             </p>
+                            <p>Our strategy is centred on planning‑led and design‑driven value creation. Rather than relying solely on market appreciation, we actively seek opportunities where value can be unlocked through planning permissions, layout optimisation, or change of use.</p>
                         </div>
                     </div>
 
                     <div className="w-full md:w-2/5 order-1 md:order-2">
-                        <div className="aspect-[4/5] overflow-hidden bg-gray-50 shadow-sm">
+                        <div className="bg-gray-50 rounded-full shadow-sm">
                             <img
+                                loading='lazy'
                                 src="https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?w=2000&auto=format&fit=crop&q=100&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D"
                                 alt="Saleha Ali Khan - Women property developer London"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-full"
                             />
                         </div>
                     </div>
                 </motion.section>
 
                 {/* 3. OUR TEAM (Icon Grid) */}
-                <motion.section {...fadeInUp} className="max-w-4xl mb-20">
+                <motion.section {...fadeInUp} className="max-w-4xl">
                     <h2 className="sr-only">Our professional team of UK property specialists</h2>
                     <h2 className="text-2xl font-bold mb-8">Our Team</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 mb-10">
                         {teamItems.map((item, i) => (
-                            <div key={i} className="flex items-center gap-4 group">
-                                <div className="p-3 bg-gray-50 rounded-sm text-[#8F6573] group-hover:bg-[#8F6573] group-hover:text-white transition-colors duration-300">
+                            <div
+                                key={i}
+                                className={`flex items-center gap-4 group
+        ${i === 4 ? "md:col-span-2 justify-center" : ""}
+      `}
+                            >
+                                <div className="p-3 bg-gray-50 rounded-sm text-[#8F6573]">
                                     <item.icon size={22} strokeWidth={1.5} />
                                 </div>
-                                <span className="text-lg font-light text-gray-600">{item.text}</span>
+
+                                <span className="text-lg font-normal text-gray-600">
+                                    {item.text}
+                                </span>
                             </div>
                         ))}
                     </div>
@@ -129,16 +143,16 @@ const About = () => {
                 </motion.section>
 
                 {/* 4. STRATEGY */}
-                <motion.section {...fadeInUp} className="max-w-4xl mb-20">
+                {/* <motion.section {...fadeInUp} className="max-w-4xl mb-20">
                     <h2 className="sr-only">Property investment strategy in London and planning gain developments</h2>
                     <h2 className="text-2xl font-bold mb-6">Strategy</h2>
                     <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-gray-600">
                         Our strategy is centred on planning‑led and design‑driven value creation. Rather than relying solely on market appreciation, we actively seek opportunities where value can be unlocked through planning permissions, layout optimisation, or change of use.
                     </p>
-                </motion.section>
+                </motion.section> */}
 
                 {/* 5. PROPERTY SELECTION CRITERIA (Icon List) */}
-                <motion.section {...fadeInUp} className="max-w-4xl">
+                {/* <motion.section {...fadeInUp} className="max-w-4xl">
                     <h2 className="text-2xl font-bold mb-10">Property Selection Criteria</h2>
                     <div className="space-y-8">
                         {criteriaItems.map((item, i) => (
@@ -153,7 +167,7 @@ const About = () => {
                             </div>
                         ))}
                     </div>
-                </motion.section>
+                </motion.section> */}
 
             </main>
         </div>

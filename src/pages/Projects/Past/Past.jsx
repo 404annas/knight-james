@@ -4,10 +4,11 @@ import logo from "../../../assets/logo.png";
 import { Link } from 'react-router-dom';
 import kingstonMain from "../../../assets/KingstonMain.jpg"
 import surreyMain from "../../../assets/SurreyMain.jpg"
+import kingstonNewMain from "../../../assets/kingstonNew1.jpg"
 
 const projects = [
-    { title: "Kingston Upon Thames", img: kingstonMain },
-    { title: "Thames Surrey", img: surreyMain },
+    { title: "Kingston Upon Thames", img: kingstonNewMain },
+    { title: "Cheam Surrey", img: kingstonMain },
     // { title: "Sutherland Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/CORE-Flat-4-116-Sutherland-Avenue-Reception3.1-1.jpg" },
     // { title: "Midhurst Avenue, N10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-front-zoomed.jpg" },
     // { title: "Leamington Road Villas, W11", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/LRV-Rear-Living-Room.jpg" },
@@ -29,11 +30,11 @@ const Past = () => {
         <div className="bg-white min-h-screen text-[#222222]">
 
             {/* HEADER SECTION */}
-            {/* <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
+            <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
-                    <img src={logo} alt="Knight James Logo" className="w-16 md:w-24" />
+                    <img loading='lazy' src={logo} alt="Dwell Rich Ltd - London Real Estate Opportunities Logo" className="w-16 md:w-24" />
                 </Link>
-            </header> */}
+            </header>
 
             {/* MAIN CONTENT */}
             <main className="max-w-5xl mx-auto pt-52 pb-20 px-6">

@@ -40,11 +40,11 @@ const Investor = () => {
             />
 
             {/* FIXED LOGO */}
-            {/* <div className="fixed top-10 left-10 md:left-14 z-50">
+            <div className="fixed top-10 left-10 md:left-14 z-50">
                 <Link to="/">
                     <img src={logo} alt="Dwell Rich Ltd - Property investment strategy UK Logo" className="w-16 md:w-24" />
                 </Link>
-            </div> */}
+            </div>
 
             <main className="max-w-4xl mx-auto pt-44 pb-20 px-6">
 
@@ -137,7 +137,7 @@ const Investor = () => {
                 </motion.section>
 
                 {/* 4. COMMITMENT & RELATIONSHIP */}
-                <div className="grid md:grid-cols-2 gap-20 mb-20">
+                <div className="grid md:grid-cols-2 gap-20">
                     <motion.section {...fadeInUp}>
                         <h2 className="text-2xl font-bold mb-6">Our Commitment</h2>
                         <p className="text-base sm:text-lg font-light leading-relaxed text-gray-600">
@@ -153,27 +153,6 @@ const Investor = () => {
                         </div>
                     </motion.section>
                 </div>
-
-                {/* 5. LEGAL DISCLAIMER SECTION */}
-                <motion.section
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    className="border-t border-gray-300 pt-10"
-                >
-                    <div className="flex items-center justify-center gap-3 mb-8 text-[#8F6573]">
-                        <AlertCircle size={20} />
-                        <h2 className="text-xl font-bold uppercase tracking-widest">Legal & Investor Disclaimer</h2>
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-10 text-sm sm:text-base text-gray-500 leading-relaxed font-light">
-                        <p>
-                            The content on this website is provided for general informational purposes only and does not constitute an offer, solicitation, or recommendation to invest in any property, security, or financial product.
-                        </p>
-                        <p>
-                            All property investments carry risk, including the potential loss of capital. Past performance is not indicative of future results. Dwell Rich Ltd does not provide financial, legal, or tax advice. Prospective investors should seek independent professional advice before making any investment decisions.
-                        </p>
-                    </div>
-                </motion.section>
-
             </main>
         </div>
     );

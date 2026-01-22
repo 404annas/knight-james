@@ -1,32 +1,60 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import {
-    Home, Layout, Hammer, Coins, TrendingUp, CheckCircle2
+    Home, Layout, Hammer, Coins, TrendingUp, CheckCircle2, X, Plus,
+    ArrowLeft, ArrowRight // Added Arrows
 } from 'lucide-react';
+import ImageLoader from '../../components/ImageLoader';
 import logo from "../../assets/logo.png";
 import { pastProjectsData } from './pastProjects';
 
 const ProjectDetails = () => {
     const { id } = useParams();
-    const project = pastProjectsData.find((p) => p.id === id);
+
+    // Find index of the current project in the array
+    const currentIndex = pastProjectsData.findIndex((p) => p.id === id);
+    const project = pastProjectsData[currentIndex];
+
+    // Determine Previous and Next projects based on index
+    const prevProject = pastProjectsData[currentIndex - 1];
+    const nextProject = pastProjectsData[currentIndex + 1];
+
+    const [selectedImg, setSelectedImg] = useState(null);
+    const [visibleCount, setVisibleCount] = useState(4);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Reset visible count when project changes
+        setVisibleCount(4);
     }, [id]);
+
+    useEffect(() => {
+        if (selectedImg) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [selectedImg]);
 
     if (!project) return null;
 
-    // Logic to determine how many images are full width based on project ID
     const getFullWidthCount = () => {
-        if (project.id === "kingston-upon-thames") return 1; // Kingston: 1st image full width
-        if (project.id === "thames-surrey") return 2;        // Surrey: 1st and 2nd images full width
+        if (project.id === "kingston-upon-thames") return 1;
+        if (project.id === "thames-surrey") return 2;
         return 0;
     };
 
-    const fullWidthCount = getFullWidthCount();
-    const fullWidthImages = project.gallery.slice(0, fullWidthCount);
-    const gridImages = project.gallery.slice(fullWidthCount);
+    const fullWidthCountMax = getFullWidthCount();
+    const currentlyVisibleGallery = project.gallery.slice(0, visibleCount);
+    const fullWidthImages = currentlyVisibleGallery.slice(0, fullWidthCountMax);
+    const gridImages = currentlyVisibleGallery.slice(fullWidthCountMax);
+
+    const hasMore = visibleCount < project.gallery.length;
+
+    const handleLoadMore = () => {
+        setVisibleCount(prev => prev + 4);
+    };
 
     const fadeInUp = {
         initial: { y: 30, opacity: 0 },
@@ -36,11 +64,49 @@ const ProjectDetails = () => {
     };
 
     return (
-        <div className="bg-white min-h-screen text-[#222222] lg:px-44">
+        <div className="bg-white min-h-screen text-[#222222] lg:px-44 relative">
+
+            {/* IMAGE PREVIEW MODAL */}
+            <AnimatePresence>
+                {selectedImg && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImg(null)}
+                        className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 md:p-10 cursor-zoom-out"
+                    >
+                        <motion.button
+                            className="absolute top-10 right-10 text-white hover:rotate-90 transition-transform duration-300"
+                            onClick={() => setSelectedImg(null)}
+                        >
+                            <X size={40} strokeWidth={1} />
+                        </motion.button>
+
+                        <motion.img
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                            src={selectedImg}
+                            alt="Preview"
+                            className="max-w-full max-h-full object-contain pointer-events-none"
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* FIXED LOGO */}
-            {/* <div className="fixed top-10 left-10 md:left-14 z-50">
-                <Link to="/"><img src={logo} alt="Logo" className="w-16 md:w-24" /></Link>
-            </div> */}
+            <div className="fixed top-10 left-10 md:left-14 z-50">
+                <Link to="/">
+                    <ImageLoader
+                        src={logo}
+                        alt="Dwell Rich Ltd - London Real Estate Opportunities Logo"
+                        className="w-16 md:w-24"
+                        priority={true}
+                    />
+                </Link>
+            </div>
 
             <main className="max-w-6xl mx-auto pt-44 pb-20 px-6">
 
@@ -50,7 +116,7 @@ const ProjectDetails = () => {
                         Past Developments
                     </Link>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2">{project.title}</h1>
-                    <div className="flex items-center gap-4 mb-16">
+                    <div className="flex items-center gap-4 mt-2 mb-16">
                         <div className="w-12 h-[2px] bg-[#8F6573]"></div>
                         <span className="text-3xl md:text-4xl font-light text-gray-400">{project.location}</span>
                     </div>
@@ -58,7 +124,15 @@ const ProjectDetails = () => {
 
                 {/* HERO IMAGE */}
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="mb-24">
-                    <img loading='lazy' src={project.heroImg} alt={project.title} className="w-full aspect-video object-cover shadow-sm" />
+                    <ImageLoader
+                        src={project.heroImg}
+                        alt={project.title}
+                        className="w-full aspect-video object-cover shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity"
+                        onClick={() => setSelectedImg(project.heroImg)}
+                        priority={true}
+                        placeholder="color"
+                        placeholderColor="#e5e7eb"
+                    />
                 </motion.div>
 
                 {/* PROJECT OVERVIEW */}
@@ -108,38 +182,47 @@ const ProjectDetails = () => {
 
                 {/* GALLERY SECTION */}
                 <div className="flex flex-col gap-4 mb-20">
-
-                    {/* 1. FULL WIDTH IMAGES (1 for Kingston, 2 for Surrey) */}
                     <div className="flex flex-col gap-4">
                         {fullWidthImages.map((img, index) => (
-                            <motion.img
+                            <ImageLoader
                                 key={`full-${index}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
                                 src={img}
-                                className="w-full h-[600px] object-cover"
+                                onClick={() => setSelectedImg(img)}
+                                className="w-full h-[600px] object-cover cursor-zoom-in hover:opacity-95 transition-opacity"
                                 alt={`Featured ${index}`}
-                                loading="lazy"
+                                priority={false}
+                                placeholder="color"
+                                placeholderColor="#e5e7eb"
                             />
                         ))}
                     </div>
 
-                    {/* 2. GRID IMAGES (The rest of the gallery) */}
                     <div className="grid md:grid-cols-2 gap-4">
                         {gridImages.map((img, index) => (
-                            <motion.img
+                            <ImageLoader
                                 key={`grid-${index}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
                                 src={img}
-                                className="w-full h-[500px] object-cover"
+                                onClick={() => setSelectedImg(img)}
+                                className="w-full h-[500px] object-cover cursor-zoom-in hover:opacity-95 transition-opacity"
                                 alt={`Detail ${index}`}
-                                loading="lazy"
+                                priority={false}
+                                placeholder="color"
+                                placeholderColor="#e5e7eb"
                             />
                         ))}
                     </div>
+
+                    {hasMore && (
+                        <div className="flex justify-center mt-12">
+                            <button
+                                onClick={handleLoadMore}
+                                className="flex items-center gap-3 px-12 py-5 border border-black/10 text-sm font-bold uppercase tracking-widest bg-black text-white transition-all duration-300 cursor-pointer hover:scale-95"
+                            >
+                                <Plus size={18} strokeWidth={1.5} />
+                                Load More Images
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 {/* FINANCIAL SUMMARY */}
@@ -159,30 +242,57 @@ const ProjectDetails = () => {
                 </motion.section>
 
                 {/* DESIGN & BUILD */}
-                <section className="grid md:grid-cols-2 gap-20 items-center mb-20">
-                    {/* Using index 2 or 0 of the grid images for this section to avoid repeats if preferred */}
-                    <img src={project.gallery[0]} className="w-full aspect-square object-cover" alt="Design" />
-                    <motion.div {...fadeInUp}>
-                        <div className="flex items-center gap-3 mb-8">
-                            <Hammer size={24} className="text-[#8F6573]" />
-                            <h3 className="text-3xl font-bold">Design & Build</h3>
-                        </div>
-                        <ul className="space-y-6">
-                            {project.designBuild?.map((item, i) => (
-                                <li key={i} className="text-xl font-light text-gray-600 border-l-2 border-[#8F6573] pl-6">
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                <section className="grid gap-0 items-center">
+                    <div className="flex items-center gap-3 mb-8">
+                        <Hammer size={24} className="text-[#8F6573]" />
+                        <h3 className="text-3xl font-bold">Design & Build</h3>
+                    </div>
+                    <ul className="space-y-6">
+                        {project.designBuild?.map((item, i) => (
+                            <li key={i} className="text-xl font-normal text-gray-600 border-l-2 border-[#8F6573] pl-6">
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
                 </section>
 
-                {/* NEXT PROJECT */}
-                <div className="mt-20 text-center pt-20 border-t flex flex-col items-center">
-                    <p className="text-sm font-bold tracking-[0.4em] uppercase mb-4 text-[#8F6573]">Next Project</p>
-                    <Link to={`/developments/${project.nextProjectId}`} className="text-4xl md:text-5xl font-light hover:opacity-50 transition-all duration-300">
-                        {project.nextProjectName} →
-                    </Link>
+                {/* DYNAMIC PROJECT NAVIGATION */}
+                <div className="mt-40 border-t border-gray-100 pt-16 flex justify-between items-center group">
+                    {/* Previous Project Link */}
+                    <div className="flex-1">
+                        {prevProject ? (
+                            <Link
+                                to={`/developments/${prevProject.id}`}
+                                className="flex flex-col items-start gap-3 hover:scale-98 transition-all duration-300"
+                            >
+                                <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">Previous Project</span>
+                                <div className="flex items-center gap-4">
+                                    <ArrowLeft size={24} strokeWidth={1} />
+                                    <span className="text-xl sm:text-2xl md:text-3xl font-light">{prevProject.title}</span>
+                                </div>
+                            </Link>
+                        ) : (
+                            <div className="invisible" /> // Placeholder to keep layout consistent
+                        )}
+                    </div>
+
+                    {/* Next Project Link */}
+                    <div className="flex-1 text-right">
+                        {nextProject ? (
+                            <Link
+                                to={`/developments/${nextProject.id}`}
+                                className="flex flex-col items-end gap-3 hover:scale-98 transition-all duration-300"
+                            >
+                                <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">Next Project</span>
+                                <div className="flex items-center gap-4">
+                                    <span className="text-xl sm:text-2xl md:text-3xl font-light">{nextProject.title}</span>
+                                    <ArrowRight size={24} strokeWidth={1} />
+                                </div>
+                            </Link>
+                        ) : (
+                            <div className="invisible" /> // Placeholder to keep layout consistent
+                        )}
+                    </div>
                 </div>
             </main>
         </div>

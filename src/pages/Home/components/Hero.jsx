@@ -1,7 +1,8 @@
 import React from 'react';
-import { Menu as MenuIcon } from 'lucide-react';
+import { Mail, Menu as MenuIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ImageLoader from '../../../components/ImageLoader';
 import logo from "../../../assets/logo.png"
 
 import mainBg from "../../../assets/SurreyMain.jpg"
@@ -28,12 +29,16 @@ const Hero = () => {
         <section className="relative min-h-screen w-full flex flex-col items-center justify-center select-none py-20">
 
             {/* Background Image Layer - CHANGED: absolute to fixed so it covers the whole scroll area */}
-            <div
-                className="fixed inset-0 bg-cover bg-center"
-                style={{
-                    backgroundImage: `url('${mainBg}')`,
-                }}
-            >
+            <div className="fixed inset-0 bg-cover bg-center">
+                <ImageLoader
+                    src={mainBg}
+                    alt="Luxury property development background"
+                    className="w-full h-full object-cover"
+                    priority={true}
+                    placeholder="color"
+                    placeholderColor="#2d2d2d"
+                />
+
                 {/* Background Overlay Animation: Fades from 1 to 0.85 */}
                 <motion.div
                     initial={{ opacity: 1 }}
@@ -45,10 +50,11 @@ const Hero = () => {
 
             {/* Top Right Menu Bar - CHANGED: absolute to fixed so it stays visible while scrolling */}
             <div className="fixed top-10 right-10 flex items-center gap-4 z-20">
-                <span className="text-black uppercase tracking-[0.2em] text-sm font-medium">
-                    Menu
-                </span>
-                <div className="bg-white w-10 h-10 flex items-center justify-center shadow-sm cursor-pointer hover:bg-gray-100 transition-colors">
+                <a href='mailto:info@dwellrich.co.uk' className="text-black flex items-center gap-2 uppercase tracking-widest text-sm font-medium">
+                    <Mail />
+                    <p>info@dwellrich.co.uk</p>
+                </a>
+                <div className="bg-white w-10 h-10 flex items-center justify-center shadow-sm cursor-pointer hover:bg-white rounded-full transition-colors">
                     <MenuIcon size={24} strokeWidth={1.5} className="text-[#998a8f]" />
                 </div>
             </div>
@@ -81,7 +87,12 @@ const Hero = () => {
                     </svg>
                 </motion.div> */}
 
-                <img loading='lazy' src={logo} alt="Logo" className="w-36 md:w-44 object-cover mb-4" />
+                <ImageLoader
+                    src={logo}
+                    alt="Logo"
+                    className="w-36 md:w-44 object-cover mb-4"
+                    priority={true}
+                />
 
                 {/* Brand Typography - Each letter animates up */}
                 {/* <h1 className="text-2xl tracking-[0.18em] font-medium mb-4 text-center ml-[0.35em] flex overflow-hidden">
@@ -105,21 +116,16 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1.2 }}
-                    className="w-xs space-y-0 text-center"
+                    className="space-y-0 text-center flex items-center gap-4 pt-4"
                 >
                     <Link to={"/projects"} >
-                        <button onClick={() => scrollTo(0, 0)} className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors cursor-pointer duration-300">
+                        <button onClick={() => scrollTo(0, 0)} className="w-full uppercase tracking-widest text-xs sm:text-sm font-bold bg-[#AD870E] hover:scale-95 px-4 py-4 rounded-lg transition-all cursor-pointer duration-300">
                             Current Projects
                         </button>
                     </Link>
 
-                    <div className="w-full flex h-px ">
-                        <motion.div className='h-[1px] bg-white/40 w-1/2'></motion.div>
-                        <motion.div className='h-[1px] bg-white/40 w-1/2'></motion.div>
-                    </div>
-
                     <Link to={"/developments"} >
-                        <button onClick={() => scrollTo(0, 0)} className="w-full py-6 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:text-white/70 transition-colors duration-300 cursor-pointer">
+                        <button onClick={() => scrollTo(0, 0)} className="w-full uppercase tracking-widest text-xs sm:text-sm font-bold bg-[#AD870E] hover:scale-95 px-4 py-4 rounded-lg transition-all duration-300 cursor-pointer">
                             Past Developments
                         </button>
                     </Link>

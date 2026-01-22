@@ -14,15 +14,45 @@ import surrey1 from "../../assets/surrey1.jpg"
 import surrey4 from "../../assets/surrey4.jpg"
 import surrey5 from "../../assets/surrey5.jpg"
 import surrey6 from "../../assets/surrey6.jpg"
+import surrey7 from "../../assets/surrey7.jpg"
+import surrey8 from "../../assets/surrey8.jpg"
+import surrey9 from "../../assets/surrey9.jpg"
+import surrey15 from "../../assets/surrey10.jpg"
+import surrey16 from "../../assets/surrey11.jpg"
+import surrey12 from "../../assets/surrey12.jpg"
+import surrey13 from "../../assets/surrey13.jpg"
+import surrey14 from "../../assets/surrey14.jpg"
 import surrey10 from "../../assets/surreyMain10.jpg"
 import surrey11 from "../../assets/surreyMain11.jpg"
+
+import cheamBefore from "../../assets/cheamBefore.jpg"
+import cheamAfter from "../../assets/cheamAfter.jpg"
+
+import kingstonNewMain from "../../assets/kingstonNew1.jpg"
+import kingstonNew2 from "../../assets/kingstonNew2.jpg"
+import kingstonNew3 from "../../assets/kingstonNew3.jpg"
+import kingstonNew4 from "../../assets/kingstonNew4.jpg"
+import kingstonNew5 from "../../assets/kingstonNew5.jpg"
+import kingstonNew6 from "../../assets/kingstonNew6.jpg"
+import kingstonNew7 from "../../assets/kingstonNew7.jpg"
+import kingstonNew8 from "../../assets/kingstonNew8.jpg"
+import kingstonNew9 from "../../assets/kingstonNew9.jpg"
+import kingstonNew10 from "../../assets/kingstonNew10.jpg"
+import kingstonNew11 from "../../assets/kingstonNew11.jpg"
+import kingstonNew12 from "../../assets/kingstonNew12.jpg"
+import kingstonNew13 from "../../assets/kingstonNew13.jpg"
+import kingstonNew14 from "../../assets/kingstonNew14.jpg"
+import kingstonNew15 from "../../assets/kingstonNew15.jpg"
+import kingstonNew16 from "../../assets/kingstonNew16.jpg"
+import kingstonNew17 from "../../assets/kingstonNew17.jpg"
+import kingstonNew18 from "../../assets/kingstonNew18.jpg"
 
 export const pastProjectsData = [
     {
         id: "kingston-upon-thames",
         title: "Kingston Upon Thames",
         location: "Surrey",
-        heroImg: kingstonMain,
+        heroImg: kingstonNewMain,
         subTitle: "Luxury Victorian House Conversion & Extension",
         overview: "This development showcases the comprehensive transformation of a traditional three-bedroom Victorian residence, originally built in 1932, located in the prime residential area of Kingston upon Thames, Surrey, South London.",
         overviewSecondary: "The project was strategically acquired with the intention of maximising both capital growth and end-user appeal. Through a combination of intelligent space planning, a substantial rear extension, and a full internal renovation, the property was repositioned into a high-quality, contemporary family home while preserving its original period charm.",
@@ -60,15 +90,15 @@ export const pastProjectsData = [
 
         outcome: "The Kingston project represents a strong example of value-led residential development, combining strategic buying, controlled costs, and design-driven execution. The completed property achieved a significant uplift in value while delivering a premium, future-proof family home.",
 
-        gallery: [kingston10, kingston1, kingston2, kingston3, kingston4, kingston5, kingston6],
+        gallery: [kingston10, kingstonNew2, kingstonNew3, kingstonNew4, kingstonNew5, kingstonNew6, kingstonNew7, kingstonNew8, kingstonNew9, kingstonNew10, kingstonNew11, kingstonNew12, kingstonNew13, kingstonNew14, kingstonNew15, kingstonNew16, kingstonNew17, kingstonNew18],
         nextProjectName: "Cheam, Surrey",
-        nextProjectId: "thames-surrey"
+        nextProjectId: "cheam-surrey"
     },
     {
-        id: "thames-surrey",
+        id: "cheam-surrey",
         title: "Cheam, Surrey",
         location: "South London",
-        heroImg: thamesSurreyMain,
+        heroImg: kingstonMain,
         subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
         overview: "This landmark development in Cheam, Surrey (South London) involved the complete redevelopment of an existing three-bedroom bungalow into a substantial, ultra-luxury seven-bedroom residence designed to meet the demands of the high-net-worth end-user market.",
         overviewSecondary: "The strategy centred on maximising gross development value through scale, specification, and lifestyle-led design, transforming a low-density asset into a prime residential home positioned at the top end of the local market.",
@@ -109,12 +139,29 @@ export const pastProjectsData = [
         gallery: [
             surrey10,
             surrey11,
+            cheamBefore,
+            cheamAfter,
             surrey3,
             surrey2,
             surrey1,
             surrey4,
             surrey5,
             surrey6,
+            surrey7,
+            surrey8,
+            surrey9,
+            surrey12,
+            surrey13,
+            surrey14,
+            surrey15,
+            surrey16,
+            kingston1,
+            kingston2,
+            kingston3,
+            kingston4,
+            kingston5,
+            kingston6,
+            thamesSurreyMain,
         ],
         nextProjectName: "Kingston Upon Thames",
         nextProjectId: "kingston-upon-thames"

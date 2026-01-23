@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { AlignVerticalSpaceAround, Award, ChartNoAxesCombined, Handshake, House, LogOut, NotebookPen, PencilRuler, Pickaxe, UsersRound } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import imageMain from "../../assets/KingstonMain.jpg"
-import kingstonNew1 from "../../assets/kingstonNew1.jpg"
-import kingstonNew6 from "../../assets/kingstonNew6.jpg"
-import kingstonNew11 from "../../assets/kingstonNew11.jpg"
-import kingstonNew4 from "../../assets/kingstonNew4.jpg"
-import kingstonNew14 from "../../assets/kingstonNew14.jpg"
+import imageMain from "../../assets/global1.jpg"
+// import kingstonNew1 from "../../assets/kingstonNew1.jpg"
+// import kingstonNew6 from "../../assets/kingstonNew6.jpg"
+// import kingstonNew11 from "../../assets/kingstonNew11.jpg"
+// import kingstonNew4 from "../../assets/kingstonNew4.jpg"
+// import kingstonNew14 from "../../assets/kingstonNew14.jpg"
 import SEO from "../../components/SEO";
 
 const WhatWeDo = () => {
@@ -18,11 +18,11 @@ const WhatWeDo = () => {
     // 1. Array of images for the slider
     const sliderImages = [
         imageMain,
-        kingstonNew1,
-        kingstonNew6,
-        kingstonNew11,
-        kingstonNew4,
-        kingstonNew14
+        // kingstonNew1,
+        // kingstonNew6,
+        // kingstonNew11,
+        // kingstonNew4,
+        // kingstonNew14
     ];
 
     // 2. State to track current image index
@@ -60,12 +60,12 @@ const WhatWeDo = () => {
             </Link>
 
             {/* LEFT CONTENT (Scrollable) - KEPT EXACTLY AS PROVIDED */}
-            <div className="w-full md:w-1/2 bg-white min-h-screen">
-                <div className="pt-52 md:pt-58 px-10 lg:px-32 xl:pl-44 pb-20">
+            <div className="w-full md:w-3/4 bg-white min-h-screen">
+                <div className="pt-52 md:pt-58 px-10 lg:px-20 xl:pl-44 pb-20">
                     {/* HEADING SECTION */}
                     <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <h2 className="sr-only">Property development company London specializing in planning gain property UK</h2>
-                        <h1 className="text-3xl md:text-4xl uppercase font-bold mb-16 text-[#222222] tracking-tight leading-tight">
+                        <h1 className="text-3xl md:text-4xl uppercase font-bold mb-16 text-[#8F6573] tracking-tight leading-tight">
                             Global Capital
                             <br />
                             Enduring Value
@@ -89,7 +89,7 @@ const WhatWeDo = () => {
                 </div>
 
                 {/* SECOND SECTION */}
-                <div className="pt-10 px-10 lg:px-32 xl:pl-44 pb-20">
+                {/* <div className="pt-10 px-10 lg:px-32 xl:pl-44 pb-20">
                     <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <h2 className="sr-only">Residential development London and property investment strategy</h2>
                         <h1 className="text-3xl md:text-4xl font-bold mb-16 text-[#222222] tracking-tight">
@@ -207,7 +207,7 @@ const WhatWeDo = () => {
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {/* RIGHT IMAGE SLIDER (Updated Slide-Only logic) */}

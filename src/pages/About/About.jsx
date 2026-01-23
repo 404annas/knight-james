@@ -94,7 +94,7 @@ const About = () => {
                 >
                     <div className="w-full md:w-3/5 order-2 md:order-1">
                         <h2 className="sr-only">Leading women property developer UK - Saleha Ali Khan</h2>
-                        <h2 className="text-3xl font-bold mb-1">Saleha Ali Khan</h2>
+                        <h2 className="text-3xl font-bold mb-1 text-[#8F6573]">Saleha Ali Khan</h2>
                         <h3 className="text-sm font-bold uppercase tracking-widest text-gray-600 mb-8">Founder</h3>
 
                         <div className="space-y-6 text-base sm:text-lg font-light leading-relaxed text-gray-600">

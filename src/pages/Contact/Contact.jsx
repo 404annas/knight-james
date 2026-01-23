@@ -68,14 +68,14 @@ const Contact = () => {
                     {/* Contact Details */}
                     <div className="space-y-14">
                         <motion.section variants={fadeInUp}>
-                            <h2 className="font-bold text-xl mb-2">General Enquiries</h2>
+                            <h2 className="font-bold text-xl mb-2 text-[#8F6573]">General Enquiries</h2>
                             <p className="text-xl">info@dwellrich.co.uk</p>
                         </motion.section>
 
                         {/* Updated Section: Private Investment Enquiries */}
                         <motion.section variants={fadeInUp}>
                             <h2 className="sr-only">London real estate opportunities for global partners</h2>
-                            <h2 className="font-bold text-xl mb-2">Private Investment Enquiries</h2>
+                            <h2 className="font-bold text-xl mb-2 text-[#8F6573]">Private Investment Enquiries</h2>
                             <p className="text-lg text-gray-700 leading-relaxed mb-4">
                                 Dwell Rich Ltd works with a limited number of investment partners. All enquiries are handled with strict confidentiality and professionalism.
                             </p>
@@ -86,7 +86,7 @@ const Contact = () => {
 
                         {/* Updated Section: Location */}
                         <motion.section variants={fadeInUp}>
-                            <h2 className="font-bold text-xl mb-2">Location</h2>
+                            <h2 className="font-bold text-xl mb-2 text-[#8F6573]">Location</h2>
                             <div className="leading-relaxed">
                                 <p className="text-xl">416, Kingston road, KT1 3PB</p>
                                 <p className="text-xl">Kingston Upon Thames, Surrey</p>

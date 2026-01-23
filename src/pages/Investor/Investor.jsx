@@ -61,9 +61,9 @@ const Investor = () => {
 
                     {/* 1. APPROACH SECTION */}
                     <motion.section {...fadeInUp} className="mb-10 md:mb-20">
-                        <h2 className="text-xs font-bold uppercase tracking-widest text-[#8F6573] mb-6">Our Investment Approach</h2>
+                        <h2 className="text-xs font-bold uppercase tracking-widest text-[#222222] mb-6">Our Investment Approach</h2>
                         <h3 className="sr-only">London real estate ROI and UK development opportunities</h3>
-                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 leading-tight">
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 leading-tight text-[#8F6573]">
                             Predictable Returns. <br />
                             Defined Timeframe. <br />
                             Disciplined Strategy.

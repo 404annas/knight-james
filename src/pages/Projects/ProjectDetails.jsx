@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import {
-    Home, Layout, Hammer, Coins, TrendingUp, CheckCircle2, X, Plus,
-    ArrowLeft, ArrowRight // Added Arrows
+    Home, Layout, Hammer, Coins, TrendingUp, CheckCircle2, X,
+    ArrowLeft, ArrowRight
 } from 'lucide-react';
 import ImageLoader from '../../components/ImageLoader';
 import logo from "../../assets/logo.png";
@@ -12,22 +12,13 @@ import { pastProjectsData } from './pastProjects';
 const ProjectDetails = () => {
     const { id } = useParams();
 
-    // Find index of the current project in the array
     const currentIndex = pastProjectsData.findIndex((p) => p.id === id);
     const project = pastProjectsData[currentIndex];
 
-    // Determine Previous and Next projects based on index
     const prevProject = pastProjectsData[currentIndex - 1];
     const nextProject = pastProjectsData[currentIndex + 1];
 
     const [selectedImg, setSelectedImg] = useState(null);
-    const [visibleCount, setVisibleCount] = useState(4);
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        // Reset visible count when project changes
-        setVisibleCount(4);
-    }, [id]);
 
     useEffect(() => {
         if (selectedImg) {
@@ -46,15 +37,10 @@ const ProjectDetails = () => {
     };
 
     const fullWidthCountMax = getFullWidthCount();
-    const currentlyVisibleGallery = project.gallery.slice(0, visibleCount);
-    const fullWidthImages = currentlyVisibleGallery.slice(0, fullWidthCountMax);
-    const gridImages = currentlyVisibleGallery.slice(fullWidthCountMax);
 
-    const hasMore = visibleCount < project.gallery.length;
-
-    const handleLoadMore = () => {
-        setVisibleCount(prev => prev + 4);
-    };
+    // 👉 SHOW ALL IMAGES AT ONCE
+    const fullWidthImages = project.gallery.slice(0, fullWidthCountMax);
+    const gridImages = project.gallery.slice(fullWidthCountMax);
 
     const fadeInUp = {
         initial: { y: 30, opacity: 0 },
@@ -77,7 +63,7 @@ const ProjectDetails = () => {
                         className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 md:p-10 cursor-zoom-out"
                     >
                         <motion.button
-                            className="absolute top-10 right-10 text-white hover:rotate-90 transition-transform duration-300"
+                            className="absolute top-10 right-10 text-white hover:rotate-90 transition-transform duration-300 cursor-pointer"
                             onClick={() => setSelectedImg(null)}
                         >
                             <X size={40} strokeWidth={1} />
@@ -115,10 +101,14 @@ const ProjectDetails = () => {
                     <Link to="/developments" className="text-[#8F6573] text-sm uppercase tracking-widest mb-4 inline-block hover:opacity-70">
                         Past Developments
                     </Link>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2">{project.title}</h1>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2">
+                        {project.title}
+                    </h1>
                     <div className="flex items-center gap-4 mt-2 mb-16">
-                        <div className="w-12 h-[2px] bg-[#8F6573]"></div>
-                        <span className="text-3xl md:text-4xl font-light text-gray-400">{project.location}</span>
+                        <div className="w-12 h-[2px] bg-[#8F6573]" />
+                        <span className="text-3xl md:text-4xl font-light text-gray-400">
+                            {project.location}
+                        </span>
                     </div>
                 </motion.div>
 
@@ -147,7 +137,7 @@ const ProjectDetails = () => {
                     </div>
                 </section>
 
-                {/* ASSET PROFILE & STRATEGY GRID */}
+                {/* ASSET PROFILE & STRATEGY */}
                 <div className="grid md:grid-cols-2 gap-20 mb-20">
                     <motion.div {...fadeInUp}>
                         <div className="flex items-center gap-3 mb-8 border-b pb-4">
@@ -157,7 +147,9 @@ const ProjectDetails = () => {
                         <div className="space-y-6">
                             {project.assetProfile?.map((item, i) => (
                                 <div key={i} className="flex flex-col">
-                                    <span className="text-sm uppercase tracking-widest text-[#8F6573] font-bold mb-1">{item.label}</span>
+                                    <span className="text-sm uppercase tracking-widest text-[#8F6573] font-bold mb-1">
+                                        {item.label}
+                                    </span>
                                     <span className="text-xl font-light">{item.value}</span>
                                 </div>
                             ))}
@@ -188,15 +180,19 @@ const ProjectDetails = () => {
                     </div>
                     <div className="max-w-2xl mx-auto">
                         {project.financials?.map((item, i) => (
-                            <div key={i} className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight ? 'text-[#8F6573] font-bold text-2xl mt-4' : 'text-xl'}`}>
+                            <div
+                                key={i}
+                                className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight ? 'text-[#8F6573] font-bold text-2xl mt-4' : 'text-xl'
+                                    }`}
+                            >
                                 <span className="font-normal">{item.label}</span>
-                                <span className='font-light'>{item.value}</span>
+                                <span className="font-light">{item.value}</span>
                             </div>
                         ))}
                     </div>
                 </motion.section>
 
-                {/* GALLERY SECTION */}
+                {/* GALLERY */}
                 <div className="flex flex-col gap-4 mb-20">
                     <div className="flex flex-col gap-4">
                         {fullWidthImages.map((img, index) => (
@@ -206,7 +202,6 @@ const ProjectDetails = () => {
                                 onClick={() => setSelectedImg(img)}
                                 className="w-full h-[600px] object-cover cursor-zoom-in hover:opacity-95 transition-opacity"
                                 alt={`Featured ${index}`}
-                                priority={false}
                                 placeholder="color"
                                 placeholderColor="#e5e7eb"
                             />
@@ -221,24 +216,11 @@ const ProjectDetails = () => {
                                 onClick={() => setSelectedImg(img)}
                                 className="w-full h-[500px] object-cover cursor-zoom-in hover:opacity-95 transition-opacity"
                                 alt={`Detail ${index}`}
-                                priority={false}
                                 placeholder="color"
                                 placeholderColor="#e5e7eb"
                             />
                         ))}
                     </div>
-
-                    {hasMore && (
-                        <div className="flex justify-center mt-12">
-                            <button
-                                onClick={handleLoadMore}
-                                className="flex items-center gap-3 px-12 py-5 border border-black/10 text-sm font-bold uppercase tracking-widest bg-black text-white transition-all duration-300 cursor-pointer hover:scale-95"
-                            >
-                                <Plus size={18} strokeWidth={1.5} />
-                                Load More Images
-                            </button>
-                        </div>
-                    )}
                 </div>
 
                 {/* DESIGN & BUILD */}
@@ -256,41 +238,37 @@ const ProjectDetails = () => {
                     </ul>
                 </section>
 
-                {/* DYNAMIC PROJECT NAVIGATION */}
-                <div className="mt-20 border-t border-gray-100 pt-16 flex justify-between items-center group">
-                    {/* Previous Project Link */}
+                {/* PROJECT NAVIGATION */}
+                <div className="mt-20 border-t border-gray-100 pt-16 flex justify-between items-center">
                     <div className="flex-1">
                         {prevProject ? (
-                            <Link
-                                to={`/developments/${prevProject.id}`}
-                                className="flex flex-col items-start gap-3 hover:scale-98 transition-all duration-300"
-                            >
-                                <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">Previous Project</span>
+                            <Link to={`/developments/${prevProject.id}`} className="flex flex-col items-start gap-3">
+                                <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">
+                                    Previous Project
+                                </span>
                                 <div className="flex items-center gap-4">
-                                    <ArrowLeft size={24} strokeWidth={1} />
-                                    <span className="text-xl sm:text-2xl md:text-3xl font-light">{prevProject.title}</span>
+                                    <ArrowLeft size={24} />
+                                    <span className="text-2xl font-light">{prevProject.title}</span>
                                 </div>
                             </Link>
                         ) : (
-                            <div className="invisible" /> // Placeholder to keep layout consistent
+                            <div className="invisible" />
                         )}
                     </div>
 
-                    {/* Next Project Link */}
                     <div className="flex-1 text-right">
                         {nextProject ? (
-                            <Link
-                                to={`/developments/${nextProject.id}`}
-                                className="flex flex-col items-end gap-3 hover:scale-98 transition-all duration-300"
-                            >
-                                <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">Next Project</span>
+                            <Link to={`/developments/${nextProject.id}`} className="flex flex-col items-end gap-3">
+                                <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">
+                                    Next Project
+                                </span>
                                 <div className="flex items-center gap-4">
-                                    <span className="text-xl sm:text-2xl md:text-3xl font-light">{nextProject.title}</span>
-                                    <ArrowRight size={24} strokeWidth={1} />
+                                    <span className="text-2xl font-light">{nextProject.title}</span>
+                                    <ArrowRight size={24} />
                                 </div>
                             </Link>
                         ) : (
-                            <div className="invisible" /> // Placeholder to keep layout consistent
+                            <div className="invisible" />
                         )}
                     </div>
                 </div>

@@ -97,14 +97,20 @@ const Footer = () => {
 
             {/* Bottom Section: Copyright and Credits */}
             <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 pt-4 border-t border-white/5">
-                <div className="text-[#444] text-[11px] flex items-center gap-6">
-                    <p className='text-sm'>© 2026 Dwell Rich Ltd</p>
+                <div className="text-[#444] text-[11px] flex items-center gap-2">
+                    <p className='text-sm'>© 2026 - Dwell Rich Ltd</p>
                     <button
                         onClick={() => setIsDisclaimerOpen(true)}
                         className='uppercase text-xs tracking-widest text-white bg-transparent border border-white/20 px-4 py-2 cursor-pointer hover:bg-white hover:text-black transition-all duration-300'
                     >
                         disclaimer
                     </button>
+                </div>
+
+                <div className='text-sm flex flex-col items-center gap-2'>
+                    <p>Company Registration: 12592480</p>
+                    <p>hello@designz.dwell-rich.com</p>
+                    <p>078033 26891</p>
                 </div>
 
                 <div className="flex items-center gap-2 text-[#444] text-[11px]">

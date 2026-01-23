@@ -14,7 +14,7 @@ const Navbar = () => {
         { label: "Home", path: "/what-we-do" },
         { label: "About", path: "/about" },
         { label: "Investor", path: "/investor" },
-        { label: "Global Investor", path: "/global-investor" },
+        // { label: "Global Investor", path: "/global-investor" },
         { label: "Current Projects", path: "/projects" },
         { label: "Past Developments", path: "/developments" },
         { label: "Contact", path: "/contact" },

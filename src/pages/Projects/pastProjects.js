@@ -52,7 +52,7 @@ export const pastProjectsData = [
         id: "kingston-upon-thames",
         title: "Kingston Upon Thames",
         location: "Surrey",
-        heroImg: kingstonNewMain,
+        heroImg: kingstonNew6,
         subTitle: "Luxury Victorian House Conversion & Extension",
         overview: "This development showcases the comprehensive transformation of a traditional three-bedroom Victorian residence, originally built in 1932, located in the prime residential area of Kingston upon Thames, Surrey, South London.",
         overviewSecondary: "The project was strategically acquired with the intention of maximising both capital growth and end-user appeal. Through a combination of intelligent space planning, a substantial rear extension, and a full internal renovation, the property was repositioned into a high-quality, contemporary family home while preserving its original period charm.",
@@ -90,7 +90,7 @@ export const pastProjectsData = [
 
         outcome: "The Kingston project represents a strong example of value-led residential development, combining strategic buying, controlled costs, and design-driven execution. The completed property achieved a significant uplift in value while delivering a premium, future-proof family home.",
 
-        gallery: [kingston10, kingstonNew2, kingstonNew3, kingstonNew4, kingstonNew5, kingstonNew6, kingstonNew7, kingstonNew8, kingstonNew9, kingstonNew10, kingstonNew11, kingstonNew12, kingstonNew13, kingstonNew14, kingstonNew15, kingstonNew16, kingstonNew17, kingstonNew18],
+        gallery: [kingston10, kingstonNew2, kingstonNew3, kingstonNew4, kingstonNew5, kingstonNewMain, kingstonNew6, kingstonNew7, kingstonNew8, kingstonNew9, kingstonNew10, kingstonNew11, kingstonNew12, kingstonNew13, kingstonNew14, kingstonNew15, kingstonNew16, kingstonNew17, kingstonNew18],
         nextProjectName: "Cheam, Surrey",
         nextProjectId: "cheam-surrey"
     },

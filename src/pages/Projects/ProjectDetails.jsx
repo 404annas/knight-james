@@ -180,6 +180,22 @@ const ProjectDetails = () => {
                     </motion.div>
                 </div>
 
+                {/* FINANCIAL SUMMARY */}
+                <motion.section {...fadeInUp} className="bg-gray-50 px-6 py-8 md:p-10 mb-20 rounded-sm">
+                    <div className="flex items-center justify-center gap-3 mb-10">
+                        <Coins size={28} className="text-[#8F6573]" />
+                        <h2 className="text-3xl font-bold">Financial Summary</h2>
+                    </div>
+                    <div className="max-w-2xl mx-auto">
+                        {project.financials?.map((item, i) => (
+                            <div key={i} className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight ? 'text-[#8F6573] font-bold text-2xl mt-4' : 'text-xl'}`}>
+                                <span className="font-normal">{item.label}</span>
+                                <span className='font-light'>{item.value}</span>
+                            </div>
+                        ))}
+                    </div>
+                </motion.section>
+
                 {/* GALLERY SECTION */}
                 <div className="flex flex-col gap-4 mb-20">
                     <div className="flex flex-col gap-4">
@@ -225,22 +241,6 @@ const ProjectDetails = () => {
                     )}
                 </div>
 
-                {/* FINANCIAL SUMMARY */}
-                <motion.section {...fadeInUp} className="bg-gray-50 px-6 py-8 md:p-10 mb-20 rounded-sm">
-                    <div className="flex items-center justify-center gap-3 mb-10">
-                        <Coins size={28} className="text-[#8F6573]" />
-                        <h2 className="text-3xl font-bold">Financial Summary</h2>
-                    </div>
-                    <div className="max-w-2xl mx-auto">
-                        {project.financials?.map((item, i) => (
-                            <div key={i} className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight ? 'text-[#8F6573] font-bold text-2xl mt-4' : 'text-xl'}`}>
-                                <span className="font-normal">{item.label}</span>
-                                <span className='font-light'>{item.value}</span>
-                            </div>
-                        ))}
-                    </div>
-                </motion.section>
-
                 {/* DESIGN & BUILD */}
                 <section className="grid gap-0 items-center">
                     <div className="flex items-center gap-3 mb-8">
@@ -257,7 +257,7 @@ const ProjectDetails = () => {
                 </section>
 
                 {/* DYNAMIC PROJECT NAVIGATION */}
-                <div className="mt-40 border-t border-gray-100 pt-16 flex justify-between items-center group">
+                <div className="mt-20 border-t border-gray-100 pt-16 flex justify-between items-center group">
                     {/* Previous Project Link */}
                     <div className="flex-1">
                         {prevProject ? (

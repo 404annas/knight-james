@@ -65,8 +65,12 @@ const WhatWeDo = () => {
                     {/* HEADING SECTION */}
                     <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <h2 className="sr-only">Property development company London specializing in planning gain property UK</h2>
-                        <h1 className="text-5xl md:text-5xl uppercase font-bold mb-16 text-[#222222] tracking-tight leading-tight">
-                            where global <br /> capital meets
+                        <h1 className="text-3xl md:text-4xl uppercase font-bold mb-16 text-[#222222] tracking-tight leading-tight">
+                            Global Capital
+                            <br />
+                            Enduring Value
+                            <br />
+                            One destination
                         </h1>
                         <div className={`h-[2px] bg-[#8F6573] mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'w-full' : 'w-0'}`}></div>
                     </div>
@@ -79,6 +83,7 @@ const WhatWeDo = () => {
                                 Dwell Rich Ltd is a London‑based private property development and investment company specialising in identifying high‑quality property opportunities across Central London, South London, and carefully selected surrounding areas. Our focus is on sourcing properties with strong fundamentals and unlocking additional value through planning gains, intelligent design, and disciplined execution.
                             </p>
                             <p>London remains one of the world’s most resilient and transparent property markets. Through a selective and research‑driven approach, Dwell Rich Ltd enables investors to participate in value‑enhancing developments within one of the most sought‑after global cities. </p>
+                            <p className="font-medium">We provide global property investment solutions.</p>
                         </div>
                     </div>
                 </div>
@@ -87,8 +92,8 @@ const WhatWeDo = () => {
                 <div className="pt-10 px-10 lg:px-32 xl:pl-44 pb-20">
                     <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <h2 className="sr-only">Residential development London and property investment strategy</h2>
-                        <h1 className="text-5xl md:text-6xl font-bold mb-16 text-[#222222] tracking-tight">
-                            What We Do
+                        <h1 className="text-3xl md:text-4xl font-bold mb-16 text-[#222222] tracking-tight">
+                            What We Do ?
                         </h1>
                         <div className={`h-[2px] bg-[#8F6573] mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'w-full' : 'w-0'}`}></div>
                     </div>
@@ -120,7 +125,7 @@ const WhatWeDo = () => {
 
                         <div className="space-y-4">
                             <h2 className="text-2xl font-bold text-[#222222]">Why Invest with Dwell Rich Ltd ?</h2>
-                            <ul className="flex flex-col gap-4">
+                            <ul className="flex flex-col gap-4 pt-6">
                                 <li className="flex flex-col gap-1">
                                     <div className="flex items-center gap-3">
                                         <Award size={20} />

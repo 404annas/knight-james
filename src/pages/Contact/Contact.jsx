@@ -21,11 +21,11 @@ const Contact = () => {
     };
 
     return (
-        <div className="flex flex-col md:flex-row min-h-screen text-gray-900 font-sans relative">
+        <div className="flex flex-col md:flex-row min-h-screen text-gray-900 relative">
 
             <SEO
-                title="Contact Us - Invest in London Property"
-                description="Get in touch with Dwell Rich Ltd for private investment enquiries. We offer premium London real estate opportunities for international investors."
+                title="Contact Dwell Rich | UK Property Investment Advisory"
+                description="Get in touch with Dwell Rich to discuss UK and international property investments. Confidential consultations and professional advisory support available."
                 keywords="Invest in London property, international investors UK property, London real estate opportunities"
             />
 
@@ -52,15 +52,17 @@ const Contact = () => {
                     <h2 className="sr-only">Invest in London property and international investors UK property</h2>
                     <motion.h1
                         variants={fadeInUp}
-                        className="text-5xl md:text-[68px] leading-none font-semibold text-[#222222] mb-16 tracking-tight"
+                        className="text-5xl md:text-6xl leading-none font-bold text-[#222222] mb-16 tracking-tight"
                     >
                         Contact
                     </motion.h1>
 
                     {/* Decorative Line */}
                     <motion.div
-                        variants={fadeInUp}
-                        className="w-full h-[3px] bg-[#8F6573] mb-20"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
+                        className="h-[2px] bg-[#8F6573] w-full mb-20 origin-left"
                     ></motion.div>
 
                     {/* Contact Details */}

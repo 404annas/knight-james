@@ -3,7 +3,7 @@ import { Mail, Menu, Menu as MenuIcon, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import logo from "../assets/logo.png"
-import mainImg from "../assets/secondaryMain3.jpg"
+import mainImg from "../assets/mainHero.jpeg"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +14,7 @@ const Navbar = () => {
         { label: "Home", path: "/what-we-do" },
         { label: "About", path: "/about" },
         { label: "Investor", path: "/investor" },
+        { label: "Global Investor", path: "/global-investor" },
         { label: "Current Projects", path: "/projects" },
         { label: "Past Developments", path: "/developments" },
         { label: "Contact", path: "/contact" },
@@ -110,7 +111,7 @@ const Navbar = () => {
                             exit={{ scale: 1.15 }}
                             transition={{ duration: 0.8, delay: 0.4, exit: { delay: 0, duration: 0 }, }}
                             className='absolute h-full w-full md:w-1/2 bottom-0 left-0 right-0 z-0 object-center object-cover'
-                            src={mainImg}
+                            src={mainImg}    
                         />
                         <div className='absolute inset-0 bg-black/50 z-5'></div>
 
@@ -128,7 +129,7 @@ const Navbar = () => {
                         ></motion.div>
 
                         <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-10 md:px-20 xl:pl-44 z-10 relative">
-                            <ul className="flex flex-col gap-6">
+                            <ul className="flex flex-col gap-5">
                                 {navLinks.map((item, i) => (
                                     <motion.li
                                         key={item.label}

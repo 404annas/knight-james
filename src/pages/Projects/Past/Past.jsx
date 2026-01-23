@@ -4,7 +4,8 @@ import logo from "../../../assets/logo.png";
 import { Link } from 'react-router-dom';
 import kingstonMain from "../../../assets/KingstonMain.jpg"
 import surreyMain from "../../../assets/SurreyMain.jpg"
-import kingstonNewMain from "../../../assets/kingstonNew1.jpg"
+import kingstonNewMain from "../../../assets/kingstonNew6.jpg"
+import SEO from '../../../components/SEO';
 
 const projects = [
     { title: "Kingston Upon Thames", img: kingstonNewMain },
@@ -29,6 +30,12 @@ const Past = () => {
     return (
         <div className="bg-white min-h-screen text-[#222222]">
 
+            <SEO
+                title="Past Property Developments | Proven UK Investments | Dwell Rich"
+                description="View past property developments advised by Dwell Rich. A track record of successful UK residential and investment property projects."
+                keywords="London property developments, residential development London, planning gain property UK, property development company London"
+            />
+
             {/* HEADER SECTION */}
             <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
@@ -44,7 +51,7 @@ const Past = () => {
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl md:text-6xl font-bold mb-10"
+                    className="text-4xl md:text-5xl font-bold mb-10"
                 >
                     Past Developments
                 </motion.h1>
@@ -60,7 +67,7 @@ const Past = () => {
                 {/* PROJECTS LIST */}
                 <div className="flex flex-col gap-24">
                     {projects.map((project, index) => (
-                        <Link  onClick={() => scrollTo(0, 0)} to={`/developments/${project.title.toLowerCase().replace(/ /g, "-")}`}>
+                        <Link onClick={() => scrollTo(0, 0)} to={`/developments/${project.title.toLowerCase().replace(/ /g, "-")}`}>
                             <motion.div
                                 key={index}
                                 initial={{ y: 80, opacity: 0 }}

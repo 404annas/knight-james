@@ -16,8 +16,8 @@ const Current = () => {
         <div className="bg-white min-h-screen text-[#222222]">
 
             <SEO
-                title="Current Projects - London Property Developments"
-                description="View our latest residential development projects across London. Dwell Rich Ltd specializes in planning gain and luxury property development."
+                title="Current Property Developments | London Investments | Dwell Rich"
+                description="Explore current UK property developments curated by Dwell Rich. Investment-led residential opportunities in London and high-demand locations."
                 keywords="London property developments, residential development London, planning gain property UK, property development company London"
             />
 
@@ -42,7 +42,7 @@ const Current = () => {
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl md:text-6xl font-bold mb-10"
+                    className="text-4xl md:text-5xl font-bold mb-10"
                 >
                     Current Projects
                 </motion.h1>

@@ -10,6 +10,7 @@ import WhatWeDo from './pages/WhatWeDo/WhatWeDo'
 import ProjectDetails from './pages/Projects/ProjectDetails'
 import About from './pages/About/About'
 import Investor from './pages/Investor/Investor'
+import Global from './pages/Global/Global'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/what-we-do' element={<WhatWeDo />}/>
         <Route path="/about" element={<About />} />
         <Route path="/investor" element={<Investor />} />
+        <Route path='/global-investor' element={<Global />}/>
         <Route path='/projects' element={<Current />}/>
         <Route path='/developments' element={<Past />}/>
         <Route path='/developments/:id' element={<ProjectDetails />}/> 

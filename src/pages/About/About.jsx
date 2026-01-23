@@ -47,8 +47,8 @@ const About = () => {
         <div className="bg-white min-h-screen text-[#222222] relative">
 
             <SEO
-                title="About Us - UK Property Specialists"
-                description="Dwell Rich Ltd is a premier London real estate investment company. Founded by Saleha Ali Khan, we are leading property developers in London."
+                title="About Dwell Rich | Trusted UK Property Investment Advisors"
+                description="Learn about Dwell Rich, a UK-based property investment advisory providing transparent, professional guidance to local and international property investors."
                 keywords="Property developer London, women property developer UK, London real estate investment company, UK property specialists"
             />
 
@@ -68,8 +68,13 @@ const About = () => {
                 {/* PAGE TITLE */}
                 <motion.div {...fadeInUp} className="mb-20">
                     <h2 className="sr-only">London real estate investment company and UK property specialists</h2>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-10 tracking-tight text-[#222222]">About</h1>
-                    <div className="h-[2px] bg-[#8F6573] w-full"></div>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 tracking-tight text-[#222222]">About</h1>
+                    <motion.div
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
+                        className="h-[2px] bg-[#8F6573] w-full origin-left"
+                    ></motion.div>
                 </motion.div>
 
                 {/* 1. ABOUT HEADLINE */}
@@ -131,13 +136,13 @@ const About = () => {
                                     <item.icon size={22} strokeWidth={1.5} />
                                 </div>
 
-                                <span className="text-lg font-normal text-gray-600">
+                                <span className="text-lg font-medium text-gray-600">
                                     {item.text}
                                 </span>
                             </div>
                         ))}
                     </div>
-                    <p className="text-base sm:text-lg font-light leading-relaxed text-gray-500 border-l-2 border-[#8F6573] pl-6">
+                    <p className="text-base sm:text-lg font-light leading-relaxed text-gray-500 text-center">
                         This integrated approach allows us to reduce execution risk, improve coordination, and maintain quality at every stage of development.
                     </p>
                 </motion.section>

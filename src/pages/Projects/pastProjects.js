@@ -78,6 +78,38 @@ import bnb16 from "../../assets/bnb16.jpg"
 import bnb17 from "../../assets/bnb17.jpg"
 import bnb18 from "../../assets/bnb18.jpg"
 
+import gilliMain from "../../assets/gilliMain.jpg"
+import gilli1 from "../../assets/gilli1.jpg"
+import gilli2 from "../../assets/gilli1.jpg"
+import gilli3 from "../../assets/gilli1.jpg"
+import gilli4 from "../../assets/gilli1.jpg"
+import gilli5 from "../../assets/gilli1.jpg"
+import gilli6 from "../../assets/gilli1.jpg"
+import gilli7 from "../../assets/gilli1.jpg"
+import gilli8 from "../../assets/gilli1.jpg"
+import gilli9 from "../../assets/gilli1.jpg"
+import gilli10 from "../../assets/gilli1.jpg"
+import gilli11 from "../../assets/gilli1.jpg"
+import gilli12 from "../../assets/gilli1.jpg"
+import gilli13 from "../../assets/gilli1.jpg"
+
+import harrowMain from "../../assets/harrowMain.jfif"
+import harrow1 from "../../assets/harrow1.jfif"
+import harrow2 from "../../assets/harrow2.jfif"
+import harrow3 from "../../assets/harrow3.jfif"
+import harrow4 from "../../assets/harrow4.jfif"
+import harrow5 from "../../assets/harrow5.jfif"
+import harrow6 from "../../assets/harrow6.jfif"
+import harrow7 from "../../assets/harrow7.jfif"
+import harrow8 from "../../assets/harrow8.jfif"
+import harrow9 from "../../assets/harrow9.jfif"
+import harrow10 from "../../assets/harrow10.jfif"
+import harrow11 from "../../assets/harrow11.jfif"
+import harrow12 from "../../assets/harrow12.jfif"
+import harrow13 from "../../assets/harrow13.jfif"
+import harrow14 from "../../assets/harrow14.jfif"
+import harrow15 from "../../assets/harrow15.jfif"
+
 export const pastProjectsData = [
     {
         id: "kingston-upon-thames",
@@ -201,7 +233,7 @@ export const pastProjectsData = [
         id: "gillian-road-sutton",
         title: "Gillian Road, Sutton",
         location: "Sutton",
-        heroImg: kingstonMain,
+        heroImg: gilliMain,
         subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
         overview: "This landmark development in Gillian Road, Sutton involved the complete redevelopment of an existing three-bedroom bungalow into a substantial, ultra-luxury seven-bedroom residence designed to meet the demands of the high-net-worth end-user market.",
         overviewSecondary: "The strategy centred on maximising gross development value through scale, specification, and lifestyle-led design, transforming a low-density asset into a prime residential home positioned at the top end of the local market.",
@@ -240,31 +272,19 @@ export const pastProjectsData = [
         outcome: "The Cheam development exemplifies our ability to identify underutilised assets, execute large-scale luxury redevelopments, and control build costs while delivering exceptional specification. It stands as a strong demonstration of our investor-led luxury development model.",
 
         gallery: [
-            surrey10,
-            surrey11,
-            cheamBefore,
-            cheamAfter,
-            surrey3,
-            surrey2,
-            surrey1,
-            surrey4,
-            surrey5,
-            surrey6,
-            surrey7,
-            surrey8,
-            surrey9,
-            surrey12,
-            surrey13,
-            surrey14,
-            surrey15,
-            surrey16,
-            kingston1,
-            kingston2,
-            kingston3,
-            kingston4,
-            kingston5,
-            kingston6,
-            thamesSurreyMain,
+            gilli1,
+            gilli2,
+            gilli3,
+            gilli4,
+            gilli5,
+            gilli6,
+            gilli7,
+            gilli8,
+            gilli9,
+            gilli10,
+            gilli11,
+            gilli12,
+            gilli13,
         ],
         nextProjectName: "Cheam, Surrey",
         nextProjectId: "cheam-surrey"
@@ -394,7 +414,7 @@ export const pastProjectsData = [
         id: "harrow",
         title: "Harrow",
         location: "Sutton",
-        heroImg: kingstonMain,
+        heroImg: harrowMain,
         subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
         overview: "This landmark development in Chiltren Drive, Sutton involved the complete redevelopment of an existing three-bedroom bungalow into a substantial, ultra-luxury seven-bedroom residence designed to meet the demands of the high-net-worth end-user market.",
         overviewSecondary: "The strategy centred on maximising gross development value through scale, specification, and lifestyle-led design, transforming a low-density asset into a prime residential home positioned at the top end of the local market.",
@@ -433,31 +453,19 @@ export const pastProjectsData = [
         outcome: "The Cheam development exemplifies our ability to identify underutilised assets, execute large-scale luxury redevelopments, and control build costs while delivering exceptional specification. It stands as a strong demonstration of our investor-led luxury development model.",
 
         gallery: [
-            surrey10,
-            surrey11,
-            cheamBefore,
-            cheamAfter,
-            surrey3,
-            surrey2,
-            surrey1,
-            surrey4,
-            surrey5,
-            surrey6,
-            surrey7,
-            surrey8,
-            surrey9,
-            surrey12,
-            surrey13,
-            surrey14,
-            surrey15,
-            surrey16,
-            kingston1,
-            kingston2,
-            kingston3,
-            kingston4,
-            kingston5,
-            kingston6,
-            thamesSurreyMain,
+            harrow1,
+            harrow2,
+            harrow3,
+            harrow4,
+            harrow5,
+            harrow6,
+            harrow7,
+            harrow8,
+            harrow9,
+            harrow10,
+            harrow11,
+            harrow12,
+            harrow13,
         ],
         nextProjectName: "Cheam, Surrey",
         nextProjectId: "cheam-surrey"

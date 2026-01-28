@@ -9,14 +9,16 @@ import SEO from '../../../components/SEO';
 
 import childMain from "../../../assets/childMain.jpg"
 import bnbMain from "../../../assets/bnbMain.jpg"
+import gilliMain from "../../../assets/gilliMain.jpg"
+import harrowMain from "../../../assets/harrowMain.jfif"
 
 const projects = [
     { title: "Kingston Upon Thames", img: kingstonNewMain },
     { title: "Cheam Surrey", img: kingstonMain },
-    { title: "Gillian Road Sutton", img: kingstonMain },
+    { title: "Gillian Road Sutton", img: gilliMain },
     { title: "Chiltren Drive Sutton", img: childMain },
     { title: "Holiday Home ( Air B&B ) Mitcham", img: bnbMain },
-    { title: "Harrow", img: kingstonMain },
+    { title: "Harrow", img: harrowMain },
     // { title: "Sutherland Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/CORE-Flat-4-116-Sutherland-Avenue-Reception3.1-1.jpg" },
     // { title: "Midhurst Avenue, N10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-front-zoomed.jpg" },
     // { title: "Leamington Road Villas, W11", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/LRV-Rear-Living-Room.jpg" },

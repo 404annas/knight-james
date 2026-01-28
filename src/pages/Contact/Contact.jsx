@@ -113,14 +113,9 @@ const Contact = () => {
                                 <h2 className="sr-only">London real estate globally presense</h2>
                                 <h2 className="font-bold text-xl mb-2 text-[#8F6573]">Global presence</h2>
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                    1. Dubai
-                                </p>
-                                <p className="text-lg text-gray-700 leading-relaxed">
-                                    2. India
+                                    Dubai | India
                                 </p>
                             </motion.section>
-
-                            
 
                             {/* Updated Section: Location */}
                             <motion.section variants={fadeInUp}>

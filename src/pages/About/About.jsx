@@ -100,7 +100,7 @@ const About = () => {
     {
       name: "Syed",
       title: "Digital & Technical Operations",
-      image: "",
+      image: "/avatarImage.jfif",
       description:
         "He supports our development team by managing all back-end development and technical aspects of the business. He is responsible for our website, graphics, and overall digital infrastructure. His expertise ensures our systems run smoothly and our online presence remains strong and up to date.",
     },

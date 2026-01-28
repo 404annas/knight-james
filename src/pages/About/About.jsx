@@ -72,35 +72,35 @@ const About = () => {
     {
       name: "Ashley Newman",
       title: "Architectural Services",
+      image: "",
       description:
         "He has been a key member of our team since the company’s inception. He oversees the planning and structural aspects of our projects, ensuring all work follows the approved architectural and structural drawings. He also provides valuable support and guidance whenever challenges arise.",
     },
     {
       name: "Zaeem Khan",
       title: "Legal Advisor",
+      image: "/picture-2.png",
       description:
         "He is our trusted legal advisor and has been closely involved with the company since its early days. He supports our real estate projects and developments by overseeing all legal aspects and ensuring compliance at every stage. His guidance plays a key role in helping projects move forward smoothly and securely.",
     },
     {
       name: "Muhammad Sufyan Moavia",
       title: "Chartered Accountant – FCCA, CTA, ACA",
+      image: "/image.png",
       description:
         "He is our chartered accountant and has been an essential part of the company from the outset. He manages all financial and accounting matters while also supporting our clients with sound financial guidance. His strategic advice helps ensure projects are structured efficiently and delivered in a profitable and sustainable way.",
     },
     {
       name: "Khalil Ur Rahman",
       title: "RICS Registered Valuer",
-      credentials: [
-        "Chartered Planning and Development Surveyor",
-        "Qualified Code for Sustainable Homes Assessor",
-        "RICS approved APC Assessor and Supervisor",
-      ],
+      image: "/picture-1.png",
       description:
         "He is our chartered surveyor and a valued member of our professional team. He supports us in property selection and contributes to project management when required. With strong expertise in cost analysis, he helps ensure our projects are commercially sound and well-informed.",
     },
     {
       name: "Syed",
       title: "Digital & Technical Operations",
+      image: "",
       description:
         "He supports our development team by managing all back-end development and technical aspects of the business. He is responsible for our website, graphics, and overall digital infrastructure. His expertise ensures our systems run smoothly and our online presence remains strong and up to date.",
     },

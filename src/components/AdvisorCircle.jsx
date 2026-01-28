@@ -86,7 +86,8 @@ export default function AdvisorCircle({ advisors = [] }) {
               className="group relative bg-white rounded-2xl p-8 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:shadow-[#8F6573]/10 hover:border-[#8F6573]/30"
             >
               <div className="flex justify-between items-start mb-6">
-                <div className="relative h-20 w-20 shrink-0 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 shadow-inner">
+                {/* Image Placeholder: Increased size to h-32 w-32 */}
+                <div className="relative h-32 w-32 shrink-0 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 shadow-inner">
                   {advisor.image ? (
                     <img
                       src={advisor.image}
@@ -95,15 +96,11 @@ export default function AdvisorCircle({ advisors = [] }) {
                     />
                   ) : (
                     <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-[#8F6573]/10 to-[#D1AAAC]/10">
-                      <span className="text-[#8F6573] font-bold text-2xl">
+                      <span className="text-[#8F6573] font-bold text-4xl">
                         {advisor.name.charAt(0)}
                       </span>
                     </div>
                   )}
-                </div>
-
-                <div className="h-10 w-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 transition-colors duration-300 group-hover:bg-[#8F6573] group-hover:border-[#8F6573] group-hover:text-white">
-                  <ArrowUpRight size={18} />
                 </div>
               </div>
 
@@ -112,9 +109,7 @@ export default function AdvisorCircle({ advisors = [] }) {
                   <h3 className="text-xl font-bold text-[#222222] group-hover:text-[#8F6573] transition-colors">
                     {advisor.name}
                   </h3>
-                  <span className="px-3 py-1 rounded-full bg-[#FAFAFA] border border-gray-100 text-[10px] font-semibold tracking-wider uppercase text-gray-500 group-hover:bg-[#8F6573]/5 group-hover:text-[#8F6573] transition-colors">
-                    Advisor
-                  </span>
+                  {/* Removed the 'Advisor' pill tag here */}
                 </div>
 
                 <p className="text-sm font-medium text-[#8F6573]">

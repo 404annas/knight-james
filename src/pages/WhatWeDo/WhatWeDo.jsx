@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.png";
 import { Link } from "react-router-dom";
 import { AlignVerticalSpaceAround, Award, ChartNoAxesCombined, Handshake, House, LogOut, NotebookPen, PencilRuler, Pickaxe, UsersRound } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -55,7 +55,7 @@ const WhatWeDo = () => {
             />
 
             {/* FIXED LOGO */}
-            <Link to={"/"} className="fixed top-10 left-10 lg:left-14 z-50">
+            <Link to={"/"} className="fixed top-10 md:left-10 left-5 lg:left-14 z-50">
                 <img loading="lazy" src={logo} alt="Dwell Rich Ltd - Property Developer London Logo" className="w-16 md:w-24 object-contain" />
             </Link>
 
@@ -80,8 +80,9 @@ const WhatWeDo = () => {
                         <h1 className="text-2xl font-normal text-[#222222]">London Real Estate Developments:</h1>
                         <div className="space-y-4">
                             <p>
-                                Dwell Rich Ltd is a London‑based private property development and investment company specialising in identifying high‑quality property opportunities across Central London, South London, and carefully selected surrounding areas. Our focus is on sourcing properties with strong fundamentals and unlocking additional value through planning gains, intelligent design, and disciplined execution.
+                                Dwell Rich Ltd is a London‑based private property development and investment company specialising in identifying high‑quality property opportunities across Central London, South London, and carefully selected surrounding areas.
                             </p>
+                            <p>Our focus is on sourcing properties with strong fundamentals and unlocking additional value through planning gains, intelligent design, and disciplined execution.</p>
                             <p>London remains one of the world’s most resilient and transparent property markets. Through a selective and research‑driven approach, Dwell Rich Ltd enables investors to participate in value‑enhancing developments within one of the most sought‑after global cities. </p>
                             <p className="font-medium">We provide global property investment solutions.</p>
                         </div>

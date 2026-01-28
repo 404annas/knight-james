@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Menu, Menu as MenuIcon, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import logo from "../assets/logo.png"
+import logo from "../assets/logo2.png"
 import mainImg from "../assets/mainHero.jpeg"
 
 const Navbar = () => {
@@ -58,7 +58,7 @@ const Navbar = () => {
             </Link> */}
 
             {/* FIXED MENU BUTTON CONTAINER */}
-            <div className="fixed top-10 right-10 flex items-center gap-4 z-[100] select-none">
+            <div className="fixed top-10 right-5 md:right-10 flex items-center gap-4 z-[100] select-none">
                 <AnimatePresence>
                     {!isOpen && (
                         <motion.a href='mailto:info@dwellrich.co.uk'

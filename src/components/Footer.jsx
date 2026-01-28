@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ImageLoader from './ImageLoader';
-import logo from "../assets/logo.png"
+import logo from "../assets/logo2.png"
 import { Link } from 'react-router-dom';
 import { Linkedin, X, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,7 +19,7 @@ const Footer = () => {
     }, [isDisclaimerOpen]);
 
     return (
-        <footer className="bg-[#111] text-white py-4 px-6 md:px-12 flex flex-col items-center relative">
+        <footer className="bg-[#292929] text-white py-4 px-6 md:px-12 flex flex-col items-center relative">
 
             {/* DISCLAIMER MODAL */}
             <AnimatePresence>
@@ -89,15 +89,14 @@ const Footer = () => {
 
             {/* Middle Section: Company Information */}
             <div className="text-center max-w-3xl mb-3">
-                <p className="text-[#888] text-xs leading-relaxed">
-                    Dwell Rich Ltd is a London‑based private property development and investment company specialising in identifying high‑quality property opportunities across Central London, South London.
-                    At Dwell Rich Ltd, we focus on properties where planning potential, location quality, and market demand combine to create strong risk‑adjusted returns.
+                <p className="text-white text-xs leading-relaxed">
+                    Dwell Rich Ltd is a London-based property development and investment company focused on high-quality opportunities across Central and South London, targeting strong risk-adjusted returns through planning potential, prime locations, and market demand.
                 </p>
             </div>
 
             {/* Bottom Section: Copyright and Credits */}
             <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 pt-4 border-t border-white/5">
-                <div className="text-[#444] text-[11px] flex items-center gap-2">
+                <div className="text-white text-[11px] flex md:flex-row flex-col items-center gap-2">
                     <p className='text-sm'>© 2026 - Dwell Rich Ltd</p>
                     <button
                         onClick={() => setIsDisclaimerOpen(true)}
@@ -107,9 +106,9 @@ const Footer = () => {
                     </button>
                 </div>
 
-                <div className='text-sm flex flex-col items-center gap-2'>
-                    <p>Company Registration: 12592480</p>
-                    <p>hello@designz.dwell-rich.com</p>
+                <div className='text-sm text-center flex-col lg:flex-row lg:-ml-44 items-center gap-2'>
+                    <p>Company Registration: 12592480 |</p>
+                    <p>hello@designz.dwell-rich.com |</p>
                     <p>078033 26891</p>
                 </div>
 
@@ -122,12 +121,6 @@ const Footer = () => {
                             className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#0A66C2] hover:opacity-90 hover:-translate-y-1 transition-all duration-300"
                         >
                             <Linkedin size={20} />
-                        </a>
-                    </div>
-                    <span className='text-sm'>DEVELOPED BY</span>
-                    <div className="flex items-center font-bold text-white text-sm">
-                        <a href='https://techxudo.com/' target='_blank' rel="noopener noreferrer">
-                            Techxudo
                         </a>
                     </div>
                 </div>

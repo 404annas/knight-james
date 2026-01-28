@@ -6,7 +6,7 @@ import {
     ArrowLeft, ArrowRight
 } from 'lucide-react';
 import ImageLoader from '../../components/ImageLoader';
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.png";
 import { pastProjectsData } from './pastProjects';
 
 const ProjectDetails = () => {
@@ -83,7 +83,7 @@ const ProjectDetails = () => {
             </AnimatePresence>
 
             {/* FIXED LOGO */}
-            <div className="fixed top-10 left-10 md:left-14 z-50">
+            <div className="fixed top-10 md:left-10 left-5 md:left-14 z-50">
                 <Link to="/">
                     <ImageLoader
                         src={logo}
@@ -242,7 +242,7 @@ const ProjectDetails = () => {
                 <div className="mt-20 border-t border-gray-100 pt-16 flex justify-between items-center">
                     <div className="flex-1">
                         {prevProject ? (
-                            <Link to={`/developments/${prevProject.id}`} className="flex flex-col items-start gap-3">
+                            <Link to={`/developments/${prevProject.id}`} onClick={() => scrollTo(0,0)} className="flex flex-col items-start gap-3">
                                 <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">
                                     Previous Project
                                 </span>
@@ -258,7 +258,7 @@ const ProjectDetails = () => {
 
                     <div className="flex-1 text-right">
                         {nextProject ? (
-                            <Link to={`/developments/${nextProject.id}`} className="flex flex-col items-end gap-3">
+                            <Link to={`/developments/${nextProject.id}`} onClick={() => scrollTo(0,0)} className="flex flex-col items-end gap-3">
                                 <span className="text-xs font-bold uppercase tracking-widest text-[#8F6573]">
                                     Next Project
                                 </span>

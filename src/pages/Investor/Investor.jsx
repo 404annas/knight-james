@@ -11,7 +11,7 @@ import {
     Briefcase,
     Handshake
 } from 'lucide-react';
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.png";
 import SEO from '../../components/SEO';
 
 const Investor = () => {
@@ -38,7 +38,7 @@ const Investor = () => {
             />
 
             {/* FIXED LOGO */}
-            <div className="fixed top-8 left-8 md:top-10 md:left-14 z-50">
+            <div className="fixed top-8 md:top-10 md:left-10 left-5 lg:left-14 z-50">
                 <Link to="/">
                     <img loading='lazy' src={logo} alt="Dwell Rich Ltd" className="w-16 md:w-24" />
                 </Link>

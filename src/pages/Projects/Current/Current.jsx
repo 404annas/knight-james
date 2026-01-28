@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ImageLoader from '../../../components/ImageLoader';
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo2.png";
 import { Link } from 'react-router-dom';
 import SEO from '../../../components/SEO';
 
 import current1 from "../../../assets/current1.jpg"
 
 const projects = [
-    { title: "Wimbledon", img: current1 }
+    { title: "Wimbledon", img: current1 },
+    { title: "Cobham-North Surrey", img: current1 },
 ];
 
 const Current = () => {
@@ -70,7 +71,7 @@ const Current = () => {
                                 <ImageLoader
                                     src={project.img}
                                     alt={`${project.title} - London property development by Dwell Rich Ltd`}
-                                    className="w-full h-[500px] object-cover cursor-pointer hover:opacity-50 transition-all duration-500 ease-in-out transform hover:scale-[1.02]"
+                                    className="w-full h-[500px] object-cover cursor-pointer hover:opacity-70 transition-all duration-500 ease-in-out transform hover:scale-[1.02]"
                                     priority={false}
                                     placeholder="color"
                                     placeholderColor="#e5e7eb"

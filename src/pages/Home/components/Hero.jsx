@@ -3,7 +3,7 @@ import { ArrowDownRight, ArrowUp, ArrowUpRight, Briefcase, Building, Building2, 
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ImageLoader from '../../../components/ImageLoader';
-import logo from "../../../assets/logo.png"
+import logo from "../../../assets/logo2.png"
 
 import mainBg from "../../../assets/SurreyMain.jpg"
 import SEO from '../../../components/SEO';
@@ -51,12 +51,12 @@ const Hero = () => {
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 0.85 }}
                     transition={{ duration: 2, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-black"
+                    className="absolute inset-0 bg-black/50"
                 ></motion.div>
             </div>
 
             {/* Top Right Menu Bar - CHANGED: absolute to fixed so it stays visible while scrolling */}
-            <div className="fixed top-10 right-10 flex items-center gap-4 z-20">
+            <div className="fixed top-10 right-5 md:right-10 flex items-center gap-4 z-20">
                 <a href='mailto:info@dwellrich.co.uk' className="text-black flex items-center gap-2 uppercase tracking-widest text-xs sm:text-sm font-medium">
                     <Mail size={20} />
                     <p>info@dwellrich.co.uk</p>
@@ -123,10 +123,10 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1.2 }}
-                    className="space-y-0 text-center flex items-center gap-4 pt-4"
+                    className="space-y-0 text-center flex md:flex-row flex-col items-center gap-4 pt-4"
                 >
                     <Link to={"/projects"}>
-                        <button onClick={() => scrollTo(0, 0)} className="w-full uppercase tracking-widest text-xs sm:text-sm font-bold bg-[#AD870E]/60 hover:scale-95 px-4 py-4 rounded-lg transition-all cursor-pointer duration-300 flex items-center gap-2">
+                        <button onClick={() => scrollTo(0, 0)} className="w-full uppercase tracking-widest text-xs sm:text-sm font-bold bg-black/60 hover:scale-95 px-4 py-4 rounded-lg transition-all cursor-pointer duration-300 flex items-center gap-2">
                             <Briefcase size={20} />
                             Current Projects
                             <ArrowUpRight />
@@ -134,7 +134,7 @@ const Hero = () => {
                     </Link>
 
                     <Link to={"/developments"} >
-                        <button onClick={() => scrollTo(0, 0)} className="w-full uppercase tracking-widest text-xs sm:text-sm font-bold bg-[#AD870E]/60 hover:scale-95 px-4 py-4 rounded-lg transition-all duration-300 cursor-pointer flex items-center gap-2">
+                        <button onClick={() => scrollTo(0, 0)} className="w-full uppercase tracking-widest text-xs sm:text-sm font-bold bg-black/60 hover:scale-95 px-3 py-4 rounded-lg transition-all duration-300 cursor-pointer flex items-center gap-2">
                             <Building2 size={20} />
                             Past Developments
                             <ArrowUpRight />

@@ -47,6 +47,37 @@ import kingstonNew16 from "../../assets/kingstonNew16.jpg"
 import kingstonNew17 from "../../assets/kingstonNew17.jpg"
 import kingstonNew18 from "../../assets/kingstonNew18.jpg"
 
+import childMain from "../../assets/childMain.jpg"
+import child1 from "../../assets/child1.jpg"
+import child2 from "../../assets/child2.jpg"
+import child3 from "../../assets/child3.jpg"
+import child4 from "../../assets/child4.jpg"
+import child5 from "../../assets/child5.jpg"
+import child6 from "../../assets/child6.jpg"
+import child7 from "../../assets/child7.jpg"
+import child8 from "../../assets/child8.jpg"
+import child9 from "../../assets/child9.jpg"
+
+import bnbMain from "../../assets/bnbMain.jpg"
+import bnb1 from "../../assets/bnb1.jpg"
+import bnb2 from "../../assets/bnb2.jpg"
+import bnb3 from "../../assets/bnb3.jpg"
+import bnb4 from "../../assets/bnb4.jpg"
+import bnb5 from "../../assets/bnb5.jpg"
+import bnb6 from "../../assets/bnb6.jpg"
+import bnb7 from "../../assets/bnb7.jpg"
+import bnb8 from "../../assets/bnb8.jpg"
+import bnb9 from "../../assets/bnb9.jpg"
+import bnb10 from "../../assets/bnb10.jpg"
+import bnb11 from "../../assets/bnb11.jpg"
+import bnb12 from "../../assets/bnb12.jpg"
+import bnb13 from "../../assets/bnb13.jpg"
+import bnb14 from "../../assets/bnb14.jpg"
+import bnb15 from "../../assets/bnb15.jpg"
+import bnb16 from "../../assets/bnb16.jpg"
+import bnb17 from "../../assets/bnb17.jpg"
+import bnb18 from "../../assets/bnb18.jpg"
+
 export const pastProjectsData = [
     {
         id: "kingston-upon-thames",
@@ -165,5 +196,270 @@ export const pastProjectsData = [
         ],
         nextProjectName: "Kingston Upon Thames",
         nextProjectId: "kingston-upon-thames"
+    },
+    {
+        id: "gillian-road-sutton",
+        title: "Gillian Road, Sutton",
+        location: "Sutton",
+        heroImg: kingstonMain,
+        subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
+        overview: "This landmark development in Gillian Road, Sutton involved the complete redevelopment of an existing three-bedroom bungalow into a substantial, ultra-luxury seven-bedroom residence designed to meet the demands of the high-net-worth end-user market.",
+        overviewSecondary: "The strategy centred on maximising gross development value through scale, specification, and lifestyle-led design, transforming a low-density asset into a prime residential home positioned at the top end of the local market.",
+
+        assetProfile: [
+            { label: "Original Property", value: "Three-bedroom bungalow" },
+            { label: "Post-Development", value: "Seven bedrooms, Seven en-suites" },
+            { label: "Key Features", value: "Private Gym, Dedicated Cinema Room" },
+            { label: "Target Market", value: "Luxury owner-occupiers & HNW buyers" },
+        ],
+
+        strategy: [
+            "Full structural redevelopment and reconfiguration of the asset",
+            "Significant increase in internal square footage and bedroom count",
+            "Integration of premium lifestyle features such as a gym and cinema",
+            "High-end finishes throughout to support a premium exit value",
+            "Intensive repositioning for the £2m+ local price point"
+        ],
+
+        designBuild: [
+            "Complete demolition and rebuild elements to maximise volume",
+            "Seven generously sized bedrooms, each with its own en-suite",
+            "Expansive open-plan kitchen and living area for entertaining",
+            "Bespoke joinery and luxury materials used throughout",
+            "Contemporary architectural styling focused on space and light"
+        ],
+
+        financials: [
+            { label: "Purchase Price", value: "£1,100,000" },
+            { label: "Development Costs", value: "£750,000" },
+            { label: "Total Project Cost", value: "£1,850,000" },
+            { label: "Final Property Value", value: "£2,500,000" },
+            { label: "Gross Gain", value: "£650,000", highlight: true },
+        ],
+
+        outcome: "The Cheam development exemplifies our ability to identify underutilised assets, execute large-scale luxury redevelopments, and control build costs while delivering exceptional specification. It stands as a strong demonstration of our investor-led luxury development model.",
+
+        gallery: [
+            surrey10,
+            surrey11,
+            cheamBefore,
+            cheamAfter,
+            surrey3,
+            surrey2,
+            surrey1,
+            surrey4,
+            surrey5,
+            surrey6,
+            surrey7,
+            surrey8,
+            surrey9,
+            surrey12,
+            surrey13,
+            surrey14,
+            surrey15,
+            surrey16,
+            kingston1,
+            kingston2,
+            kingston3,
+            kingston4,
+            kingston5,
+            kingston6,
+            thamesSurreyMain,
+        ],
+        nextProjectName: "Cheam, Surrey",
+        nextProjectId: "cheam-surrey"
+    },
+    {
+        id: "chiltren-drive-sutton",
+        title: "Chiltren drive, Sutton",
+        location: "Sutton",
+        heroImg: childMain,
+        subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
+        overview: "This landmark development in Chiltren Drive, Sutton involved the complete redevelopment of an existing three-bedroom bungalow into a substantial, ultra-luxury seven-bedroom residence designed to meet the demands of the high-net-worth end-user market.",
+        overviewSecondary: "The strategy centred on maximising gross development value through scale, specification, and lifestyle-led design, transforming a low-density asset into a prime residential home positioned at the top end of the local market.",
+
+        assetProfile: [
+            { label: "Original Property", value: "Three-bedroom bungalow" },
+            { label: "Post-Development", value: "Seven bedrooms, Seven en-suites" },
+            { label: "Key Features", value: "Private Gym, Dedicated Cinema Room" },
+            { label: "Target Market", value: "Luxury owner-occupiers & HNW buyers" },
+        ],
+
+        strategy: [
+            "Full structural redevelopment and reconfiguration of the asset",
+            "Significant increase in internal square footage and bedroom count",
+            "Integration of premium lifestyle features such as a gym and cinema",
+            "High-end finishes throughout to support a premium exit value",
+            "Intensive repositioning for the £2m+ local price point"
+        ],
+
+        designBuild: [
+            "Complete demolition and rebuild elements to maximise volume",
+            "Seven generously sized bedrooms, each with its own en-suite",
+            "Expansive open-plan kitchen and living area for entertaining",
+            "Bespoke joinery and luxury materials used throughout",
+            "Contemporary architectural styling focused on space and light"
+        ],
+
+        financials: [
+            { label: "Purchase Price", value: "£1,100,000" },
+            { label: "Development Costs", value: "£750,000" },
+            { label: "Total Project Cost", value: "£1,850,000" },
+            { label: "Final Property Value", value: "£2,500,000" },
+            { label: "Gross Gain", value: "£650,000", highlight: true },
+        ],
+
+        outcome: "The Cheam development exemplifies our ability to identify underutilised assets, execute large-scale luxury redevelopments, and control build costs while delivering exceptional specification. It stands as a strong demonstration of our investor-led luxury development model.",
+
+        gallery: [
+            child1,
+            child2,
+            child3,
+            child4,
+            child5,
+            child6,
+            child7,
+            child8,
+            child9,
+        ],
+        nextProjectName: "Cheam, Surrey",
+        nextProjectId: "cheam-surrey"
+    },
+    {
+        id: "holiday-home-(-air-b&b-)-mitcham",
+        title: "Holiday Home ( Air B&B ) Mitcham",
+        location: "Sutton",
+        heroImg: bnbMain,
+        subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
+        overview: "This landmark development in Chiltren Drive, Sutton involved the complete redevelopment of an existing three-bedroom bungalow into a substantial, ultra-luxury seven-bedroom residence designed to meet the demands of the high-net-worth end-user market.",
+        overviewSecondary: "The strategy centred on maximising gross development value through scale, specification, and lifestyle-led design, transforming a low-density asset into a prime residential home positioned at the top end of the local market.",
+
+        assetProfile: [
+            { label: "Original Property", value: "Three-bedroom bungalow" },
+            { label: "Post-Development", value: "Seven bedrooms, Seven en-suites" },
+            { label: "Key Features", value: "Private Gym, Dedicated Cinema Room" },
+            { label: "Target Market", value: "Luxury owner-occupiers & HNW buyers" },
+        ],
+
+        strategy: [
+            "Full structural redevelopment and reconfiguration of the asset",
+            "Significant increase in internal square footage and bedroom count",
+            "Integration of premium lifestyle features such as a gym and cinema",
+            "High-end finishes throughout to support a premium exit value",
+            "Intensive repositioning for the £2m+ local price point"
+        ],
+
+        designBuild: [
+            "Complete demolition and rebuild elements to maximise volume",
+            "Seven generously sized bedrooms, each with its own en-suite",
+            "Expansive open-plan kitchen and living area for entertaining",
+            "Bespoke joinery and luxury materials used throughout",
+            "Contemporary architectural styling focused on space and light"
+        ],
+
+        financials: [
+            { label: "Purchase Price", value: "£1,100,000" },
+            { label: "Development Costs", value: "£750,000" },
+            { label: "Total Project Cost", value: "£1,850,000" },
+            { label: "Final Property Value", value: "£2,500,000" },
+            { label: "Gross Gain", value: "£650,000", highlight: true },
+        ],
+
+        outcome: "The Cheam development exemplifies our ability to identify underutilised assets, execute large-scale luxury redevelopments, and control build costs while delivering exceptional specification. It stands as a strong demonstration of our investor-led luxury development model.",
+
+        gallery: [
+            bnb1,
+            bnb2,
+            bnb3,
+            bnb4,
+            bnb5,
+            bnb6,
+            bnb7,
+            bnb8,
+            bnb9,
+            bnb10,
+            bnb11,
+            bnb12,
+            bnb13,
+            bnb14,
+            bnb15,
+            bnb16,
+            bnb17,
+            bnb18,
+        ],
+        nextProjectName: "Cheam, Surrey",
+        nextProjectId: "cheam-surrey"
+    },
+    {
+        id: "harrow",
+        title: "Harrow",
+        location: "Sutton",
+        heroImg: kingstonMain,
+        subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
+        overview: "This landmark development in Chiltren Drive, Sutton involved the complete redevelopment of an existing three-bedroom bungalow into a substantial, ultra-luxury seven-bedroom residence designed to meet the demands of the high-net-worth end-user market.",
+        overviewSecondary: "The strategy centred on maximising gross development value through scale, specification, and lifestyle-led design, transforming a low-density asset into a prime residential home positioned at the top end of the local market.",
+
+        assetProfile: [
+            { label: "Original Property", value: "Three-bedroom bungalow" },
+            { label: "Post-Development", value: "Seven bedrooms, Seven en-suites" },
+            { label: "Key Features", value: "Private Gym, Dedicated Cinema Room" },
+            { label: "Target Market", value: "Luxury owner-occupiers & HNW buyers" },
+        ],
+
+        strategy: [
+            "Full structural redevelopment and reconfiguration of the asset",
+            "Significant increase in internal square footage and bedroom count",
+            "Integration of premium lifestyle features such as a gym and cinema",
+            "High-end finishes throughout to support a premium exit value",
+            "Intensive repositioning for the £2m+ local price point"
+        ],
+
+        designBuild: [
+            "Complete demolition and rebuild elements to maximise volume",
+            "Seven generously sized bedrooms, each with its own en-suite",
+            "Expansive open-plan kitchen and living area for entertaining",
+            "Bespoke joinery and luxury materials used throughout",
+            "Contemporary architectural styling focused on space and light"
+        ],
+
+        financials: [
+            { label: "Purchase Price", value: "£1,100,000" },
+            { label: "Development Costs", value: "£750,000" },
+            { label: "Total Project Cost", value: "£1,850,000" },
+            { label: "Final Property Value", value: "£2,500,000" },
+            { label: "Gross Gain", value: "£650,000", highlight: true },
+        ],
+
+        outcome: "The Cheam development exemplifies our ability to identify underutilised assets, execute large-scale luxury redevelopments, and control build costs while delivering exceptional specification. It stands as a strong demonstration of our investor-led luxury development model.",
+
+        gallery: [
+            surrey10,
+            surrey11,
+            cheamBefore,
+            cheamAfter,
+            surrey3,
+            surrey2,
+            surrey1,
+            surrey4,
+            surrey5,
+            surrey6,
+            surrey7,
+            surrey8,
+            surrey9,
+            surrey12,
+            surrey13,
+            surrey14,
+            surrey15,
+            surrey16,
+            kingston1,
+            kingston2,
+            kingston3,
+            kingston4,
+            kingston5,
+            kingston6,
+            thamesSurreyMain,
+        ],
+        nextProjectName: "Cheam, Surrey",
+        nextProjectId: "cheam-surrey"
     },
 ];

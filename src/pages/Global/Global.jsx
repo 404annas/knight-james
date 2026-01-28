@@ -11,7 +11,7 @@ import {
     CheckCircle2,
     MessageSquare
 } from 'lucide-react';
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.png";
 import SEO from '../../components/SEO';
 
 import global1 from "../../assets/global1.jpg"

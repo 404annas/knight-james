@@ -14,8 +14,10 @@ import {
     Target
 } from 'lucide-react';
 import ImageLoader from '../../components/ImageLoader';
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.png";
 import SEO from '../../components/SEO';
+
+import salehaFounder from "../../assets/saleha.jfif"
 
 const About = () => {
 
@@ -76,7 +78,7 @@ const About = () => {
             />
 
             {/* FIXED LOGO */}
-            <div className="fixed top-10 left-10 md:left-14 z-50">
+            <div className="fixed top-10 md:left-10 left-5 lg:left-14 z-50">
                 <Link to="/">
                     <ImageLoader
                         src={logo}
@@ -87,10 +89,10 @@ const About = () => {
                 </Link>
             </div>
 
-            <main className="max-w-4xl mx-auto pt-44 pb-20 px-6">
+            <main className="max-w-5xl mx-auto pt-44 pb-20 px-6">
 
                 {/* PAGE TITLE */}
-                <motion.div
+                {/* <motion.div
                     variants={headingFromTop}
                     initial="hidden"
                     animate="visible"
@@ -110,7 +112,7 @@ const About = () => {
                         animate="visible"
                         className="h-[2px] bg-[#8F6573] w-full origin-left"
                     />
-                </motion.div>
+                </motion.div> */}
 
                 {/* ABOUT HEADLINE */}
                 <motion.section
@@ -133,7 +135,7 @@ const About = () => {
                         duration: 1.2,
                         ease: [0.22, 1, 0.36, 1]
                     }}
-                    className="flex flex-col md:flex-row items-center gap-12 md:gap-24 mb-20"
+                    className="flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-20"
                 >
                     <div className="w-full md:w-3/5 order-2 md:order-1">
                         <h2 className="sr-only">
@@ -161,11 +163,11 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="w-full md:w-2/5 order-1 md:order-2">
+                    <div className="w-full md:w-1/2 order-1 md:order-2">
                         <div className="bg-gray-50 rounded-full shadow-sm">
                             <img
                                 loading="lazy"
-                                src="https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?w=2000&auto=format&fit=crop&q=100"
+                                src={salehaFounder}
                                 alt="Saleha Ali Khan - Women property developer London"
                                 className="w-full h-full object-cover rounded-full"
                             />

@@ -10,21 +10,21 @@ import LocationMarker from '../../components/LocationMarker';
 const locations = [
     {
         id: 1,
-        name: "London",
-        top: "30%",
-        left: "55%",
+        name: "Dubai",
+        top: "39%",
+        left: "50%",
     },
     {
         id: 2,
-        name: "Dubai",
+        name: "India",
         top: "44%",
-        left: "65%",
+        left: "60%",
     },
     {
         id: 3,
-        name: "New York",
-        top: "35%",
-        left: "15%",
+        name: "London",
+        top: "26%",
+        left: "38%",
     },
 ];
 
@@ -77,7 +77,7 @@ const Contact = () => {
                         <h2 className="sr-only">Invest in London property and international investors UK property</h2>
                         <motion.h1
                             variants={fadeInUp}
-                            className="text-5xl md:text-6xl leading-none font-bold text-[#222222] mb-16 tracking-tight"
+                            className="text-3xl md:text-4xl leading-none font-bold text-[#8F6573] mb-16 tracking-tight"
                         >
                             Contact
                         </motion.h1>
@@ -109,12 +109,27 @@ const Contact = () => {
                                 </p>
                             </motion.section>
 
+                            <motion.section variants={fadeInUp}>
+                                <h2 className="sr-only">London real estate globally presense</h2>
+                                <h2 className="font-bold text-xl mb-2 text-[#8F6573]">Global presence</h2>
+                                <p className="text-lg text-gray-700 leading-relaxed">
+                                    1. Dubai
+                                </p>
+                                <p className="text-lg text-gray-700 leading-relaxed">
+                                    2. India
+                                </p>
+                            </motion.section>
+
+                            
+
                             {/* Updated Section: Location */}
                             <motion.section variants={fadeInUp}>
-                                <h2 className="font-bold text-xl mb-2 text-[#8F6573]">Location</h2>
+                                <h2 className="font-bold text-xl mb-4 text-[#8F6573]">Location</h2>
                                 <div className="leading-relaxed">
-                                    <p className="text-xl">416, Kingston road, KT1 3PB</p>
-                                    <p className="text-xl">Kingston Upon Thames, Surrey</p>
+                                    <h1 className='text-2xl text-[#8F6573] font-bold'>Central London :</h1>
+                                    <p className="text-lg">45 Albemarle Street, Mayfair, London W1S 4JL</p>
+                                    <h1 className='text-2xl text-[#8F6573] font-bold'>South London :</h1>
+                                    <p className="text-lg">416, Kingston road, KT1 3PB</p>
                                 </div>
                             </motion.section>
                         </div>

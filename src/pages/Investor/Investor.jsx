@@ -50,7 +50,7 @@ const Investor = () => {
                     {/* PAGE TITLE */}
                     <motion.div {...fadeInUp} className="mb-10 md:mb-20">
                         <h2 className="sr-only">Property investment strategy UK and planning gain investments</h2>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tight">Investor</h1>
+                        <h1 className="text-3xl text-[#8F6573] font-bold mb-8 tracking-tight">Investor</h1>
                         <motion.div
                             initial={{ scaleX: 0 }}
                             animate={{ scaleX: 1 }}
@@ -63,7 +63,7 @@ const Investor = () => {
                     <motion.section {...fadeInUp} className="mb-10 md:mb-20">
                         <h2 className="text-xs font-bold uppercase tracking-widest text-[#222222] mb-6">Our Investment Approach</h2>
                         <h3 className="sr-only">London real estate ROI and UK development opportunities</h3>
-                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 leading-tight text-[#8F6573]">
+                        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 leading-tight text-[#8F6573]">
                             Predictable Returns. <br />
                             Defined Timeframe. <br />
                             Disciplined Strategy.

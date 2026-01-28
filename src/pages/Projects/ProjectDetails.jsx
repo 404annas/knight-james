@@ -143,7 +143,7 @@ const ProjectDetails = () => {
         </motion.div>
 
         {/* PROJECT OVERVIEW */}
-        <section className="max-w-4xl mx-auto mb-32">
+        <section className="max-w-4xl mx-auto mb-20">
           <div className="flex items-center gap-3 mb-6 text-[#8F6573]">
             <Home size={28} strokeWidth={1.5} />
             <h2 className="text-3xl font-bold">Project Overview</h2>
@@ -175,71 +175,79 @@ const ProjectDetails = () => {
         </section>
 
         {/* ASSET PROFILE & STRATEGY */}
-        <div className="grid md:grid-cols-2 gap-20 mb-20">
-          <motion.div {...fadeInUp}>
-            <div className="flex items-center gap-3 mb-8 border-b pb-4">
-              <Layout size={24} className="text-[#8F6573]" />
-              <h3 className="text-2xl font-bold">Asset Profile</h3>
+        {(project.assetProfile?.length > 0 || project.strategy?.length > 0) && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mb-20">
+            {project.assetProfile?.length > 0 && (
+              <motion.div {...fadeInUp}>
+                <div className="flex items-center gap-3 mb-8 border-b pb-4">
+                  <Layout size={24} className="text-[#8F6573]" />
+                  <h3 className="text-2xl font-bold">Asset Profile</h3>
+                </div>
+                <div className="space-y-6">
+                  {project.assetProfile.map((item, i) => (
+                    <div key={i} className="flex flex-col">
+                      <span className="text-sm uppercase tracking-widest text-[#8F6573] font-bold mb-1">
+                        {item.label}
+                      </span>
+                      <span className="text-xl font-light">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {project.strategy?.length > 0 && (
+              <motion.div {...fadeInUp}>
+                <div className="flex items-center gap-3 mb-8 border-b pb-4">
+                  <TrendingUp size={24} className="text-[#8F6573]" />
+                  <h3 className="text-2xl font-bold">Strategy & Value Creation</h3>
+                </div>
+                <ul className="space-y-4">
+                  {project.strategy.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-4 text-lg font-light text-gray-600"
+                    >
+                      <CheckCircle2
+                        size={20}
+                        className="text-[#8F6573] mt-1 shrink-0"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+          </div>
+        )}
+
+        {/* FINANCIAL SUMMARY */}
+        {project.financials?.length > 0 && (
+          <motion.section
+            {...fadeInUp}
+            className="bg-gray-50 px-6 py-8 md:p-10 mb-20 rounded-sm"
+          >
+            <div className="flex items-center justify-center gap-3 mb-10">
+              <Coins size={28} className="text-[#8F6573]" />
+              <h2 className="text-3xl font-bold">Financial Summary</h2>
             </div>
-            <div className="space-y-6">
-              {project.assetProfile?.map((item, i) => (
-                <div key={i} className="flex flex-col">
-                  <span className="text-sm uppercase tracking-widest text-[#8F6573] font-bold mb-1">
-                    {item.label}
-                  </span>
-                  <span className="text-xl font-light">{item.value}</span>
+            <div className="max-w-2xl mx-auto">
+              {project.financials.map((item, i) => (
+                <div
+                  key={i}
+                  className={`flex justify-between py-5 border-b border-gray-200 ${
+                    item.highlight
+                      ? "text-[#8F6573] font-bold text-2xl mt-4"
+                      : "text-xl"
+                  }`}
+                >
+                  <span className="font-normal">{item.label}</span>
+                  <span className="font-light">{item.value}</span>
                 </div>
               ))}
             </div>
-          </motion.div>
-
-          <motion.div {...fadeInUp}>
-            <div className="flex items-center gap-3 mb-8 border-b pb-4">
-              <TrendingUp size={24} className="text-[#8F6573]" />
-              <h3 className="text-2xl font-bold">Strategy & Value Creation</h3>
-            </div>
-            <ul className="space-y-4">
-              {project.strategy?.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex gap-4 text-lg font-light text-gray-600"
-                >
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#8F6573] mt-1 shrink-0"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-
-        {/* FINANCIAL SUMMARY */}
-        <motion.section
-          {...fadeInUp}
-          className="bg-gray-50 px-6 py-8 md:p-10 mb-20 rounded-sm"
-        >
-          <div className="flex items-center justify-center gap-3 mb-10">
-            <Coins size={28} className="text-[#8F6573]" />
-            <h2 className="text-3xl font-bold">Financial Summary</h2>
-          </div>
-          <div className="max-w-2xl mx-auto">
-            {project.financials?.map((item, i) => (
-              <div
-                key={i}
-                className={`flex justify-between py-5 border-b border-gray-200 ${
-                  item.highlight
-                    ? "text-[#8F6573] font-bold text-2xl mt-4"
-                    : "text-xl"
-                }`}
-              >
-                <span className="font-normal">{item.label}</span>
-                <span className="font-light">{item.value}</span>
-              </div>
-            ))}
-          </div>
-        </motion.section>
+          </motion.section>
+        )}
 
         {/* GALLERY */}
         <div className="flex flex-col gap-4 mb-20">
@@ -273,22 +281,24 @@ const ProjectDetails = () => {
         </div>
 
         {/* DESIGN & BUILD */}
-        <section className="grid gap-0 items-center">
-          <div className="flex items-center gap-3 mb-8">
-            <Hammer size={24} className="text-[#8F6573]" />
-            <h3 className="text-3xl font-bold">Design & Build</h3>
-          </div>
-          <ul className="space-y-6">
-            {project.designBuild?.map((item, i) => (
-              <li
-                key={i}
-                className="text-xl font-normal text-gray-600 border-l-2 border-[#8F6573] pl-6"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
+        {project.designBuild?.length > 0 && (
+          <section className="grid gap-0 items-center">
+            <div className="flex items-center gap-3 mb-8">
+              <Hammer size={24} className="text-[#8F6573]" />
+              <h3 className="text-3xl font-bold">Design & Build</h3>
+            </div>
+            <ul className="space-y-6">
+              {project.designBuild.map((item, i) => (
+                <li
+                  key={i}
+                  className="text-xl font-normal text-gray-600 border-l-2 border-[#8F6573] pl-6"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* PROJECT NAVIGATION */}
         <div className="mt-20 border-t border-gray-100 pt-16 flex justify-between items-center">
@@ -304,7 +314,7 @@ const ProjectDetails = () => {
                 </span>
                 <div className="flex items-center gap-4">
                   <ArrowLeft size={24} />
-                  <span className="text-2xl font-light">
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-light">
                     {prevProject.title}
                   </span>
                 </div>
@@ -325,7 +335,7 @@ const ProjectDetails = () => {
                   Next Project
                 </span>
                 <div className="flex items-center gap-4">
-                  <span className="text-2xl font-light">
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-light">
                     {nextProject.title}
                   </span>
                   <ArrowRight size={24} />

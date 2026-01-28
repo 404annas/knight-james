@@ -27,21 +27,21 @@ export default function AdvisorCircle({ advisors = [] }) {
     advisors.length > 0
       ? advisors
       : [
-          {
-            name: "Sarah Jenkins",
-            title: "Head of Planning",
-            credentials: ["MRIBA", "BSc Hons"],
-            description:
-              "Expert in urban regeneration with 15 years in UK planning law.",
-          },
-          {
-            name: "David Chen",
-            title: "Senior Legal Counsel",
-            credentials: ["LLM", "Solicitor"],
-            description:
-              "Specializing in property acquisitions and complex commercial structures.",
-          },
-        ];
+        {
+          name: "Sarah Jenkins",
+          title: "Head of Planning",
+          credentials: ["MRIBA", "BSc Hons"],
+          description:
+            "Expert in urban regeneration with 15 years in UK planning law.",
+        },
+        {
+          name: "David Chen",
+          title: "Senior Legal Counsel",
+          credentials: ["LLM", "Solicitor"],
+          description:
+            "Specializing in property acquisitions and complex commercial structures.",
+        },
+      ];
 
   return (
     <section className="w-full py-24 bg-[#FAFAFA] overflow-hidden relative">
@@ -59,7 +59,7 @@ export default function AdvisorCircle({ advisors = [] }) {
             <span className="text-[#8F6573] font-semibold tracking-widest uppercase text-xs mb-3 block">
               Our Expertise
             </span>
-            <h2 className="text-4xl md:text-5xl font-light text-[#222222] leading-tight">
+            <h2 className="text-2xl md:text-3xl font-light text-[#222222] leading-tight">
               The <span className="font-bold">Advisory</span> Circle
             </h2>
             <p className="mt-6 text-gray-500 text-lg leading-relaxed max-w-xl">
@@ -87,12 +87,13 @@ export default function AdvisorCircle({ advisors = [] }) {
             >
               <div className="flex justify-between items-start mb-6">
                 {/* Image Placeholder: Increased size to h-32 w-32 */}
-                <div className="relative h-32 w-32 shrink-0 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 shadow-inner">
+                <div className="relative h-32 w-32 shrink-0 rounded-full overflow-hidden bg-gray-50 border border-gray-100 shadow-inner">
                   {advisor.image ? (
                     <img
+                      loading="lazy"
                       src={advisor.image}
                       alt={advisor.name}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-full"
                     />
                   ) : (
                     <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-[#8F6573]/10 to-[#D1AAAC]/10">

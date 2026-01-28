@@ -80,18 +80,18 @@ import bnb18 from "../../assets/bnb18.jpg";
 
 import gilliMain from "../../assets/gilliMain.jpg";
 import gilli1 from "../../assets/gilli1.jpg";
-import gilli2 from "../../assets/gilli1.jpg";
-import gilli3 from "../../assets/gilli1.jpg";
-import gilli4 from "../../assets/gilli1.jpg";
-import gilli5 from "../../assets/gilli1.jpg";
-import gilli6 from "../../assets/gilli1.jpg";
-import gilli7 from "../../assets/gilli1.jpg";
-import gilli8 from "../../assets/gilli1.jpg";
-import gilli9 from "../../assets/gilli1.jpg";
-import gilli10 from "../../assets/gilli1.jpg";
-import gilli11 from "../../assets/gilli1.jpg";
-import gilli12 from "../../assets/gilli1.jpg";
-import gilli13 from "../../assets/gilli1.jpg";
+import gilli2 from "../../assets/gilli2.jpg";
+import gilli3 from "../../assets/gilli3.jpg";
+import gilli4 from "../../assets/gilli4.jpg";
+import gilli5 from "../../assets/gilli5.jpg";
+import gilli6 from "../../assets/gilli6.jpg";
+import gilli7 from "../../assets/gilli7.jpg";
+import gilli8 from "../../assets/gilli8.jpg";
+import gilli9 from "../../assets/gilli9.jpg";
+import gilli10 from "../../assets/gilli10.jpg";
+import gilli11 from "../../assets/gilli11.jpg";
+import gilli12 from "../../assets/gilli12.jpg";
+import gilli13 from "../../assets/gilli13.jpg";
 
 import harrowMain from "../../assets/harrowMain.jfif";
 import harrow1 from "../../assets/harrow1.jfif";
@@ -271,29 +271,6 @@ export const pastProjectsData = [
     overviewSecondary:
       "The property was comprehensively transformed through a full ground-floor renovation and strategic extension, repositioning it for the modern residential market. The internal layout was reconfigured to create a bright, open-plan kitchen and dining space, significantly enhancing flow, light, and functionality. A four-metre rear extension was added to increase the living footprint while remaining sympathetic to the scale of the original structure. The bathroom was fully refurbished, and a new loft was constructed, unlocking additional value and future-proofing the property. All works were delivered with a focus on efficient spend, practical design, and strong end-user appeal.",
 
-    assetProfile: [
-      { label: "Original Property", value: "Three-bedroom bungalow" },
-      { label: "Post-Development", value: "Seven bedrooms, Seven en-suites" },
-      { label: "Key Features", value: "Private Gym, Dedicated Cinema Room" },
-      { label: "Target Market", value: "Luxury owner-occupiers & HNW buyers" },
-    ],
-
-    strategy: [
-      "Full structural redevelopment and reconfiguration of the asset",
-      "Significant increase in internal square footage and bedroom count",
-      "Integration of premium lifestyle features such as a gym and cinema",
-      "High-end finishes throughout to support a premium exit value",
-      "Intensive repositioning for the £2m+ local price point",
-    ],
-
-    designBuild: [
-      "Complete demolition and rebuild elements to maximise volume",
-      "Seven generously sized bedrooms, each with its own en-suite",
-      "Expansive open-plan kitchen and living area for entertaining",
-      "Bespoke joinery and luxury materials used throughout",
-      "Contemporary architectural styling focused on space and light",
-    ],
-
     financials: [
       { label: "Total acquisition & project cost", value: "≈£380,000" },
       { label: "Construction & conversion cost", value: "≈£70,000" },
@@ -334,35 +311,11 @@ export const pastProjectsData = [
     overviewSecondary:
       "The property was repositioned through a carefully planned six-metre rear extension, combined with a full internal refurbishment to improve both functionality and visual continuity throughout the home. The extension created a generous living space at the rear while maintaining a strong sense of flow from the front of the house through to the garden. Particular attention was given to circulation and sightlines, ensuring that movement through the property felt intuitive and open rather than interrupted. The garage was intelligently converted into a study and utility space, adding practical square footage without expanding the building envelope. This intervention increased everyday usability while appealing to modern lifestyle requirements such as home working and flexible storage. The entire house was refurbished with a consistent material palette, enhancing ventilation, light penetration, and visual cohesion across all spaces.",
 
-    assetProfile: [
-      { label: "Original Property", value: "Three-bedroom bungalow" },
-      { label: "Post-Development", value: "Seven bedrooms, Seven en-suites" },
-      { label: "Key Features", value: "Private Gym, Dedicated Cinema Room" },
-      { label: "Target Market", value: "Luxury owner-occupiers & HNW buyers" },
-    ],
-
     strategy: [
       "A well-proportioned six-metre rear extension",
       "Reconfiguration to improve flow, ventilation, and connectivity",
       "Conversion of underused garage space into habitable accommodation",
       "Full internal refurbishment to modern standards",
-      "Focused on usability and modern family living rather than pure square footage",
-    ],
-
-    designBuild: [
-      "Complete demolition and rebuild elements to maximise volume",
-      "Seven generously sized bedrooms, each with its own en-suite",
-      "Expansive open-plan kitchen and living area for entertaining",
-      "Bespoke joinery and luxury materials used throughout",
-      "Contemporary architectural styling focused on space and light",
-    ],
-
-    financials: [
-      { label: "Purchase Price", value: "£1,100,000" },
-      { label: "Development Costs", value: "£750,000" },
-      { label: "Total Project Cost", value: "£1,850,000" },
-      { label: "Final Property Value", value: "£2,500,000" },
-      { label: "Gross Gain", value: "£650,000", highlight: true },
     ],
 
     outcome:
@@ -395,44 +348,11 @@ export const pastProjectsData = [
     overviewSecondary:
       "The property was strategically repositioned and fully refurbished to function as a four-bedroom home with an additional study space, significantly increasing capacity and revenue potential. The internal layout was reworked to retain a bright open-plan kitchen and dining area, while clearly defining sleeping, working, and relaxation zones. This created a flexible environment suitable for holiday guests, corporate stays, and mid-term tenants. The property was finished and presented as a holiday-ready home, with durable materials, practical storage, and a layout designed to minimise ongoing maintenance while maximising guest comfort. Key operational features — including a private garden, garage, and a dedicated bin area — were incorporated into the overall planning, improving both functionality and management efficiency.",
 
-    assetProfile: [
-      { label: "Original Property", value: "Three-bedroom new-build house" },
-      {
-        label: "Post-Development",
-        value: "Four bedrooms, Study, Flexible circulation",
-      },
-      {
-        label: "Key Features",
-        value: "Holiday/mid-term letting ready, operational layout",
-      },
-      {
-        label: "Target Market",
-        value: "Short- and mid-term tenants, corporate guests",
-      },
-    ],
-
     strategy: [
       "Replanning internal space to increase bedroom count and flexibility",
       "Retaining open-plan living to enhance guest experience",
       "Full refurbishment aligned with short- and mid-term letting standards",
       "Positioning the property for low maintenance, high usability",
-      "Integrating operational features into the guest journey (garden, garage, bin store)",
-    ],
-
-    designBuild: [
-      "Complete refurbishment of finishes and fixtures",
-      "Study/utility created from underused circulation space",
-      "Flexible wardrobe and storage solutions for guests",
-      "Durable materials specified for high-turnover use",
-      "Coordinated lighting and ventilation to improve comfort",
-    ],
-
-    financials: [
-      { label: "Purchase Price", value: "£1,100,000" },
-      { label: "Development Costs", value: "£750,000" },
-      { label: "Total Project Cost", value: "£1,850,000" },
-      { label: "Final Property Value", value: "£2,500,000" },
-      { label: "Gross Gain", value: "£650,000", highlight: true },
     ],
 
     outcome:
@@ -474,44 +394,11 @@ export const pastProjectsData = [
     overviewSecondary:
       "The property underwent a <strong>substantial redevelopment</strong>, anchored by a <strong>full-width, double-storey rear extension measuring approximately six metres by eight metres</strong>, delivering a significant increase in usable internal space and overall square footage. The extension transformed the ground floor into a <strong>broad, highly functional living environment</strong>, allowing for a reconfigured kitchen, dining, and family space that better suited modern living requirements. The scale of the build enabled a complete rethink of the internal layout, improving circulation, natural light, and spatial balance across the home. Alongside the structural works, the <strong>entire property was fully renovated</strong>, including a newly designed kitchen, refurbished bathrooms throughout, and consistent finishes and upgraded specifications across all living areas.",
 
-    assetProfile: [
-      { label: "Original Property", value: "Three-bedroom family house" },
-      {
-        label: "Post-Development",
-        value: "Expanded living space, rebalanced layout",
-      },
-      {
-        label: "Key Features",
-        value: "Double-storey rear extension, high-quality finishes",
-      },
-      {
-        label: "Target Market",
-        value: "Growing families & high-spec end-users",
-      },
-    ],
-
     strategy: [
       "A large-scale double-storey rear extension to maximise footprint",
       "Significant uplift in internal square footage and flow",
       "Full internal refurbishment to a high-quality standard",
       "Repositioning the property as a larger, family-focused home",
-      "Consistent material palette and specification across living zones",
-    ],
-
-    designBuild: [
-      "Full-width, double-storey structure with bespoke glazing",
-      "New open-plan kitchen, dining, and family space",
-      "Refreshed bathrooms and wet rooms across both levels",
-      "Uniform specification for flooring, joinery, and lighting",
-      "Structural and M&E works to support improved circulation and comfort",
-    ],
-
-    financials: [
-      { label: "Purchase Price", value: "£1,100,000" },
-      { label: "Development Costs", value: "£750,000" },
-      { label: "Total Project Cost", value: "£1,850,000" },
-      { label: "Final Property Value", value: "£2,500,000" },
-      { label: "Gross Gain", value: "£650,000", highlight: true },
     ],
 
     outcome:

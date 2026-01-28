@@ -12,7 +12,7 @@ import {
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ImageLoader from "../../../components/ImageLoader";
-import logo from "../../../assets/logo2.png";
+import logo from "../../../assets/logo.png";
 
 import mainBg from "../../../assets/SurreyMain.jpg";
 import SEO from "../../../components/SEO";
@@ -59,7 +59,7 @@ const Hero = () => {
           initial={{ opacity: 1 }}
           animate={{ opacity: 0.85 }}
           transition={{ duration: 2, ease: "easeInOut" }}
-          className="absolute inset-0 bg-black/30"
+          className="absolute inset-0 bg-black/80"
         ></motion.div>
       </div>
 

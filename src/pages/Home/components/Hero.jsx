@@ -63,6 +63,8 @@ const Hero = () => {
         ></motion.div>
       </div>
 
+
+
       {/* Top Right Menu Bar - CHANGED: absolute to fixed so it stays visible while scrolling */}
       <div className="fixed top-10 right-5 md:right-10 flex items-center gap-4 z-20">
         <a

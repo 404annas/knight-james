@@ -63,13 +63,11 @@ const Hero = () => {
         ></motion.div>
       </div>
 
-
-
       {/* Top Right Menu Bar - CHANGED: absolute to fixed so it stays visible while scrolling */}
-      <div className="fixed top-10 right-5 md:right-10 flex items-center gap-4 z-20">
+      <div className="fixed top-10 right-3 md:right-10 flex items-center gap-4 z-20">
         <a
           href="mailto:info@dwellrich.co.uk"
-          className="text-black flex items-center gap-2 uppercase tracking-widest text-xs sm:text-sm font-medium"
+          className="text-black flex items-center gap-2 uppercase tracking-widest text-[11px] sm:text-sm font-medium"
         >
           <Mail size={20} />
           <p>info@dwellrich.co.uk</p>

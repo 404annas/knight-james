@@ -121,9 +121,9 @@ const Contact = () => {
                             <motion.section variants={fadeInUp}>
                                 <h2 className="font-bold text-xl mb-4 text-[#8F6573]">Location</h2>
                                 <div className="leading-relaxed">
-                                    <h1 className='text-2xl text-[#8F6573] font-bold'>Central London :</h1>
+                                    <h1 className='text-xl sm:text-2xl text-[#8F6573] font-bold'>Central London :</h1>
                                     <p className="text-lg">45 Albemarle Street, Mayfair, London W1S 4JL</p>
-                                    <h1 className='text-2xl text-[#8F6573] font-bold'>South London :</h1>
+                                    <h1 className='text-xl sm:text-2xl text-[#8F6573] font-bold'>South London :</h1>
                                     <p className="text-lg">416, Kingston road, KT1 3PB</p>
                                 </div>
                             </motion.section>

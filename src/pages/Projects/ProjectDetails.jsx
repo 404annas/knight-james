@@ -109,16 +109,16 @@ const ProjectDetails = () => {
         >
           <Link
             to="/developments"
-            className="text-[#8F6573] text-sm uppercase tracking-widest mb-4 inline-block hover:opacity-70"
+            className="text-[#8F6573] text-xs sm:text-sm uppercase tracking-widest mb-4 inline-block hover:opacity-70"
           >
             Past Developments
           </Link>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2">
+          <h1 className="text-3xl sm:text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2">
             {project.title}
           </h1>
           <div className="flex items-center gap-4 mt-2 mb-16">
             <div className="w-12 h-[2px] bg-[#8F6573]" />
-            <span className="text-3xl md:text-4xl font-light text-gray-400">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-400">
               {project.location}
             </span>
           </div>
@@ -146,7 +146,7 @@ const ProjectDetails = () => {
         <section className="max-w-4xl mx-auto mb-20">
           <div className="flex items-center gap-3 mb-6 text-[#8F6573]">
             <Home size={28} strokeWidth={1.5} />
-            <h2 className="text-3xl font-bold">Project Overview</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold">Project Overview</h2>
           </div>
           <div className="text-lg md:text-xl font-light text-gray-600 leading-relaxed space-y-6">
             <div className="space-y-3">
@@ -189,7 +189,7 @@ const ProjectDetails = () => {
                       <span className="text-sm uppercase tracking-widest text-[#8F6573] font-bold mb-1">
                         {item.label}
                       </span>
-                      <span className="text-xl font-light">{item.value}</span>
+                      <span className="text-lg sm:text-xl font-light">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -206,7 +206,7 @@ const ProjectDetails = () => {
                   {project.strategy.map((item, i) => (
                     <li
                       key={i}
-                      className="flex gap-4 text-lg font-light text-gray-600"
+                      className="flex gap-4 text-base sm:text-lg font-light text-gray-600"
                     >
                       <CheckCircle2
                         size={20}
@@ -229,7 +229,7 @@ const ProjectDetails = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-10">
               <Coins size={28} className="text-[#8F6573]" />
-              <h2 className="text-3xl font-bold">Financial Summary</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold">Financial Summary</h2>
             </div>
             <div className="max-w-2xl mx-auto">
               {project.financials.map((item, i) => (
@@ -237,8 +237,8 @@ const ProjectDetails = () => {
                   key={i}
                   className={`flex justify-between py-5 border-b border-gray-200 ${
                     item.highlight
-                      ? "text-[#8F6573] font-bold text-2xl mt-4"
-                      : "text-xl"
+                      ? "text-[#8F6573] font-bold text-base sm:text-xl md:text-2xl mt-4"
+                      : "text-base sm:text-xl"
                   }`}
                 >
                   <span className="font-normal">{item.label}</span>

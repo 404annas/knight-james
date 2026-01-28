@@ -47,13 +47,13 @@ export default function AdvisorCircle({ advisors = [] }) {
     <section className="w-full py-24 bg-[#FAFAFA] overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D1AAAC]/20 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-2 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6"
+          className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6 px-4"
         >
           <div className="max-w-2xl">
             <span className="text-[#8F6573] font-semibold tracking-widest uppercase text-xs mb-3 block">

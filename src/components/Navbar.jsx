@@ -58,14 +58,14 @@ const Navbar = () => {
             </Link> */}
 
             {/* FIXED MENU BUTTON CONTAINER */}
-            <div className="fixed top-10 right-5 md:right-10 flex items-center gap-4 z-[100] select-none">
+            <div className="fixed top-10 right-3 md:right-10 flex items-center gap-4 z-[100] select-none">
                 <AnimatePresence>
                     {!isOpen && (
                         <motion.a href='mailto:info@dwellrich.co.uk'
                             initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 10 }}
-                            className={`uppercase tracking-widest text-xs sm:text-sm font-medium transition-colors duration-300 flex items-center gap-2 cursor-pointer 
+                            className={`uppercase tracking-widest text-[11px] sm:text-sm font-medium transition-colors duration-300 flex items-center gap-2 cursor-pointer 
                                 ${isHomePage ? 'text-white' : 'text-black'}`}
                         >
                             <Mail size={20}/>

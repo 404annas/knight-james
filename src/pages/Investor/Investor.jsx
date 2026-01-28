@@ -45,7 +45,7 @@ const Investor = () => {
             </div>
 
             {/* LEFT COLUMN: Content */}
-            <div className="w-full lg:w-[60%] px-6 md:px-16 lg:pl-44 lg:pr-24 pt-32 md:pt-44 pb-20">
+            <div className="w-full lg:w-[60%] px-6 md:px-16 lg:pl-44 lg:pr-24 pt-44 pb-20">
                 <main className="max-w-3xl">
                     {/* PAGE TITLE */}
                     <motion.div {...fadeInUp} className="mb-10 md:mb-20">
@@ -88,7 +88,7 @@ const Investor = () => {
                         viewport={{ once: true }}
                         className="bg-gray-50 p-8 md:p-12 rounded-sm mb-10 md:mb-20"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold mb-6">How the Investment Works?</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">How the Investment Works?</h2>
                         <p className="text-lg font-light text-gray-600 mb-10">
                             Investors participate in our development projects through a fixed-return investment structure:
                         </p>
@@ -129,14 +129,14 @@ const Investor = () => {
 
                     {/* 3. WHY THIS STRUCTURE */}
                     <motion.section {...fadeInUp} className="mb-10 md:mb-20">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-10">Why This Structure Appeals to Investors</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-10">Why This Structure Appeals to Investors</h2>
                         <div className="grid grid-cols-1 gap-y-8">
                             {benefits.map((item, i) => (
                                 <div key={i} className="flex items-start gap-5 group">
                                     <div className="p-3 bg-white border border-gray-100 shadow-sm text-[#8F6573] group-hover:bg-[#8F6573] group-hover:text-white transition-all duration-300">
                                         <item.icon size={22} strokeWidth={1.5} />
                                     </div>
-                                    <span className="text-lg font-normal text-gray-600 leading-snug pt-1">{item.text}</span>
+                                    <span className="text-base sm:text-lg font-normal text-gray-600 leading-snug pt-1">{item.text}</span>
                                 </div>
                             ))}
                         </div>
@@ -145,15 +145,15 @@ const Investor = () => {
                     {/* 4. COMMITMENT & RELATIONSHIP */}
                     <div className="space-y-20 md:space-y-20">
                         <motion.section {...fadeInUp}>
-                            <h2 className="text-2xl md:text-3xl font-bold mb-6">Our Commitment</h2>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Our Commitment</h2>
                             <p className="text-lg md:text-xl font-light leading-relaxed text-gray-600">
                                 Dwell Rich Developments applies conservative assumptions and disciplined underwriting across all projects. We prioritise capital preservation, robust feasibility analysis, and responsible leverage to ensure our obligations to investors are met regardless of market conditions.
                             </p>
                         </motion.section>
 
                         <motion.section {...fadeInUp}>
-                            <h2 className="text-2xl md:text-3xl font-bold mb-8">Straightforward Relationship</h2>
-                            <div className="space-y-5 text-lg font-normal text-gray-600">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Straightforward Relationship</h2>
+                            <div className="space-y-5 text-base sm:text-lg font-normal text-gray-600">
                                 <p className="flex items-center gap-4"><Briefcase size={20} className="text-[#8F6573] shrink-0" /> Fixed timelines & income-style returns</p>
                                 <p className="flex items-center gap-4"><Briefcase size={20} className="text-[#8F6573] shrink-0" /> Clear contractual terms</p>
                                 <p className="flex items-center gap-4"><Briefcase size={20} className="text-[#8F6573] shrink-0" /> No operational involvement required</p>

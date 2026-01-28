@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 import SEO from '../../../components/SEO';
 
 import current1 from "../../../assets/current1.jpg"
+import current2 from "../../../assets/current2.jfif"
 
 const projects = [
     { title: "Wimbledon", img: current1 },
-    { title: "Cobham-North Surrey", img: current1 },
+    { title: "Cobham-North Surrey", img: current2 },
 ];
 
 const Current = () => {

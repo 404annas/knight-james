@@ -17,14 +17,14 @@ const locations = [
     {
         id: 2,
         name: "Dubai",
-        top: "40%",
+        top: "44%",
         left: "65%",
     },
     {
         id: 3,
         name: "New York",
-        top: "38%",
-        left: "23%",
+        top: "35%",
+        left: "15%",
     },
 ];
 
@@ -122,13 +122,33 @@ const Contact = () => {
                 </div>
 
                 {/* RIGHT COLUMN: Contact Form */}
-                <div className="w-full md:w-1/2 p-10 lg:px-24 pt-10 md:pt-80 pb-16 bg-[#ebebeb] flex flex-col relative">
+                <div className="w-full md:w-1/2 p-10 lg:px-24 pt-10 md:pt-40 pb-16 bg-white border-l flex flex-col relative">
+
+                    <div className="relative flex justify-center my-0">
+                        {/* Map Image */}
+                        <img
+                            src={mapImage}
+                            alt="World Map"
+                            className="w-full"
+                        />
+
+                        {/* Markers */}
+                        {locations.map((loc) => (
+                            <LocationMarker
+                                key={loc.id}
+                                name={loc.name}
+                                top={loc.top}
+                                left={loc.left}
+                            />
+                        ))}
+                    </div>
+
                     {/* The Form */}
                     <motion.form
                         initial={{ y: 40, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="w-full max-w-md mx-auto md:mx-0 mt-20 md:mt-32"
+                        className="w-full max-w-md mx-auto md:mx-0 mt-10"
                     >
                         <div className="mb-8">
                             <label className="block text-xl font-medium mb-2" htmlFor="name">Your Name</label>
@@ -136,7 +156,7 @@ const Contact = () => {
                                 type="text"
                                 id="name"
                                 placeholder='Your Name'
-                                className="w-full md:w-[80%] bg-white border-none p-4 outline-none focus:ring-1 focus:ring-gray-400"
+                                className="w-full md:w-[80%] bg-gray-100 border border-gray-400 p-4 outline-none"
                             />
                         </div>
 
@@ -146,7 +166,7 @@ const Contact = () => {
                                 type="email"
                                 id="email"
                                 placeholder='email@example.com'
-                                className="w-full md:w-[80%] bg-white border-none p-4 outline-none focus:ring-1 focus:ring-gray-400"
+                                className="w-full md:w-[80%] bg-gray-100 border border-gray-400 p-4 outline-none"
                             />
                         </div>
 
@@ -156,7 +176,7 @@ const Contact = () => {
                                 id="message"
                                 rows="6"
                                 placeholder='Your Enquiry'
-                                className="w-full md:w-[80%] bg-white border-none p-4 outline-none resize-none focus:ring-1 focus:ring-gray-400"
+                                className="w-full md:w-[80%] resize-none bg-gray-100 border border-gray-400 p-4 outline-none"
                             ></textarea>
                         </div>
 
@@ -168,25 +188,6 @@ const Contact = () => {
                         </button>
                     </motion.form>
                 </div>
-            </div>
-
-            <div className="relative flex justify-center my-20">
-                {/* Map Image */}
-                <img
-                    src={mapImage}
-                    alt="World Map"
-                    className="w-full md:w-[80vw]"
-                />
-
-                {/* Markers */}
-                {locations.map((loc) => (
-                    <LocationMarker
-                        key={loc.id}
-                        name={loc.name}
-                        top={loc.top}
-                        left={loc.left}
-                    />
-                ))}
             </div>
         </>
     );

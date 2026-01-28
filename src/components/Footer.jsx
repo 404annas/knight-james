@@ -106,7 +106,7 @@ const Footer = () => {
                     </button>
                 </div>
 
-                <div className='text-sm text-center flex-col lg:flex-row lg:-ml-44 items-center gap-2'>
+                <div className='text-sm text-center flex flex-col lg:flex-row lg:-ml-44 items-center gap-2'>
                     <p>Company Registration: 12592480 |</p>
                     <p>hello@designz.dwell-rich.com |</p>
                     <p>078033 26891</p>

@@ -92,7 +92,7 @@ const ProjectDetails = () => {
       <div className="fixed top-10 md:left-10 left-5 md:left-14 z-50">
         <Link to="/">
           <img
-          loading="lazy"
+            loading="lazy"
             src={logo}
             alt="Dwell Rich Ltd - London Real Estate Opportunities Logo"
             className="w-16 md:w-24"
@@ -235,11 +235,10 @@ const ProjectDetails = () => {
               {project.financials.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex justify-between py-5 border-b border-gray-200 ${
-                    item.highlight
+                  className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight
                       ? "text-[#8F6573] font-bold text-base sm:text-xl md:text-2xl mt-4"
                       : "text-base sm:text-xl"
-                  }`}
+                    }`}
                 >
                   <span className="font-normal">{item.label}</span>
                   <span className="font-light">{item.value}</span>
@@ -254,7 +253,7 @@ const ProjectDetails = () => {
           <div className="flex flex-col gap-4">
             {fullWidthImages.map((img, index) => (
               <img
-              loading="lazy"
+                loading="lazy"
                 key={`full-${index}`}
                 src={img}
                 onClick={() => setSelectedImg(img)}
@@ -268,8 +267,8 @@ const ProjectDetails = () => {
 
           <div className="grid md:grid-cols-2 gap-4">
             {gridImages.map((img, index) => (
-              <img
-              loading="lazy"
+              <ImageLoader
+                priority={true}
                 key={`grid-${index}`}
                 src={img}
                 onClick={() => setSelectedImg(img)}

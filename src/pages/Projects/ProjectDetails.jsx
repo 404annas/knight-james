@@ -91,11 +91,11 @@ const ProjectDetails = () => {
       {/* FIXED LOGO */}
       <div className="fixed top-10 md:left-10 left-5 md:left-14 z-50">
         <Link to="/">
-          <ImageLoader
+          <img
+          loading="lazy"
             src={logo}
             alt="Dwell Rich Ltd - London Real Estate Opportunities Logo"
             className="w-16 md:w-24"
-            priority={true}
           />
         </Link>
       </div>
@@ -131,12 +131,12 @@ const ProjectDetails = () => {
           transition={{ duration: 1.2 }}
           className="mb-24"
         >
-          <ImageLoader
+          <img
             src={project.heroImg}
             alt={project.title}
             className="w-full aspect-video object-cover shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity"
             onClick={() => setSelectedImg(project.heroImg)}
-            priority={true}
+            loading="lazy"
             placeholder="color"
             placeholderColor="#e5e7eb"
           />
@@ -253,7 +253,8 @@ const ProjectDetails = () => {
         <div className="flex flex-col gap-4 mb-20">
           <div className="flex flex-col gap-4">
             {fullWidthImages.map((img, index) => (
-              <ImageLoader
+              <img
+              loading="lazy"
                 key={`full-${index}`}
                 src={img}
                 onClick={() => setSelectedImg(img)}
@@ -267,7 +268,8 @@ const ProjectDetails = () => {
 
           <div className="grid md:grid-cols-2 gap-4">
             {gridImages.map((img, index) => (
-              <ImageLoader
+              <img
+              loading="lazy"
                 key={`grid-${index}`}
                 src={img}
                 onClick={() => setSelectedImg(img)}
@@ -285,13 +287,13 @@ const ProjectDetails = () => {
           <section className="grid gap-0 items-center">
             <div className="flex items-center gap-3 mb-8">
               <Hammer size={24} className="text-[#8F6573]" />
-              <h3 className="text-3xl font-bold">Design & Build</h3>
+              <h3 className="text-2xl md:text-3xl font-bold">Design & Build</h3>
             </div>
             <ul className="space-y-6">
               {project.designBuild.map((item, i) => (
                 <li
                   key={i}
-                  className="text-xl font-normal text-gray-600 border-l-2 border-[#8F6573] pl-6"
+                  className="text-base sm:text-xl font-normal text-gray-600 border-l-2 border-[#8F6573] pl-6"
                 >
                   {item}
                 </li>

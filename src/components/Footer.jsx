@@ -53,10 +53,10 @@ const Footer = () => {
                             <div className="flex flex-col items-center">
                                 <div className="flex items-center gap-3 mb-8 text-[#8F6573]">
                                     <AlertCircle size={28} />
-                                    <h2 className="text-xl md:text-2xl font-bold uppercase tracking-widest">Legal & Investor Disclaimer</h2>
+                                    <h2 className="text-base sm:text-xl md:text-2xl leading-none font-bold uppercase tracking-widest">Legal & Investor Disclaimer</h2>
                                 </div>
 
-                                <div className="grid md:grid-cols-1 gap-4 text-base md:text-lg text-gray-600 leading-relaxed font-light text-center">
+                                <div className="grid md:grid-cols-1 gap-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed font-light text-center">
                                     <p>
                                         The content on this website is provided for general informational purposes only and does not constitute an offer, solicitation, or recommendation to invest in any property, security, or financial product.
                                     </p>
@@ -79,7 +79,8 @@ const Footer = () => {
 
             {/* Top Section: Logo and Brand Name */}
             <Link to={"/"}>
-                <ImageLoader
+                <img
+                loading='lazy'
                     src={logo}
                     alt="Dwell Rich Ltd Logo"
                     className='w-20 mb-3'

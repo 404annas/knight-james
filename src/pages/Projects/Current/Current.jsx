@@ -26,11 +26,11 @@ const Current = () => {
             {/* HEADER SECTION */}
             <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
-                    <ImageLoader
+                    <img
+                    loading='lazy'
                         src={logo}
                         alt="Dwell Rich Ltd - Property Development Company London"
                         className="w-16 md:w-24"
-                        priority={true}
                     />
                 </Link>
             </header>
@@ -69,11 +69,11 @@ const Current = () => {
                             className="flex flex-col items-center group"
                         >
                             <div className="w-full overflow-hidden mb-6">
-                                <ImageLoader
+                                <img
                                     src={project.img}
                                     alt={`${project.title} - London property development by Dwell Rich Ltd`}
                                     className="w-full h-[500px] object-cover cursor-pointer hover:opacity-70 transition-all duration-500 ease-in-out transform hover:scale-[1.02]"
-                                    priority={false}
+                                    loading="lazy"
                                     placeholder="color"
                                     placeholderColor="#e5e7eb"
                                 />

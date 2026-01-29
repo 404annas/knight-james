@@ -45,11 +45,11 @@ const Hero = () => {
 
       {/* Background Image Layer - CHANGED: absolute to fixed so it covers the whole scroll area */}
       <div className="fixed inset-0 bg-cover bg-center">
-        <ImageLoader
+        <img
+          loading="lazy"
           src={mainBg}
           alt="Luxury property development background"
           className="w-full h-full object-cover"
-          priority={true}
           placeholder="color"
           placeholderColor="#2d2d2d"
         />
@@ -104,11 +104,11 @@ const Hero = () => {
                     </svg>
                 </motion.div> */}
 
-        <ImageLoader
+        <img
+        loading="lazy"
           src={logo}
           alt="Logo"
           className="w-36 md:w-44 object-cover mb-4"
-          priority={true}
         />
 
         {/* Brand Typography - Each letter animates up */}

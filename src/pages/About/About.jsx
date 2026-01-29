@@ -117,11 +117,11 @@ const About = () => {
       {/* FIXED LOGO */}
       <div className="fixed top-10 md:left-10 left-5 lg:left-14 z-50">
         <Link to="/">
-          <ImageLoader
+          <img
+          loading="lazy"
             src={logo}
             alt="Dwell Rich Ltd - Property Developer London Logo"
             className="w-16 md:w-24"
-            priority
           />
         </Link>
       </div>

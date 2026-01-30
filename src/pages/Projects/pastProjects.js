@@ -110,6 +110,15 @@ import harrow13 from "../../assets/harrow13.jfif";
 import harrow14 from "../../assets/harrow14.jfif";
 import harrow15 from "../../assets/harrow15.jfif";
 
+import chelseaMain from "../../assets/chelsea3.jpg";
+import chelsea2 from "../../assets/chelsea2.jpg";
+import chelsea1 from "../../assets/chelsea1.jpg";
+
+import bromleyMain from "../../assets/bromleyMain.jpg";
+import bromley1 from "../../assets/bromley1.jpg";
+import bromley2 from "../../assets/bromely2.jpg";
+import bromley3 from "../../assets/bromely3.jpg";
+
 export const pastProjectsData = [
   {
     id: "kingston-upon-thames",
@@ -259,13 +268,49 @@ export const pastProjectsData = [
     nextProjectId: "kingston-upon-thames",
   },
   {
+    id: "chelsea-flat",
+    title: "Chelsea Flat",
+    location: "Chelsea",
+    heroImg: chelseaMain,
+    subTitle: "Luxury Apartment Development in Prime London Location",
+    overviewHead: "Overview",
+    overview:
+      "This beautifully refurbished flat demonstrates how thoughtful design and targeted upgrades can transform a home. By focusing on the living area and bedroom, the property was enhanced to a high standard, improving everyday comfort while also increasing overall market value.",
+    overviewHeading: "Before refurbishment, the flat featured:",
+    overviewPrimaryList: [
+      "Outdated finishes in key living spaces",
+      "Limited visual impact and warmth",
+      "Untapped potential in layout and lighting"
+    ],
+    overviewSecondaryHeading: "After refurbishment, the flat offers:",
+    overviewSecondaryList: [
+      "A modern, high-quality living area with refined finishes",
+      "A stylish and comfortable bedroom designed for contemporary living",
+      "Improved lighting, flooring, and spatial flow",
+      "A cohesive, premium look throughout"
+    ],
+
+    strategy: [
+      "Focused investment in high-visibility living spaces",
+      "Design-led refurbishment delivering strong value uplift",
+      "Increased appeal to buyers",
+    ],
+
+    gallery: [
+      chelsea2,
+      chelsea1,
+    ],
+    nextProjectName: "Kingston Upon Thames",
+    nextProjectId: "kingston-upon-thames",
+  },
+  {
     id: "gillian-road-sutton",
     title: "Gillian Road, Sutton",
     location: "Sutton",
     heroImg: gilliMain,
     subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was originally a three-bedroom bungalow with a dated internal layout and limited entertaining space. The kitchen and dining areas were compartmentalised, the bathroom required modernisation, and the overall footprint restricted the property’s appeal to contemporary buyers. While the bungalow had strong fundamentals, its configuration and condition capped both usability and market value.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -305,7 +350,7 @@ export const pastProjectsData = [
     heroImg: childMain,
     subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was a three-bedroom family house with a conventional layout that limited natural flow and underutilised key areas. The garage was used purely for storage, circulation through the ground floor felt segmented, and the rear of the property lacked the space and connection required for modern family living. While structurally sound, the house did not fully capitalise on its footprint or natural light potential.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -342,7 +387,7 @@ export const pastProjectsData = [
     heroImg: bnbMain,
     subTitle: "Mid-term Holiday Letting Repositioning",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was a house that had been delivered with a basic layout and limited consideration for operational use or guest experience. Although structurally new, the internal planning was inefficient, presenting effectively as a three-bedroom home, with underutilised space and a layout that did not support flexible occupancy or short- to mid-term letting demand. The property lacked a clear identity in the market and was not optimised for rental performance, despite strong fundamentals such as a garden, garage, and low-maintenance construction.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -388,7 +433,7 @@ export const pastProjectsData = [
     heroImg: harrowMain,
     subTitle: "Scale-Driven Family Home Expansion",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was a <strong>standard residential house</strong> with a limited ground-floor footprint and a conventional layout that restricted living space and functionality. While structurally sound, the house did not reflect the scale, layout, or quality expected by today’s family market and significantly underutilised the potential of the plot.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -418,8 +463,42 @@ export const pastProjectsData = [
       harrow11,
       harrow12,
       harrow13,
+      harrow14,
+      harrow15
     ],
     nextProjectName: "Cheam, Surrey",
     nextProjectId: "cheam-surrey",
+  },
+  {
+    id: "bromley",
+    title: "Bromley",
+    location: "Bromley",
+    heroImg: bromleyMain,
+    subTitle: "Adding Value Through Thoughtful Refurbishment",
+    overviewHead: "Overview",
+    overview:
+      "Refurbishing the most prominent areas of a home is one of the most effective ways to increase its value. Spaces such as the kitchen and living area shape first impressions and play a major role in how a property is perceived by both homeowners and investors. In this home, the refurbishment focused on delivering a high standard of finish while improving layout, flow, and everyday usability.",
+    overviewHeading: "Kitchen & Living Area Transformation",
+    overviewPrimary: "The kitchen and living area were upgraded to a very high standard, combining quality materials with clean, modern design. Careful attention was given to finishes, lighting, and detailing to create spaces that feel both practical and refined.",
+    overviewPrimaryList: [
+      "High-quality kitchen fittings and finishes",
+      "A contemporary design that enhances space and light",
+      "A welcoming living area suited to modern lifestyles"
+    ],
+
+    strategy: [
+      "Focus on high-impact spaces that drive buyer and tenant interest",
+      "Premium finishes that elevate overall property appeal",
+      "Refurbishment designed to maximise market value and desirability",
+      "A clear example of how targeted investment delivers strong returns",
+    ],
+
+    gallery: [
+      bromley1,
+      bromley2,
+      bromley3,
+    ],
+    nextProjectName: "Kingston Upon Thames",
+    nextProjectId: "kingston-upon-thames",
   },
 ];

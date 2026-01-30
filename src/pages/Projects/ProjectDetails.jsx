@@ -56,6 +56,39 @@ const ProjectDetails = () => {
     transition: { duration: 0.8 },
   };
 
+  const renderSection = (title, text, list) => {
+    if (!title && !text && (!list || list.length === 0)) return null;
+
+    return (
+      <div className="space-y-4">
+        {title && (
+          <p className="text-2xl font-bold mb-1 text-[#8F6573]">
+            {title}
+          </p>
+        )}
+
+        {text && (
+          <p className="m-0" dangerouslySetInnerHTML={{ __html: text }} />
+        )}
+
+        {list && list.length > 0 && (
+          <ul className="space-y-3 mt-4">
+            {list.map((item, idx) => (
+              <li key={idx} className="flex gap-3 items-start text-gray-600">
+                <CheckCircle2
+                  size={18}
+                  className="text-[#8F6573] mt-1.5 shrink-0"
+                  strokeWidth={2.5}
+                />
+                <span className="text-lg md:text-xl font-light">{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="bg-white min-h-screen text-[#222222] lg:px-44 relative">
       {/* IMAGE PREVIEW MODAL */}
@@ -148,29 +181,23 @@ const ProjectDetails = () => {
             <Home size={28} strokeWidth={1.5} />
             <h2 className="text-2xl sm:text-3xl font-bold">Project Overview</h2>
           </div>
-          <div className="text-lg md:text-xl font-light text-gray-600 leading-relaxed space-y-6">
-            <div className="space-y-3">
-              {project.overviewHeading && (
-                <p className="text-2xl font-bold mb-1 text-[#8F6573]">
-                  {project.overviewHeading}
-                </p>
-              )}
-              <p
-                className="m-0"
-                dangerouslySetInnerHTML={{ __html: project.overview }}
-              />
-            </div>
-            <div className="space-y-3">
-              {project.overviewSecondaryHeading && (
-                <p className="text-2xl font-bold mb-1 text-[#8F6573]">
-                  {project.overviewSecondaryHeading}
-                </p>
-              )}
-              <p
-                className="m-0"
-                dangerouslySetInnerHTML={{ __html: project.overviewSecondary }}
-              />
-            </div>
+          <div className="text-lg md:text-xl font-light text-gray-600 leading-relaxed space-y-12">
+            {/* Render General Overview */}
+            {renderSection(project.overviewHead, project.overview)}
+
+            {/* Render Before / Primary Section */}
+            {renderSection(
+              project.overviewHeading,
+              project.overviewPrimary,
+              project.overviewPrimaryList
+            )}
+
+            {/* Render After / Secondary Section */}
+            {renderSection(
+              project.overviewSecondaryHeading,
+              project.overviewSecondary,
+              project.overviewSecondaryList
+            )}
           </div>
         </section>
 
@@ -236,8 +263,8 @@ const ProjectDetails = () => {
                 <div
                   key={i}
                   className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight
-                      ? "text-[#8F6573] font-bold text-base sm:text-xl md:text-2xl mt-4"
-                      : "text-base sm:text-xl"
+                    ? "text-[#8F6573] font-bold text-base sm:text-xl md:text-2xl mt-4"
+                    : "text-base sm:text-xl"
                     }`}
                 >
                   <span className="font-normal">{item.label}</span>

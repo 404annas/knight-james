@@ -11,28 +11,18 @@ import childMain from "../../../assets/childMain.jpg"
 import bnbMain from "../../../assets/bnbMain.jpg"
 import gilliMain from "../../../assets/gilliMain.jpg"
 import harrowMain from "../../../assets/harrowMain.jfif"
+import chelseaMain from "../../../assets/chelsea3.jpg"
+import bromleyMain from "../../../assets/bromleyMain.jpg"
 
 const projects = [
     { title: "Kingston Upon Thames", img: kingstonNewMain },
     { title: "Cheam Surrey", img: kingstonMain },
+    { title: "Chelsea Flat", img: chelseaMain },
     { title: "Gillian Road Sutton", img: gilliMain },
     { title: "Chiltren Drive Sutton", img: childMain },
     { title: "Holiday Home ( Air B&B ) Mitcham", img: bnbMain },
     { title: "Harrow", img: harrowMain },
-    // { title: "Sutherland Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/CORE-Flat-4-116-Sutherland-Avenue-Reception3.1-1.jpg" },
-    // { title: "Midhurst Avenue, N10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-front-zoomed.jpg" },
-    // { title: "Leamington Road Villas, W11", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/LRV-Rear-Living-Room.jpg" },
-    // { title: "Oxford Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-I.jpg" },
-    // { title: "Clanricarde Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Living-Room-Main.jpg" },
-    // { title: "Queens Gate Place, SW7", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-Wide-angle_2020-10-26-130738.jpg" },
-    // { title: "Craven Hill, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Website-main-shot-terrace-and-living-from-side.jpg" },
-    // { title: "Trebovir Road, SW5", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-I.jpg" },
-    // { title: "Linden Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Linden-Gardens-W2-LIVING-MEZZ-AND-KITCHEN.jpg" },
-    // { title: "St. Mark's Road, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Marks-Place-91D-2.jpg" },
-    // { title: "Ashmore Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Ashmore-Road-68D-22.jpg" },
-    // { title: "St. Quintin Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Quintin-Gardens-W10_19.jpg" },
-    // { title: "Shirland Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Shirland-rd-4.jpg" },
-    // { title: "Elgin Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Elgin-Avenue-Diner-Through-A.jpg" },
+    { title: "Bromley", img: bromleyMain },
 ];
 
 const Past = () => {

@@ -22,6 +22,8 @@ const cardVariants = {
   },
 };
 
+const grayBgIndexes = [0, 3, 4]; // change anytime
+
 export default function AdvisorCircle({ advisors = [] }) {
   const data =
     advisors.length > 0
@@ -83,7 +85,9 @@ export default function AdvisorCircle({ advisors = [] }) {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="group relative bg-white rounded-2xl p-8 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:shadow-[#8F6573]/10 hover:border-[#8F6573]/30"
+              className={`group relative rounded-2xl p-8 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:shadow-[#8F6573]/10 hover:border-[#8F6573]/30
+  ${grayBgIndexes.includes(index) ? "bg-gray-100" : "bg-white"}
+`}
             >
               <div className="flex justify-between items-start mb-6">
                 {/* Image Placeholder: Increased size to h-32 w-32 */}

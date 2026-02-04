@@ -72,9 +72,23 @@ const About = () => {
     {
       name: "Ashley Newman",
       title: "Architectural Services",
-      image: "",
+      image: "/teamMan1.jpg",
       description:
         "He has been a key member of our team since the company’s inception. He oversees the planning and structural aspects of our projects, ensuring all work follows the approved architectural and structural drawings. He also provides valuable support and guidance whenever challenges arise.",
+    },
+    {
+      name: "Lindsey Boggis",
+      title: "Investment Consultant",
+      image: "/teamLady1.jfif",
+      description:
+        "She is an experienced Buying Consultant with a strong track record in sourcing, negotiation and relationship management. Highly organised and deeply connected within the agent and professional network, Lindsey is often the first to hear about discreet or pre-market opportunities.",
+    },
+    {
+      name: "Lisa Sayers",
+      title: "Investment Consultant",
+      image: "/teamLady2.jfif",
+      description:
+        "Lisa is  a trusted advisor to families, relocators and private clients seeking exceptional homes across the Home Counties and London. Known for her discretion, tenacity and instinct for matching people to place, Lisa specialises in unlocking off-market opportunities, negotiating intelligently and managing the entire acquisition process end-to-end.",
     },
     {
       name: "Zaeem Khan",

@@ -41443,10 +41443,10 @@ const Footer = () => {
                             <div className="flex flex-col items-center">
                                 <div className="flex items-center gap-3 mb-8 text-[#8F6573]">
                                     <AlertCircle size={28} />
-                                    <h2 className="text-xl md:text-2xl font-bold uppercase tracking-widest">Legal & Investor Disclaimer</h2>
+                                    <h2 className="text-base sm:text-xl md:text-2xl leading-none font-bold uppercase tracking-widest">Legal & Investor Disclaimer</h2>
                                 </div>
 
-                                <div className="grid md:grid-cols-1 gap-4 text-base md:text-lg text-gray-600 leading-relaxed font-light text-center">
+                                <div className="grid md:grid-cols-1 gap-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed font-light text-center">
                                     <p>
                                         The content on this website is provided for general informational purposes only and does not constitute an offer, solicitation, or recommendation to invest in any property, security, or financial product.
                                     </p>
@@ -41469,7 +41469,8 @@ const Footer = () => {
 
             {/* Top Section: Logo and Brand Name */}
             <Link to={"/"}>
-                <ImageLoader
+                <img
+                loading='lazy'
                     src={logo}
                     alt="Dwell Rich Ltd Logo"
                     className='w-20 mb-3'
@@ -42008,11 +42009,11 @@ const About = () => {
       {/* FIXED LOGO */}
       <div className="fixed top-10 md:left-10 left-5 lg:left-14 z-50">
         <Link to="/">
-          <ImageLoader
+          <img
+          loading="lazy"
             src={logo}
             alt="Dwell Rich Ltd - Property Developer London Logo"
             className="w-16 md:w-24"
-            priority
           />
         </Link>
       </div>
@@ -42640,11 +42641,11 @@ const Hero = () => {
 
       {/* Background Image Layer - CHANGED: absolute to fixed so it covers the whole scroll area */}
       <div className="fixed inset-0 bg-cover bg-center">
-        <ImageLoader
+        <img
+          loading="lazy"
           src={mainBg}
           alt="Luxury property development background"
           className="w-full h-full object-cover"
-          priority={true}
           placeholder="color"
           placeholderColor="#2d2d2d"
         />
@@ -42699,11 +42700,11 @@ const Hero = () => {
                     </svg>
                 </motion.div> */}
 
-        <ImageLoader
+        <img
+        loading="lazy"
           src={logo}
           alt="Logo"
           className="w-36 md:w-44 object-cover mb-4"
-          priority={true}
         />
 
         {/* Brand Typography - Each letter animates up */}
@@ -43076,6 +43077,39 @@ const ProjectDetails = () => {
     transition: { duration: 0.8 },
   };
 
+  const renderSection = (title, text, list) => {
+    if (!title && !text && (!list || list.length === 0)) return null;
+
+    return (
+      <div className="space-y-4">
+        {title && (
+          <p className="text-2xl font-bold mb-1 text-[#8F6573]">
+            {title}
+          </p>
+        )}
+
+        {text && (
+          <p className="m-0" dangerouslySetInnerHTML={{ __html: text }} />
+        )}
+
+        {list && list.length > 0 && (
+          <ul className="space-y-3 mt-4">
+            {list.map((item, idx) => (
+              <li key={idx} className="flex gap-3 items-start text-gray-600">
+                <CheckCircle2
+                  size={18}
+                  className="text-[#8F6573] mt-1.5 shrink-0"
+                  strokeWidth={2.5}
+                />
+                <span className="text-lg md:text-xl font-light">{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="bg-white min-h-screen text-[#222222] lg:px-44 relative">
       {/* IMAGE PREVIEW MODAL */}
@@ -43111,11 +43145,11 @@ const ProjectDetails = () => {
       {/* FIXED LOGO */}
       <div className="fixed top-10 md:left-10 left-5 md:left-14 z-50">
         <Link to="/">
-          <ImageLoader
+          <img
+            loading="lazy"
             src={logo}
             alt="Dwell Rich Ltd - London Real Estate Opportunities Logo"
             className="w-16 md:w-24"
-            priority={true}
           />
         </Link>
       </div>
@@ -43151,12 +43185,12 @@ const ProjectDetails = () => {
           transition={{ duration: 1.2 }}
           className="mb-24"
         >
-          <ImageLoader
+          <img
             src={project.heroImg}
             alt={project.title}
             className="w-full aspect-video object-cover shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity"
             onClick={() => setSelectedImg(project.heroImg)}
-            priority={true}
+            loading="lazy"
             placeholder="color"
             placeholderColor="#e5e7eb"
           />
@@ -43168,29 +43202,23 @@ const ProjectDetails = () => {
             <Home size={28} strokeWidth={1.5} />
             <h2 className="text-2xl sm:text-3xl font-bold">Project Overview</h2>
           </div>
-          <div className="text-lg md:text-xl font-light text-gray-600 leading-relaxed space-y-6">
-            <div className="space-y-3">
-              {project.overviewHeading && (
-                <p className="text-2xl font-bold mb-1 text-[#8F6573]">
-                  {project.overviewHeading}
-                </p>
-              )}
-              <p
-                className="m-0"
-                dangerouslySetInnerHTML={{ __html: project.overview }}
-              />
-            </div>
-            <div className="space-y-3">
-              {project.overviewSecondaryHeading && (
-                <p className="text-2xl font-bold mb-1 text-[#8F6573]">
-                  {project.overviewSecondaryHeading}
-                </p>
-              )}
-              <p
-                className="m-0"
-                dangerouslySetInnerHTML={{ __html: project.overviewSecondary }}
-              />
-            </div>
+          <div className="text-lg md:text-xl font-light text-gray-600 leading-relaxed space-y-12">
+            {/* Render General Overview */}
+            {renderSection(project.overviewHead, project.overview)}
+
+            {/* Render Before / Primary Section */}
+            {renderSection(
+              project.overviewHeading,
+              project.overviewPrimary,
+              project.overviewPrimaryList
+            )}
+
+            {/* Render After / Secondary Section */}
+            {renderSection(
+              project.overviewSecondaryHeading,
+              project.overviewSecondary,
+              project.overviewSecondaryList
+            )}
           </div>
         </section>
 
@@ -43255,11 +43283,10 @@ const ProjectDetails = () => {
               {project.financials.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex justify-between py-5 border-b border-gray-200 ${
-                    item.highlight
-                      ? "text-[#8F6573] font-bold text-base sm:text-xl md:text-2xl mt-4"
-                      : "text-base sm:text-xl"
-                  }`}
+                  className={`flex justify-between py-5 border-b border-gray-200 ${item.highlight
+                    ? "text-[#8F6573] font-bold text-base sm:text-xl md:text-2xl mt-4"
+                    : "text-base sm:text-xl"
+                    }`}
                 >
                   <span className="font-normal">{item.label}</span>
                   <span className="font-light">{item.value}</span>
@@ -43273,7 +43300,8 @@ const ProjectDetails = () => {
         <div className="flex flex-col gap-4 mb-20">
           <div className="flex flex-col gap-4">
             {fullWidthImages.map((img, index) => (
-              <ImageLoader
+              <img
+                loading="lazy"
                 key={`full-${index}`}
                 src={img}
                 onClick={() => setSelectedImg(img)}
@@ -43288,6 +43316,7 @@ const ProjectDetails = () => {
           <div className="grid md:grid-cols-2 gap-4">
             {gridImages.map((img, index) => (
               <ImageLoader
+                priority={true}
                 key={`grid-${index}`}
                 src={img}
                 onClick={() => setSelectedImg(img)}
@@ -43305,13 +43334,13 @@ const ProjectDetails = () => {
           <section className="grid gap-0 items-center">
             <div className="flex items-center gap-3 mb-8">
               <Hammer size={24} className="text-[#8F6573]" />
-              <h3 className="text-3xl font-bold">Design & Build</h3>
+              <h3 className="text-2xl md:text-3xl font-bold">Design & Build</h3>
             </div>
             <ul className="space-y-6">
               {project.designBuild.map((item, i) => (
                 <li
                   key={i}
-                  className="text-xl font-normal text-gray-600 border-l-2 border-[#8F6573] pl-6"
+                  className="text-base sm:text-xl font-normal text-gray-600 border-l-2 border-[#8F6573] pl-6"
                 >
                   {item}
                 </li>
@@ -43492,6 +43521,15 @@ import harrow13 from "../../assets/harrow13.jfif";
 import harrow14 from "../../assets/harrow14.jfif";
 import harrow15 from "../../assets/harrow15.jfif";
 
+import chelseaMain from "../../assets/chelsea3.jpg";
+import chelsea2 from "../../assets/chelsea2.jpg";
+import chelsea1 from "../../assets/chelsea1.jpg";
+
+import bromleyMain from "../../assets/bromleyMain.jpg";
+import bromley1 from "../../assets/bromley1.jpg";
+import bromley2 from "../../assets/bromely2.jpg";
+import bromley3 from "../../assets/bromely3.jpg";
+
 export const pastProjectsData = [
   {
     id: "kingston-upon-thames",
@@ -43641,13 +43679,49 @@ export const pastProjectsData = [
     nextProjectId: "kingston-upon-thames",
   },
   {
+    id: "chelsea-flat",
+    title: "Chelsea Flat",
+    location: "Chelsea",
+    heroImg: chelseaMain,
+    subTitle: "Luxury Apartment Development in Prime London Location",
+    overviewHead: "Overview",
+    overview:
+      "This beautifully refurbished flat demonstrates how thoughtful design and targeted upgrades can transform a home. By focusing on the living area and bedroom, the property was enhanced to a high standard, improving everyday comfort while also increasing overall market value.",
+    overviewHeading: "Before refurbishment, the flat featured:",
+    overviewPrimaryList: [
+      "Outdated finishes in key living spaces",
+      "Limited visual impact and warmth",
+      "Untapped potential in layout and lighting"
+    ],
+    overviewSecondaryHeading: "After refurbishment, the flat offers:",
+    overviewSecondaryList: [
+      "A modern, high-quality living area with refined finishes",
+      "A stylish and comfortable bedroom designed for contemporary living",
+      "Improved lighting, flooring, and spatial flow",
+      "A cohesive, premium look throughout"
+    ],
+
+    strategy: [
+      "Focused investment in high-visibility living spaces",
+      "Design-led refurbishment delivering strong value uplift",
+      "Increased appeal to buyers",
+    ],
+
+    gallery: [
+      chelsea2,
+      chelsea1,
+    ],
+    nextProjectName: "Kingston Upon Thames",
+    nextProjectId: "kingston-upon-thames",
+  },
+  {
     id: "gillian-road-sutton",
     title: "Gillian Road, Sutton",
     location: "Sutton",
     heroImg: gilliMain,
     subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was originally a three-bedroom bungalow with a dated internal layout and limited entertaining space. The kitchen and dining areas were compartmentalised, the bathroom required modernisation, and the overall footprint restricted the property’s appeal to contemporary buyers. While the bungalow had strong fundamentals, its configuration and condition capped both usability and market value.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -43687,7 +43761,7 @@ export const pastProjectsData = [
     heroImg: childMain,
     subTitle: "Luxury Bungalow Redevelopment into Prime Residential Asset",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was a three-bedroom family house with a conventional layout that limited natural flow and underutilised key areas. The garage was used purely for storage, circulation through the ground floor felt segmented, and the rear of the property lacked the space and connection required for modern family living. While structurally sound, the house did not fully capitalise on its footprint or natural light potential.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -43724,7 +43798,7 @@ export const pastProjectsData = [
     heroImg: bnbMain,
     subTitle: "Mid-term Holiday Letting Repositioning",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was a house that had been delivered with a basic layout and limited consideration for operational use or guest experience. Although structurally new, the internal planning was inefficient, presenting effectively as a three-bedroom home, with underutilised space and a layout that did not support flexible occupancy or short- to mid-term letting demand. The property lacked a clear identity in the market and was not optimised for rental performance, despite strong fundamentals such as a garden, garage, and low-maintenance construction.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -43770,7 +43844,7 @@ export const pastProjectsData = [
     heroImg: harrowMain,
     subTitle: "Scale-Driven Family Home Expansion",
     overviewHeading: "Before",
-    overview:
+    overviewPrimary:
       "The property was a <strong>standard residential house</strong> with a limited ground-floor footprint and a conventional layout that restricted living space and functionality. While structurally sound, the house did not reflect the scale, layout, or quality expected by today’s family market and significantly underutilised the potential of the plot.",
     overviewSecondaryHeading: "After",
     overviewSecondary:
@@ -43800,9 +43874,43 @@ export const pastProjectsData = [
       harrow11,
       harrow12,
       harrow13,
+      harrow14,
+      harrow15
     ],
     nextProjectName: "Cheam, Surrey",
     nextProjectId: "cheam-surrey",
+  },
+  {
+    id: "bromley",
+    title: "Bromley",
+    location: "Bromley",
+    heroImg: bromleyMain,
+    subTitle: "Adding Value Through Thoughtful Refurbishment",
+    overviewHead: "Overview",
+    overview:
+      "Refurbishing the most prominent areas of a home is one of the most effective ways to increase its value. Spaces such as the kitchen and living area shape first impressions and play a major role in how a property is perceived by both homeowners and investors. In this home, the refurbishment focused on delivering a high standard of finish while improving layout, flow, and everyday usability.",
+    overviewHeading: "Kitchen & Living Area Transformation",
+    overviewPrimary: "The kitchen and living area were upgraded to a very high standard, combining quality materials with clean, modern design. Careful attention was given to finishes, lighting, and detailing to create spaces that feel both practical and refined.",
+    overviewPrimaryList: [
+      "High-quality kitchen fittings and finishes",
+      "A contemporary design that enhances space and light",
+      "A welcoming living area suited to modern lifestyles"
+    ],
+
+    strategy: [
+      "Focus on high-impact spaces that drive buyer and tenant interest",
+      "Premium finishes that elevate overall property appeal",
+      "Refurbishment designed to maximise market value and desirability",
+      "A clear example of how targeted investment delivers strong returns",
+    ],
+
+    gallery: [
+      bromley1,
+      bromley2,
+      bromley3,
+    ],
+    nextProjectName: "Kingston Upon Thames",
+    nextProjectId: "kingston-upon-thames",
   },
 ];
 
@@ -43844,11 +43952,11 @@ const Current = () => {
             {/* HEADER SECTION */}
             <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-14 py-8">
                 <Link to="/">
-                    <ImageLoader
+                    <img
+                    loading='lazy'
                         src={logo}
                         alt="Dwell Rich Ltd - Property Development Company London"
                         className="w-16 md:w-24"
-                        priority={true}
                     />
                 </Link>
             </header>
@@ -43887,11 +43995,11 @@ const Current = () => {
                             className="flex flex-col items-center group"
                         >
                             <div className="w-full overflow-hidden mb-6">
-                                <ImageLoader
+                                <img
                                     src={project.img}
                                     alt={`${project.title} - London property development by Dwell Rich Ltd`}
                                     className="w-full h-[500px] object-cover cursor-pointer hover:opacity-70 transition-all duration-500 ease-in-out transform hover:scale-[1.02]"
-                                    priority={false}
+                                    loading="lazy"
                                     placeholder="color"
                                     placeholderColor="#e5e7eb"
                                 />
@@ -43934,28 +44042,18 @@ import childMain from "../../../assets/childMain.jpg"
 import bnbMain from "../../../assets/bnbMain.jpg"
 import gilliMain from "../../../assets/gilliMain.jpg"
 import harrowMain from "../../../assets/harrowMain.jfif"
+import chelseaMain from "../../../assets/chelsea3.jpg"
+import bromleyMain from "../../../assets/bromleyMain.jpg"
 
 const projects = [
     { title: "Kingston Upon Thames", img: kingstonNewMain },
     { title: "Cheam Surrey", img: kingstonMain },
+    { title: "Chelsea Flat", img: chelseaMain },
     { title: "Gillian Road Sutton", img: gilliMain },
     { title: "Chiltren Drive Sutton", img: childMain },
     { title: "Holiday Home ( Air B&B ) Mitcham", img: bnbMain },
     { title: "Harrow", img: harrowMain },
-    // { title: "Sutherland Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/CORE-Flat-4-116-Sutherland-Avenue-Reception3.1-1.jpg" },
-    // { title: "Midhurst Avenue, N10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-front-zoomed.jpg" },
-    // { title: "Leamington Road Villas, W11", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/LRV-Rear-Living-Room.jpg" },
-    // { title: "Oxford Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Kitchen-I.jpg" },
-    // { title: "Clanricarde Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Living-Room-Main.jpg" },
-    // { title: "Queens Gate Place, SW7", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-Wide-angle_2020-10-26-130738.jpg" },
-    // { title: "Craven Hill, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Website-main-shot-terrace-and-living-from-side.jpg" },
-    // { title: "Trebovir Road, SW5", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Drawing-Room-I.jpg" },
-    // { title: "Linden Gardens, W2", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Linden-Gardens-W2-LIVING-MEZZ-AND-KITCHEN.jpg" },
-    // { title: "St. Mark's Road, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Marks-Place-91D-2.jpg" },
-    // { title: "Ashmore Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Ashmore-Road-68D-22.jpg" },
-    // { title: "St. Quintin Gardens, W10", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/St-Quintin-Gardens-W10_19.jpg" },
-    // { title: "Shirland Road, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Shirland-rd-4.jpg" },
-    // { title: "Elgin Avenue, W9", img: "https://knightjames.co.uk/assets/developments/_1536xAUTO_crop_center-center_70_none/Elgin-Avenue-Diner-Through-A.jpg" },
+    { title: "Bromley", img: bromleyMain },
 ];
 
 const Past = () => {
